@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".policeEcomplain"></activity>
+        <activity android:name=".forgetPassword"></activity>
+        <activity android:name=".policeEcomplain" />
         <activity android:name=".homePageDuplicate" />
         <activity android:name=".Testpage" />
         <activity android:name=".registrationPage" />
