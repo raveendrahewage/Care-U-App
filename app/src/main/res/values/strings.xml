@@ -1,3 +1,50 @@
 <resources>
-    <string name="app_name">CareU</string>
+    <string name="app_name">E-Complain</string>
+    <string name="country_prompt">Choose a country</string>
+    <string-array name="Dis">
+        <item>Galle</item>
+        <item>Colombo</item>
+        <item>Kandy</item>
+        <item>Gampaha</item>
+        <item>Mathara</item>
+        <item>Hamabanthota</item>
+        <item>New Zealand</item>
+        <item>India</item>
+        <item>Malaysia</item>
+        <item>United States</item>
+        <item>Indonesia</item>
+        <item>France</item>
+        <item>Italy</item>
+        <item>Singapore</item>
+        <item>New Zealand</item>
+        <item>India</item>
+    </string-array>
+
+    <string-array name="Dis_pos">
+        <item>Galle-Police</item>
+        <item>Colombo-Police</item>
+        <item>Kandy-Police</item>
+        <item>Gampaha-Police</item>
+        <item>Mathara-Police</item>
+        <item>Hamabanthota-Police</item>
+        <item>New Zealand-Police</item>
+        <item>India-Police</item>
+        <item>Malaysia-Police</item>
+        <item>United States-Police</item>
+        <item>Indonesia-Police</item>
+        <item>France</item>
+        <item>Italy</item>
+        <item>Singapore</item>
+        <item>New Zealand</item>
+        <item>India</item>
+    </string-array>
+    <string-array name="Number_of_Patients">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>more than 5</item>
+
+    </string-array>
 </resources>

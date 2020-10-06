@@ -52,7 +52,7 @@
 
 
             <Button
-                android:id="@+id/button1"
+
                 android:layout_width="120dp"
                 android:layout_height="120dp"
                 android:backgroundTint="#29A536"
@@ -74,7 +74,6 @@
                 />
 
             <Button
-                android:id="@+id/button4"
                 android:layout_width="120dp"
                 android:layout_height="120dp"
                 android:layout_gravity="center"
@@ -91,6 +90,7 @@
                 android:layout_marginLeft="15dp"
                 android:layout_marginRight="15dp"
                 android:background="@drawable/rounded_edittext"
+                android:onClick="Police_Emergency_Service"
                 />
 
 
@@ -108,7 +108,7 @@
             android:layout_marginBottom="5dp"
             android:layout_gravity="center">
             <Button
-                android:id="@+id/button2"
+
                 android:layout_width="120dp"
                 android:layout_height="120dp"
                 android:backgroundTint="#D1522A"
@@ -127,7 +127,7 @@
                 android:background="@drawable/rounded_edittext"
                 />
             <Button
-                android:id="@+id/button3"
+
                 android:layout_width="120dp"
                 android:layout_height="120dp"
                 android:backgroundTint="#8F7608"
