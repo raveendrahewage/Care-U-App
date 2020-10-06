@@ -19,4 +19,9 @@ public class homePageDuplicate extends AppCompatActivity {
         Intent i = new Intent(this,policeEcomplain.class);
         startActivity(i);
     }
+
+    public void Suwasariya_Ambulance_Srevice(View view) {
+        Intent i = new Intent(this,ambulance.class);
+        startActivity(i);
+    }
 }
