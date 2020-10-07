@@ -27,6 +27,7 @@ public class homePageDuplicate extends AppCompatActivity {
 
     public void profile(View view) {
         Intent i = new Intent(this,my_profile.class);
+        startActivity(i);
     }
 
     public void emgency_Numbers(View view) {

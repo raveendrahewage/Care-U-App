@@ -4,72 +4,77 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".homePageDuplicate"
-    android:orientation="vertical">
+    android:background="#FFFFFF"
+    android:orientation="vertical"
+    tools:context=".homePageDuplicate">
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="0.5"
-        android:layout_marginTop="50dp"
         android:layout_marginLeft="15dp"
         android:layout_marginRight="15dp"
         android:layout_marginBottom="20dp"
+        android:layout_weight="0.5"
         android:orientation="vertical">
+
+
+
         <ImageView
             android:id="@+id/imageView3"
             android:layout_width="139dp"
             android:layout_height="166dp"
-            app:srcCompat="@drawable/app_logo"
-            android:layout_gravity="center"/>
+            android:layout_gravity="center"
+            app:srcCompat="@drawable/app_logo" />
+
         <TextView
             android:id="@+id/textView2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="center"
             android:text="CareU"
             android:textColor="#FF9800"
             android:textSize="24sp"
-            android:textStyle="bold"
-            android:layout_marginTop="15dp"
-            android:layout_gravity="center"/>
+            android:textStyle="bold" />
+
+
     </LinearLayout>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="4"
-        android:orientation="vertical"
-        >
+        android:orientation="vertical">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
             android:layout_gravity="center_horizontal"
-            android:layout_marginTop="10dp"
             android:layout_marginLeft="25dp"
             android:layout_marginRight="25dp"
             android:layout_marginBottom="5dp"
-            android:layout_weight="1">
+            android:layout_weight="1"
+            android:orientation="horizontal">
 
 
             <Button
 
                 android:layout_width="120dp"
                 android:layout_height="120dp"
-                android:backgroundTint="#29A536"
+                android:layout_gravity="center"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_weight="1.5"
                 android:background="@drawable/rounded_edittext"
+                android:backgroundTint="#29A536"
                 android:drawableTop="@drawable/ic_local_taxi_black_24dp"
                 android:gravity="bottom|center_horizontal"
-                android:paddingBottom="8dp"
+                android:onClick="Suwasariya_Ambulance_Srevice"
                 android:paddingTop="5dp"
+                android:paddingBottom="8dp"
                 android:text="Suwasariya Ambulance Srevice"
                 android:textColor="#FFFFFF"
                 android:textSize="16dp"
                 android:textStyle="bold"
-                android:layout_gravity="center"
-                android:layout_weight="1.5"
-                android:layout_marginLeft="15dp"
-                android:layout_marginRight="15dp"
-                android:onClick="Suwasariya_Ambulance_Srevice"
 
                 />
 
@@ -77,21 +82,20 @@
                 android:layout_width="120dp"
                 android:layout_height="120dp"
                 android:layout_gravity="center"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_weight="1.5"
+                android:background="@drawable/rounded_edittext"
                 android:backgroundTint="#F1110C"
                 android:drawableTop="@drawable/ic_account_balance_black_24dp"
                 android:gravity="bottom|center_horizontal"
+                android:onClick="Police_Emergency_Service"
                 android:paddingTop="5dp"
                 android:paddingBottom="8dp"
                 android:text="Police Emergency Service"
                 android:textColor="#FFFFFF"
                 android:textSize="16dp"
-                android:textStyle="bold"
-                android:layout_weight="1.5"
-                android:layout_marginLeft="15dp"
-                android:layout_marginRight="15dp"
-                android:background="@drawable/rounded_edittext"
-                android:onClick="Police_Emergency_Service"
-                />
+                android:textStyle="bold" />
 
 
         </LinearLayout>
@@ -99,18 +103,24 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:orientation="horizontal"
+            android:layout_gravity="center"
+            android:layout_marginLeft="25dp"
 
             android:layout_marginTop="10dp"
-            android:layout_marginLeft="25dp"
             android:layout_marginRight="25dp"
             android:layout_marginBottom="5dp"
-            android:layout_gravity="center">
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
             <Button
 
                 android:layout_width="120dp"
                 android:layout_height="120dp"
+                android:layout_gravity="center"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_weight="1.5"
+                android:background="@drawable/rounded_edittext"
                 android:backgroundTint="#D1522A"
                 android:drawableTop="@drawable/ic_phone_in_talk_black_24dp"
                 android:gravity="bottom|center_horizontal"
@@ -119,49 +129,28 @@
                 android:text="Emergency Numbers"
                 android:textColor="#FFFFFF"
                 android:textSize="16dp"
-                android:textStyle="bold"
-                android:layout_weight="1.5"
-                android:layout_marginLeft="15dp"
-                android:layout_marginRight="15dp"
-                android:layout_gravity="center"
-                android:background="@drawable/rounded_edittext"
-                android:onClick="emgency_Numbers"
-                />
+                android:textStyle="bold" />
 
 
             <Button
 
-            android:layout_width="120dp"
-            android:layout_height="120dp"
-            android:backgroundTint="#8F7608"
-            android:drawableTop="@drawable/ic_local_hospital_black_24dp"
-            android:gravity="bottom|center_horizontal"
-            android:paddingTop="10dp"
-            android:paddingBottom="8dp"
-            android:text="First-Aid Instructions"
-            android:textColor="#FFFFFF"
-            android:textSize="16dp"
-            android:textStyle="bold"
-                android:layout_weight="1.5"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:layout_gravity="center"
                 android:layout_marginLeft="15dp"
                 android:layout_marginRight="15dp"
-                android:layout_gravity="center"
-                android:background="@drawable/rounded_edittext"/>
+                android:layout_weight="1.5"
+                android:background="@drawable/rounded_edittext"
+                android:backgroundTint="#8F7608"
+                android:drawableTop="@drawable/ic_local_hospital_black_24dp"
+                android:gravity="bottom|center_horizontal"
+                android:paddingTop="10dp"
+                android:paddingBottom="8dp"
+                android:text="First-Aid Instructions"
+                android:textColor="#FFFFFF"
+                android:textSize="16dp"
+                android:textStyle="bold" />
         </LinearLayout>
-
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="next"
-            android:id="@+id/btnprofile"
-            android:onClick="profile"/>
-
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="next"
-            android:id="@+id/btnprofile1"
-            android:onClick="profile"/>
 
 
     </LinearLayout>
