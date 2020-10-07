@@ -155,6 +155,13 @@
             android:id="@+id/btnprofile"
             android:onClick="profile"/>
 
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="next"
+            android:id="@+id/btnprofile1"
+            android:onClick="profile"/>
+
 
     </LinearLayout>
 
