@@ -125,6 +125,7 @@
                 android:layout_marginRight="15dp"
                 android:layout_gravity="center"
                 android:background="@drawable/rounded_edittext"
+                android:onClick="emgency_Numbers"
                 />
 
 
