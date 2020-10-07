@@ -114,7 +114,7 @@
                 android:backgroundTint="#D1522A"
                 android:drawableTop="@drawable/ic_phone_in_talk_black_24dp"
                 android:gravity="bottom|center_horizontal"
-                android:paddingTop="10dp"
+                android:paddingTop="9.5dp"
                 android:paddingBottom="8dp"
                 android:text="Emergency Numbers"
                 android:textColor="#FFFFFF"
