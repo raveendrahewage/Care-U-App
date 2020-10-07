@@ -14,7 +14,9 @@
         <activity android:name=".request_1" />
         <activity android:name=".my_requests" />
         <activity android:name=".edit_prof" />
-        <activity android:name=".my_profile" />
+        <activity android:name=".my_profile">
+
+        </activity>
         <activity android:name=".ambulance" />
         <activity android:name=".forgetPassword" />
         <activity android:name=".policeEcomplain" />
