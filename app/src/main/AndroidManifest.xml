@@ -9,7 +9,13 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ambulance"></activity>
+        <activity android:name=".feedback"></activity>
+        <activity android:name=".request_2" />
+        <activity android:name=".request_1" />
+        <activity android:name=".my_requests" />
+        <activity android:name=".edit_prof" />
+        <activity android:name=".my_profile" />
+        <activity android:name=".ambulance" />
         <activity android:name=".forgetPassword" />
         <activity android:name=".policeEcomplain" />
         <activity android:name=".homePageDuplicate" />
