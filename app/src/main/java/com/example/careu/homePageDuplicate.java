@@ -24,4 +24,8 @@ public class homePageDuplicate extends AppCompatActivity {
         Intent i = new Intent(this,ambulance.class);
         startActivity(i);
     }
+
+    public void profile(View view) {
+        Intent i = new Intent(this,my_profile.class);
+    }
 }
