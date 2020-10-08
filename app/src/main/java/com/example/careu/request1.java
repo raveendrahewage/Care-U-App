@@ -6,23 +6,16 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
-public class my_requests extends AppCompatActivity {
+public class request1 extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_my_requests);
+        setContentView(R.layout.activity_request_1);
     }
-
-    public void req_1(View view) {
-        Intent i= new Intent(this,request_1.class);
+    public void feedbk(View view) {
+        Intent i= new Intent(this,feedback.class);
         startActivity(i);
     }
-
-    public void req_2(View view) {
-        Intent i= new Intent(this,request_2.class);
-        startActivity(i);
-    }
-
 
 }

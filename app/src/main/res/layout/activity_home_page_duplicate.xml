@@ -114,7 +114,7 @@
                 android:backgroundTint="#D1522A"
                 android:drawableTop="@drawable/ic_phone_in_talk_black_24dp"
                 android:gravity="bottom|center_horizontal"
-                android:paddingTop="10dp"
+                android:paddingTop="9.5dp"
                 android:paddingBottom="8dp"
                 android:text="Emergency Numbers"
                 android:textColor="#FFFFFF"
@@ -125,7 +125,10 @@
                 android:layout_marginRight="15dp"
                 android:layout_gravity="center"
                 android:background="@drawable/rounded_edittext"
+                android:onClick="emgency_Numbers"
                 />
+
+
             <Button
 
                 android:layout_width="120dp"
@@ -143,10 +146,27 @@
                 android:layout_marginLeft="15dp"
                 android:layout_marginRight="15dp"
                 android:layout_gravity="center"
-                android:background="@drawable/rounded_edittext"/>
+                android:background="@drawable/rounded_edittext"
+                android:onClick="first_Aid_Instructions"/>
         </LinearLayout>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="next"
+            android:id="@+id/btnprofile"
+            android:onClick="profile"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="next"
+            android:id="@+id/btnprofile1"
+            android:onClick="profile"/>
 
 
     </LinearLayout>
+
+
 
 </LinearLayout>
