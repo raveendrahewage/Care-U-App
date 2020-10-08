@@ -4,11 +4,11 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
-public class request_2 extends AppCompatActivity {
+public class emergencyNumbersPolice extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_request_2);
+        setContentView(R.layout.activity_emergency_numbers_police);
     }
 }

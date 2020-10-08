@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".my_requests">
+    tools:context=".myrequests">
 
     <Button
         android:layout_width="match_parent"

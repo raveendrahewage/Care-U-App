@@ -26,12 +26,17 @@ public class homePageDuplicate extends AppCompatActivity {
     }
 
     public void profile(View view) {
-        Intent i = new Intent(this,my_profile.class);
+        Intent i = new Intent(this, myprofile.class);
         startActivity(i);
     }
 
     public void emgency_Numbers(View view) {
-        Intent i = new Intent(this,emergencyNumbers.class);
+        Intent i = new Intent(this, emergencyNumbersCate.class);
+        startActivity(i);
+    }
+
+    public void first_Aid_Instructions(View view) {
+        Intent i = new Intent(this,firstAidInstruction.class);
         startActivity(i);
     }
 }

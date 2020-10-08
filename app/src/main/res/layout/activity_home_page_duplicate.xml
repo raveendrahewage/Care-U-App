@@ -146,7 +146,8 @@
                 android:layout_marginLeft="15dp"
                 android:layout_marginRight="15dp"
                 android:layout_gravity="center"
-                android:background="@drawable/rounded_edittext"/>
+                android:background="@drawable/rounded_edittext"
+                android:onClick="first_Aid_Instructions"/>
         </LinearLayout>
 
         <Button
@@ -165,5 +166,7 @@
 
 
     </LinearLayout>
+
+
 
 </LinearLayout>
