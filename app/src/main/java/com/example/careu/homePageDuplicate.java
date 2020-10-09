@@ -56,7 +56,7 @@ public class homePageDuplicate extends AppCompatActivity {
                         return true;
 
                 }
-                return false;
+                return true;
             }
         });
     }
