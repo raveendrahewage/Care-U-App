@@ -41,12 +41,12 @@ public class homePageDuplicate extends AppCompatActivity {
                 switch (menuItem.getItemId()){
                     case R.id.myProfile:
 //                        Toast.makeText(homePageDuplicate.this, "this is my profile", Toast.LENGTH_SHORT).show();
-                        Intent myp = new Intent(getApplicationContext(),my_profile.class);
+                        Intent myp = new Intent(getApplicationContext(),myprofile.class);
                         startActivity(myp);
                         return true;
 
                     case R.id.myRequests:
-                        Intent myr = new Intent(getApplicationContext(),my_requests.class);
+                        Intent myr = new Intent(getApplicationContext(),myrequests.class);
                         startActivity(myr);
                         return true;
 
@@ -81,8 +81,18 @@ public class homePageDuplicate extends AppCompatActivity {
         startActivity(i);
     }
 
+    public void profile(View view) {
+        Intent i = new Intent(this, myprofile.class);
+        startActivity(i);
+    }
+
     public void emgency_Numbers(View view) {
-        Intent i = new Intent(this,emergencyNumbers.class);
+        Intent i = new Intent(this, emergencyNumbersCate.class);
+        startActivity(i);
+    }
+
+    public void first_Aid_Instructions(View view) {
+        Intent i = new Intent(this,firstAidInstruction.class);
         startActivity(i);
     }
 

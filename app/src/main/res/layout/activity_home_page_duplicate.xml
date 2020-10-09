@@ -140,6 +140,8 @@
             </androidx.appcompat.widget.LinearLayoutCompat>
 
 
+                android:background="@drawable/rounded_edittext"
+                android:onClick="first_Aid_Instructions"/>
         </LinearLayout>
 
 
@@ -297,3 +299,6 @@
 
 <!--</LinearLayout>-->
 <!--</androidx.drawerlayout.widget.DrawerLayout>-->
+
+
+<!--</LinearLayout>-->

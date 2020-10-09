@@ -6,7 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
-public class my_profile extends AppCompatActivity {
+public class myprofile extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -15,7 +15,7 @@ public class my_profile extends AppCompatActivity {
     }
 
     public void my_requests(View view) {
-        Intent i= new Intent(this,my_requests.class);
+        Intent i= new Intent(this, myrequests.class);
         startActivity(i);
     }
 
