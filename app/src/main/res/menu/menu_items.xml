@@ -16,5 +16,4 @@
         android:id="@+id/editProfile"
         android:icon="@drawable/ic_baseline_supervisor_account_24"/>
 
-
 </menu>
