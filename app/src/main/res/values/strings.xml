@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">E-Complain</string>
+    <string name="app_name">Care-U</string>
     <string name="country_prompt">Choose a country</string>
     <string-array name="Dis">
         <item>Galle</item>

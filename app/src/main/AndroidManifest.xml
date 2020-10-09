@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.careu">
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
     <application
         android:allowBackup="true"
         android:icon="@drawable/app_logo"
@@ -9,12 +11,25 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".feedback"></activity>
-        <activity android:name=".request_2" />
-        <activity android:name=".request_1" />
-        <activity android:name=".my_requests" />
+        <activity android:name=".Testprofile"></activity>
+<!--        <activity android:name=".emergencyNumbers" />-->
+<!--        <activity android:name=".emergencyNumbersOthers"></activity>-->
+        <activity android:name=".emergencyNumbersOthers" />
+        <activity android:name=".emergencyNumbersFire" />
+        <activity android:name=".emergencyNumbersPolice" />
+        <activity android:name=".emergencyNumbersHealth" />
+        <activity android:name=".emergencyNumbersCate" />
+        <activity android:name=".firstAidInstruction" />
+        <activity android:name=".Pop1" android:theme="@style/AppTheme.CustomTheme"/>
+        <activity android:name=".Pop2" android:theme="@style/AppTheme.CustomTheme"/>
+        <activity android:name=".Pop3" android:theme="@style/AppTheme.CustomTheme"/>
+        <activity android:name=".feedback" />
+        <activity android:name=".request2" />
+        <activity android:name=".request1" />
+        <activity android:name=".myrequests" />
         <activity android:name=".edit_prof" />
-        <activity android:name=".my_profile" />
+<!--        <activity android:name=".my_profile" />-->
+        <activity android:name=".myprofile" />
         <activity android:name=".ambulance" />
         <activity android:name=".forgetPassword" />
         <activity android:name=".policeEcomplain" />

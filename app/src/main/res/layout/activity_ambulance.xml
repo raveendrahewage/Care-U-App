@@ -30,7 +30,7 @@
             android:layout_height="wrap_content"
             android:layout_weight=".05"
             android:paddingLeft="45dp"
-            app:srcCompat="@drawable/ic_local_hospital_black_24dp"
+            app:srcCompat="@drawable/ic_local_taxi_black_24dp"
             tools:ignore="VectorDrawableCompat" />
 
         <TextView
@@ -41,10 +41,47 @@
             android:paddingRight="100dp"
             android:text="Suvasariya Ambulance"
             android:textAlignment="viewEnd"
-            android:textSize="18dp"></TextView>
+            android:textSize="55px"></TextView>
 
 
     </LinearLayout>
+<!--    <LinearLayout-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:orientation="horizontal"-->
+<!--        android:layout_gravity="center"-->
+<!--        android:layout_marginRight="50px"-->
+<!--        android:layout_marginLeft="50px"-->
+<!--        android:layout_marginTop="15px"-->
+<!--        android:backgroundTint="#EEE82723"-->
+<!--        android:paddingTop="20px"-->
+<!--        android:paddingBottom="20px"-->
+<!--        android:background="@drawable/rounded_edittext"-->
+<!--        >-->
+
+
+<!--        <ImageView-->
+<!--            android:id="@+id/imageView"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_weight=".05"-->
+<!--            android:paddingLeft="100px"-->
+<!--            app:srcCompat="@drawable/ic_account_balance_black_24dp"-->
+<!--            tools:ignore="VectorDrawableCompat" />-->
+
+<!--        <TextView-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_weight="2"-->
+<!--            android:gravity="end"-->
+<!--            android:paddingRight="100px"-->
+<!--            android:text="Police Emergency Service"-->
+<!--            android:textAlignment="viewEnd"-->
+<!--            android:layout_gravity="center_vertical"-->
+<!--            android:textSize="55px"></TextView>-->
+
+
+<!--    </LinearLayout>-->
 
     <LinearLayout
         android:layout_width="match_parent"

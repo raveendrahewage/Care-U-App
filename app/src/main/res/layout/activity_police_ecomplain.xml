@@ -40,7 +40,7 @@
             android:text="Police Emergency Service"
             android:textAlignment="viewEnd"
             android:layout_gravity="center_vertical"
-            android:textSize="35px"></TextView>
+            android:textSize="55px"></TextView>
 
 
     </LinearLayout>

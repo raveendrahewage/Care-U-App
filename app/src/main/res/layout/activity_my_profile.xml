@@ -154,7 +154,8 @@
                     android:text="My Requests"
                     android:textColor="#392B2B"
                     android:textSize="18sp"
-                    android:onClick="my_requests">
+                    android:onClick="my_requests"
+                    tools:ignore="OnClick">
 
                 </Button>
 
@@ -169,7 +170,8 @@
                     android:text="Edit Profile"
                     android:textColor="#3C2929"
                     android:textSize="18sp"
-                    android:onClick="edit_profile">
+                    android:onClick="edit_profile"
+                    tools:ignore="OnClick">
 
                 </Button>
 
