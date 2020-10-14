@@ -9,11 +9,31 @@ import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.graphics.Bitmap;
+import android.net.Uri;
 import android.os.Bundle;
+import android.provider.MediaStore;
+import android.util.Base64;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.EditText;
+import android.widget.Toast;
+
+import com.android.volley.AuthFailureError;
+import com.android.volley.Request;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.StringRequest;
+
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.io.ByteArrayOutputStream;
+import java.io.IOException;
+import java.util.HashMap;
+import java.util.Map;
 
 public class registrationPage extends AppCompatActivity {
 
@@ -21,12 +41,15 @@ public class registrationPage extends AppCompatActivity {
     EditText _fname,_lname,_email,_pnum,_username,_pwd,_nic,_address,_r1,_r1_num,_r2,_r2_num,_r3,_r3_num;
     TextView _fnametv,_lnametv,_emailtv,_pnumtv,_usernametv,_pwdtv,_nictv,_addresstv,_r1_numtv,_r2_numtv,_r3_numtv;
 
+    Button selectPics1,selectPics2,upload1,upload2,btnReg;
+    Bitmap bitmap;
+    EditText nicNum;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registration_page);
 
-        selectPics = findViewById(R.id.btnpic);
+        //selectPics = findViewById(R.id.btnpic);
         _fname = findViewById(R.id.fname);
         _lname = findViewById(R.id.lname);
         _email = findViewById(R.id.email);
@@ -60,7 +83,24 @@ public class registrationPage extends AppCompatActivity {
 
 
 
-        selectPics.setOnClickListener(new View.OnClickListener() {
+      //  selectPics.setOnClickListener(new View.OnClickListener() {
+        selectPics1 = findViewById(R.id.btnSelectPic1);
+        selectPics2 = findViewById(R.id.btnSelectPic2);
+        upload1 = findViewById(R.id.btnUpload1);
+        upload2 = findViewById(R.id.btnUpload2);
+        btnReg = findViewById(R.id.btnReg);
+        nicNum = findViewById(R.id.nic);
+        final String uploadUrl = "http://10.0.2.2/imageUpload/updateinfo.php";
+
+//        btnReg.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                Intent i = new Intent(getApplicationContext(),loginPage.class);
+//                startActivity(i);
+//            }
+//        });
+
+        selectPics1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if (ActivityCompat.checkSelfPermission(registrationPage.this, Manifest.permission.READ_EXTERNAL_STORAGE)
@@ -75,11 +115,122 @@ public class registrationPage extends AppCompatActivity {
                 startActivityForResult(intent,1);
             }
         });
+
+        selectPics2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (ActivityCompat.checkSelfPermission(registrationPage.this, Manifest.permission.READ_EXTERNAL_STORAGE)
+                        != PackageManager.PERMISSION_GRANTED) {
+                    ActivityCompat.requestPermissions(registrationPage.this,
+                            new String[]{Manifest.permission.READ_EXTERNAL_STORAGE}, 100);
+                    return;
+                }
+                Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
+                intent.putExtra(Intent.EXTRA_ALLOW_MULTIPLE,true);
+                intent.setType("image/*");
+                startActivityForResult(intent,1);
+            }
+        });
+
+        upload1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                StringRequest stringRequest = new StringRequest(Request.Method.POST, uploadUrl, new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+                        try {
+                            JSONObject jsonObject = new JSONObject(response);
+                            String Response = jsonObject.getString("response");
+                            Toast.makeText(registrationPage.this,Response,Toast.LENGTH_LONG).show();
+
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+
+                    }
+                }, new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+
+                    }
+                })
+
+                {
+                    @Override
+                    protected Map<String, String> getParams() throws AuthFailureError {
+                        Map <String,String> params = new HashMap<>();
+                        params.put("name",nicNum.getText().toString().trim()+" 1");
+                        params.put("image",imageToString(bitmap));
+
+
+                        return params;
+                    }
+                };
+                MySingleton.getInstance(registrationPage.this).addToRequestQue(stringRequest);
+            }
+        });
+
+        upload2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                StringRequest stringRequest = new StringRequest(Request.Method.POST, uploadUrl, new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+                        try {
+                            JSONObject jsonObject = new JSONObject(response);
+                            String Response = jsonObject.getString("response");
+                            Toast.makeText(registrationPage.this,Response,Toast.LENGTH_LONG).show();
+
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+
+                    }
+                }, new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+
+                    }
+                })
+
+                {
+                    @Override
+                    protected Map<String, String> getParams() throws AuthFailureError {
+                        Map <String,String> params = new HashMap<>();
+                        params.put("name",nicNum.getText().toString().trim()+" 2");
+                        params.put("image",imageToString(bitmap));
+
+
+                        return params;
+                    }
+                };
+                MySingleton.getInstance(registrationPage.this).addToRequestQue(stringRequest);
+            }
+        });
     }
+
+
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
+
+        if(requestCode==1 && resultCode== RESULT_OK && data != null){
+            Uri path = data.getData();
+            try {
+                bitmap = MediaStore.Images.Media.getBitmap(getContentResolver(),path);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
+    private String imageToString(Bitmap bitmap){
+
+        ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
+        bitmap.compress(Bitmap.CompressFormat.JPEG,100,byteArrayOutputStream);
+        byte[] imgbytes = byteArrayOutputStream.toByteArray();
+        return Base64.encodeToString(imgbytes,Base64.DEFAULT);
     }
 
     public void register(View view) {
