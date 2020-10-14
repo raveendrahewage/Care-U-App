@@ -253,14 +253,21 @@ public class registrationPage extends AppCompatActivity {
                     _ptv.setText("phone number must be 070/071/072/075/076/077/078");
                     return 0;
                 } else {
-                    _ptv.setText("");
-                    return 1;
+                    if(phone.startsWith("070")||phone.startsWith("071")||phone.startsWith("072")||phone.startsWith("075")||phone.startsWith("076")||phone.startsWith("077")||phone.startsWith("078")){
+                        _ptv.setText("");
+                        return 1;
+                    }
                 }
             }else if(phone.length()==9){
                 if(!((phone.contains("76")||phone.contains("71")||phone.contains("70")||phone.contains("77")||phone.contains("78")||phone.contains("72")||phone.contains("75")))) {
                     showAlertDialog("* phone number must be 70/71/72/75/76/77/78*");
                     _ptv.setText("phone number must be 70/71/72/75/76/77/78");
                     return 0;
+                }else{
+                    if(phone.startsWith("70")||phone.startsWith("71")||phone.startsWith("72")||phone.startsWith("75")||phone.startsWith("76")||phone.startsWith("77")||phone.startsWith("70")){
+                        _ptv.setText("");
+                        return 1;
+                    }
                 }
             } else if (phone.length()!=10){
                 showAlertDialog("*Wrong lenght of Phone number*");
