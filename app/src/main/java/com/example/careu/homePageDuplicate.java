@@ -27,7 +27,7 @@ public class homePageDuplicate extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home_page_duplicate);
-        //sessions updates
+        //sessions updates in Login Files
         sp = getSharedPreferences("login",MODE_PRIVATE);
 
         drawerLayout = findViewById(R.id.drawer);
