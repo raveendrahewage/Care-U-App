@@ -7,6 +7,7 @@ import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
@@ -21,11 +22,13 @@ public class homePageDuplicate extends AppCompatActivity {
     DrawerLayout drawerLayout;
     NavigationView navigationView;
     Toolbar toolbar;
-
+    SharedPreferences sp;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home_page_duplicate);
+        //sessions updates in Login Files
+        sp = getSharedPreferences("login",MODE_PRIVATE);
 
         drawerLayout = findViewById(R.id.drawer);
         navigationView = findViewById(R.id.navView);
@@ -56,7 +59,7 @@ public class homePageDuplicate extends AppCompatActivity {
                         return true;
 
                 }
-                return false;
+                return true;
             }
         });
     }
