@@ -8,12 +8,14 @@ import android.Manifest;
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.util.Base64;
+import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -26,6 +28,9 @@ import com.android.volley.Request;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
+import com.basgeekball.awesomevalidation.AwesomeValidation;
+import com.basgeekball.awesomevalidation.ValidationStyle;
+import com.basgeekball.awesomevalidation.utility.RegexTemplate;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -39,11 +44,12 @@ public class registrationPage extends AppCompatActivity {
 
     Button selectPics;
     EditText _fname,_lname,_email,_pnum,_username,_pwd,_nic,_address,_r1,_r1_num,_r2,_r2_num,_r3,_r3_num;
-    TextView _fnametv,_lnametv,_emailtv,_pnumtv,_usernametv,_pwdtv,_nictv,_addresstv,_r1_numtv,_r2_numtv,_r3_numtv;
-
+    //TextView _fnametv,_lnametv,_emailtv,_pnumtv,_usernametv,_pwdtv,_nictv,_addresstv,_r1_numtv,_r2_numtv,_r3_numtv;
+    AwesomeValidation awesomeValidation;
     Button selectPics1,selectPics2,upload1,upload2,btnReg;
     Bitmap bitmap;
     EditText nicNum;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -65,17 +71,21 @@ public class registrationPage extends AppCompatActivity {
         _r3 = findViewById(R.id.r3);
         _r3_num = findViewById(R.id.r3_num);
 
-        _fnametv = findViewById(R.id.fnametv);
-        _lnametv = findViewById(R.id.lnametv);
-        _emailtv = findViewById(R.id.emailtv);
-        _pnumtv = findViewById(R.id.pnumtv);
-        _usernametv = findViewById(R.id.usernametv);
-        _pwdtv = findViewById(R.id.pwdtv);
-        _nictv = findViewById(R.id.nictv);
-        _addresstv = findViewById(R.id.addresstv);
-        _r1_numtv =findViewById(R.id.r1_numtv);
-        _r2_numtv =findViewById(R.id.r2_numtv);
-        _r3_numtv =findViewById(R.id.r3_numtv);
+        awesomeValidation = new AwesomeValidation(ValidationStyle.BASIC);
+
+
+
+//        _fnametv = findViewById(R.id.fnametv);
+//        _lnametv = findViewById(R.id.lnametv);
+//        _emailtv = findViewById(R.id.emailtv);
+//        _pnumtv = findViewById(R.id.pnumtv);
+//        _usernametv = findViewById(R.id.usernametv);
+//        _pwdtv = findViewById(R.id.pwdtv);
+//        _nictv = findViewById(R.id.nictv);
+//        _addresstv = findViewById(R.id.addresstv);
+//        _r1_numtv =findViewById(R.id.r1_numtv);
+//        _r2_numtv =findViewById(R.id.r2_numtv);
+//        _r3_numtv =findViewById(R.id.r3_numtv);
 
 //      _tv1tx  = findViewById(R.id.tv1tx);
 
@@ -236,232 +246,143 @@ public class registrationPage extends AppCompatActivity {
     public void register(View view) {
         String s;
         String fname = _fname.getText().toString();
-        if (error(fname,_fnametv,"First name")==0){
-            return;
-        }else{
-            _fnametv.setText("");
-
-        }
-//        if (fname.isEmpty()){
-//            showAlertDialog("* Fill  First name Field*");
-//            _fnametv.setText("*You must Enter First name");
-//            return;
-//        }else{
-//            _fnametv.setText("");
-//        }
-
+        awesomeValidation.addValidation(this,R.id.fname, RegexTemplate.NOT_EMPTY,R.string.Invalid_First_name);
 
         String lname = _lname.getText().toString();
-        if (error(lname,_lnametv,"Last name")==0){
-            return;
-        }else{
-            _lnametv.setText("");
-        }
-//        if (lname.isEmpty()){
-//            showAlertDialog("*Fill Last name Field*");
-//            _lnametv.setText("*You must Enter First name");
-//            return;
-//        }else{
-//            _lnametv.setText("");
-//        }
+        awesomeValidation.addValidation(this,R.id.lname, RegexTemplate.NOT_EMPTY,R.string.Invalid_Last_name);
 
         String email = _email.getText().toString();
-//        if (error(email,_emailtv)==0){
-//            return;
-//        }else{
-//            _emailtv.setText("");
-//
-//        }
-        if (email.isEmpty()){
-            showAlertDialog("*Fill Email Field*");
-            _emailtv.setText("*You must Enter  email Field");
-            return;
-        }else{
-            if ( !(email.contains("@") && email.contains(".com")) ){
-                showAlertDialog("*Invalid type of  email*");
-                _emailtv.setText("Invalid type of  email");
-                return;
-            }else{
-                _emailtv.setText("");
-            }
-        }
+        awesomeValidation.addValidation(this,R.id.email, Patterns.EMAIL_ADDRESS,R.string.Invalid_email);
 
         String phone = _pnum.getText().toString();
-
-        if(number(phone,_pnumtv)==0){
-            return;
-        }else{
-            _pnumtv.setText("");
-        };
-
-//        if (phone.isEmpty()){
-//            _pnumtv.setText("*Plase enter your Phone number");
-//            showAlertDialog("* Fill  Phone Number  Field*");
-//            return;
-//        }else if(phone.length()>10) {
-//            showAlertDialog("* Wrong lenght of Phone number*");
-//            _pnumtv.setText("Wrong lenght of Phone number ");
-//            return;
-//        }else if(phone.length()<=10) {
-//            if (phone.length()==10){
-//                if(!((phone.contains("076")||phone.contains("071")||phone.contains("070")||phone.contains("077")||phone.contains("078")||phone.contains("072")||phone.contains("075")))) {
-//                    showAlertDialog("* phone number must be 070/071/072/075/076/077/078*");
-//                    _pnumtv.setText("phone number must be 070/071/072/075/076/077/078");
-//                    return;
-//                }else{
-//                    _pnumtv.setText("");
-//                }
-//            }else if(phone.length()==9){
-//                if(!((phone.contains("76")||phone.contains("71")||phone.contains("70")||phone.contains("77")||phone.contains("78")||phone.contains("72")||phone.contains("75")))) {
-//                    showAlertDialog("* phone number must be 70/71/72/75/76/77/78*");
-//                    _pnumtv.setText("phone number must be 070/071/072/075/076/077/078");
-//                    return;
-//                }
-//            }else if (phone.length()<9){
-//                showAlertDialog("*Wrong lenght of Phone number*");
-//                _pnumtv.setText("Wrong lenght of Phone number ");
-//                return;
-//            }
-//        }else{
-//            _pnumtv.setText("");
-//        }
+        //number(phone,R.id.pnum);
+        awesomeValidation.addValidation(this,R.id.pnum,"[0]{1}[7]{1}[1||2||5||6||7||8]{1}[0-9]{7}$",R.string.invalid_number1);
 
         String username = _username.getText().toString();
-        if (error(username,_usernametv,"User name")==0){
-            return;
-        }else{
-            _usernametv.setText("");
-
-        }
-//        if (username.isEmpty()){
-//            showAlertDialog("*Fill  User name Field*");
-//            _usernametv.setText("*Fill  User name Field");
-//            return;
-//        }else{
-//            _usernametv.setText("");
-//        }
+        awesomeValidation.addValidation(this,R.id.usrname, RegexTemplate.NOT_EMPTY,R.string.Invalid_user_name);
 
         String pwd = _pwd.getText().toString();
-        if (error(pwd,_pwdtv,"password")==0){
-            return;
-        }else{
-            _pwdtv.setText("");
-
-        }
-//        if (pwd.isEmpty()){
-//            showAlertDialog("*Fill  password Field*");
-//            _pwdtv.setText("*Fill  password Field");
-//            return;
-//        }else{
-//            _pwdtv.setText("");
-//        }
+        awesomeValidation.addValidation(this,R.id.pwd,".{8,}",R.string.invalid_password);
 
         String NIC = _nic.getText().toString();
-        if (error(NIC,_nictv,"NIC")==0){
-            return;
-        }else{
-            _nictv.setText("");
+
+        if (NIC.length()==10) {
+            awesomeValidation.addValidation(this,R.id.nic,"[0-9]{9}[V|v]{1}$",R.string.Invalid_NIC);
+        }else if (NIC.length()==12) {
+            awesomeValidation.addValidation(this, R.id.nic, "[0-9]{12}$", R.string.Invalid_NIC);
+        }else {
+            awesomeValidation.addValidation(this,R.id.nic,"[0-9]{9}[V|v]{1}$",R.string.Invalid_NIC);
         }
 
         String address = _address.getText().toString();
-        if (error(address,_addresstv,"Address")==0){
-            return;
-        }else {
-            _addresstv.setText("");
-        }
+        awesomeValidation.addValidation(this,R.id.address, RegexTemplate.NOT_EMPTY,R.string.Invalid_address);
 
         String r1 = _r1.getText().toString();
-        if (!r1.isEmpty()){
-            String r1num =_r1_num.getText().toString();
-            number(r1num,_r1_numtv);
+       if (!r1.isEmpty()){
+//           number(_r1_num.getText().toString(),R.id.r1_num);
+           awesomeValidation.addValidation(this,R.id.r1_num,"[0]{1}[7]{1}[1||2||5||6||7||8]{1}[0-9]{7}$",R.string.invalid_number1);
         }
 
         String r2 = _r2.getText().toString();
         if (!r2.isEmpty()){
-            String r2_num =_r2_num.getText().toString();
-            number(r2_num,_r2_numtv);
-        }
+//            number(_r2_num.getText().toString(),R.id.r2_num);
+            awesomeValidation.addValidation(this,R.id.r2_num,"[0]{1}[7]{1}[1||2||5||6||7||8]{1}[0-9]{7}$",R.string.invalid_number1);
+       }
 
         String r3 = _r3.getText().toString();
         if (!r3.isEmpty()){
-            String r3_num =_r3_num.getText().toString();
-            number(r3_num,_r3_numtv);
+//            number(_r3_num.getText().toString(),R.id.r3_num);
+            awesomeValidation.addValidation(this,R.id.r3_num,"[0]{1}[7]{1}[1||2||5||6||7||8]{1}[0-9]{7}$",R.string.invalid_number1);
+        }
+        if (awesomeValidation.validate()) {
+            Intent i = new Intent(this, loginPage.class);
+            startActivity(i);
         }
 
-
-
-
     }
-    public int number(String phone,TextView _ptv){
+//    public int number(String phone,TextView _ptv){
+//
+//        if (phone.isEmpty()){
+//            _ptv.setText("*Plase enter your Phone number");
+//            showAlertDialog("* Fill  Phone Number  Field*");
+//            return 0;
+//        } else if (phone.length()==10) {
+//                if (!((phone.contains("076") || phone.contains("071") || phone.contains("070") || phone.contains("077") || phone.contains("078") || phone.contains("072") || phone.contains("075")))) {
+//                    showAlertDialog("* phone number must be 070/071/072/075/076/077/078*");
+//                    _ptv.setText("phone number must be 070/071/072/075/076/077/078");
+//                    return 0;
+//                } else {
+//                    if(phone.startsWith("070")||phone.startsWith("071")||phone.startsWith("072")||phone.startsWith("075")||phone.startsWith("076")||phone.startsWith("077")||phone.startsWith("078")){
+//                        _ptv.setText("");
+//                        return 1;
+//                    }
+//                }
+//            }else if(phone.length()==9){
+//                if(!((phone.contains("76")||phone.contains("71")||phone.contains("70")||phone.contains("77")||phone.contains("78")||phone.contains("72")||phone.contains("75")))) {
+//                    showAlertDialog("* phone number must be 70/71/72/75/76/77/78*");
+//                    _ptv.setText("phone number must be 70/71/72/75/76/77/78");
+//                    return 0;
+//                }else{
+//                    if(phone.startsWith("70")||phone.startsWith("71")||phone.startsWith("72")||phone.startsWith("75")||phone.startsWith("76")||phone.startsWith("77")||phone.startsWith("70")){
+//                        _ptv.setText("");
+//                        return 1;
+//                    }
+//                }
+//            } else if (phone.length()!=10){
+//                showAlertDialog("*Wrong lenght of Phone number*");
+//                _ptv.setText("Wrong lenght of Phone number ");
+//                return 0;
+//            }
+//
+//        _ptv.setText("");
+//        return 1;
+//
+//
+//    }
+//    public void showAlertDialog(String s){
+//        AlertDialog.Builder builder1 = new AlertDialog.Builder(this);
+//        builder1.setMessage(s);
+//        builder1.setCancelable(true);
+//        AlertDialog alert11 = builder1.create();
+//        alert11.show();
+//
+//    }
+//    public int error (String er,TextView _tv,String type){
+//        if (er.isEmpty()){
+//            showAlertDialog("* Fill "+ type +"Field*");
+//            _tv.setText("*You must Enter "+type);
+//            return 0;
+//        }else{
+//            if (type.equals("NIC")){
+//                if (er.length()==10 && !((er.contains("v"))||(er.contains("V")))){
+//                    showAlertDialog("* Error "+ type +"Field*");
+//                    _tv.setText("*You must Enter 98900259v type NIC");
+//                    return 0;
+//                }else {
+//                    if (er.length()!=10){
+//                        showAlertDialog("* Invalid Size "+ type +"Field*");
+//                        _tv.setText("*you must enter 10digits");
+//                        return 0;
+//                    }
+//                }
+//            }
+//            _tv.setText("");
+//            return 1;
+//        }
+//
+//    }
 
-        if (phone.isEmpty()){
-            _ptv.setText("*Plase enter your Phone number");
-            showAlertDialog("* Fill  Phone Number  Field*");
-            return 0;
-        } else if (phone.length()==10) {
-                if (!((phone.contains("076") || phone.contains("071") || phone.contains("070") || phone.contains("077") || phone.contains("078") || phone.contains("072") || phone.contains("075")))) {
-                    showAlertDialog("* phone number must be 070/071/072/075/076/077/078*");
-                    _ptv.setText("phone number must be 070/071/072/075/076/077/078");
-                    return 0;
-                } else {
-                    if(phone.startsWith("070")||phone.startsWith("071")||phone.startsWith("072")||phone.startsWith("075")||phone.startsWith("076")||phone.startsWith("077")||phone.startsWith("078")){
-                        _ptv.setText("");
-                        return 1;
-                    }
-                }
-            }else if(phone.length()==9){
-                if(!((phone.contains("76")||phone.contains("71")||phone.contains("70")||phone.contains("77")||phone.contains("78")||phone.contains("72")||phone.contains("75")))) {
-                    showAlertDialog("* phone number must be 70/71/72/75/76/77/78*");
-                    _ptv.setText("phone number must be 70/71/72/75/76/77/78");
-                    return 0;
-                }else{
-                    if(phone.startsWith("70")||phone.startsWith("71")||phone.startsWith("72")||phone.startsWith("75")||phone.startsWith("76")||phone.startsWith("77")||phone.startsWith("70")){
-                        _ptv.setText("");
-                        return 1;
-                    }
-                }
-            } else if (phone.length()!=10){
-                showAlertDialog("*Wrong lenght of Phone number*");
-                _ptv.setText("Wrong lenght of Phone number ");
-                return 0;
+   public void number (String s,int k) {
+        if (s.length()==10){
+            awesomeValidation.addValidation(this,k,"[0]{1}[7]{1}[0||1||2||5||6||7||8]{1}[0-9]{7}$",R.string.invalid_number1);
+        }else if (s.length()==9){
+            if (s.startsWith("0")){
+                awesomeValidation.addValidation(this,k,"[0]{1}[7]{1}[0||1||2||5||6||7||8]{1}[0-9]{7}$",R.string.invalid_number);
+            }else {
+                awesomeValidation.addValidation(this, k, "[7]{1}[0||1||2||5||6||7||8]{1}[0-9]{7}$", R.string.invalid_number2);
             }
-
-        _ptv.setText("");
-        return 1;
-
-
-    }
-    public void showAlertDialog(String s){
-        AlertDialog.Builder builder1 = new AlertDialog.Builder(this);
-        builder1.setMessage(s);
-        builder1.setCancelable(true);
-        AlertDialog alert11 = builder1.create();
-        alert11.show();
-
-    }
-    public int error (String er,TextView _tv,String type){
-        if (er.isEmpty()){
-            showAlertDialog("* Fill "+ type +"Field*");
-            _tv.setText("*You must Enter "+type);
-            return 0;
         }else{
-            if (type.equals("NIC")){
-                if (er.length()==10 && !((er.contains("v"))||(er.contains("V")))){
-                    showAlertDialog("* Error "+ type +"Field*");
-                    _tv.setText("*You must Enter 98900259v type NIC");
-                    return 0;
-                }else {
-                    if (er.length()!=10){
-                        showAlertDialog("* Invalid Size "+ type +"Field*");
-                        _tv.setText("*you must enter 10digits");
-                        return 0;
-                    }
-                }
-            }
-            _tv.setText("");
-            return 1;
+            awesomeValidation.addValidation(this,k,"[0]{1}[7]{1}[0||1||2||5||6||7||8]{1}[0-9]{7}$",R.string.invalid_number);
         }
-
-    }
-
+   }
 }
