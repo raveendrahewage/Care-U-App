@@ -11,17 +11,19 @@ import android.widget.Button;
 public class MainActivity extends AppCompatActivity {
 
     Button btnlogin,btnreg;
-    SharedPreferences sp;
+    SharedPreferences sharedPreferences;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        sp = getSharedPreferences("login",MODE_PRIVATE);
 
-        if(sp.getBoolean("logged",false)){
-            Intent i = new Intent(this,homePageDuplicate.class);
-            startActivity(i);
+        sharedPreferences=getSharedPreferences("logIn", MODE_PRIVATE);
+        if(sharedPreferences.contains("logInStatus"))
+        {
+            Intent intent=new Intent(getApplicationContext(),homePageDuplicate.class);
+            startActivity(intent);
         }
 
         btnlogin = findViewById(R.id.btnLog);
