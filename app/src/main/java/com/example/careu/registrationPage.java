@@ -42,7 +42,6 @@ import java.util.Map;
 
 public class registrationPage extends AppCompatActivity {
 
-    Button selectPics;
     EditText _fname,_lname,_email,_pnum,_username,_pwd,_nic,_address,_r1,_r1_num,_r2,_r2_num,_r3,_r3_num;
     //TextView _fnametv,_lnametv,_emailtv,_pnumtv,_usernametv,_pwdtv,_nictv,_addresstv,_r1_numtv,_r2_numtv,_r3_numtv;
     AwesomeValidation awesomeValidation;
@@ -55,7 +54,7 @@ public class registrationPage extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registration_page);
 
-        //selectPics = findViewById(R.id.btnpic);
+
         _fname = findViewById(R.id.fname);
         _lname = findViewById(R.id.lname);
         _email = findViewById(R.id.email);
