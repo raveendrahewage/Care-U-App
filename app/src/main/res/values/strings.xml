@@ -1,5 +1,8 @@
 <resources>
     <string name="app_name">Care-U</string>
+
+
+    <string name="country_prompt">Choose a country</string>
     <string name="country_prompt">Choose a cou</string>
     <string name="Invalid_First_name">Please Enter First Name</string>
     <string name="Invalid_Last_name">Please Enter Your Last Name</string>
@@ -57,4 +60,6 @@
         <item>more than 5</item>
 
     </string-array>
+    
+
 </resources>
