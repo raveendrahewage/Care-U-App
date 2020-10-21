@@ -43,9 +43,7 @@
             android:text="FireBrigade Service Numbers"
             android:textAlignment="viewEnd"
             android:layout_gravity="center_vertical"
-            android:textSize="55px"></TextView>
-
-
+            android:textSize="55px"/>
 
     </LinearLayout>
 
@@ -82,16 +80,26 @@
                         android:padding="10dp"
                         android:background="@drawable/rounded_edittext"
                         android:layout_weight="1"
-                        ></TextView>
+                        />
+
+                    <Button
+                        android:id="@+id/Fire1"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_marginLeft="270dp"
+                        android:layout_marginTop="-40dp"
+                        android:background="@drawable/ic_baseline_phone_24"
+                        android:onClick="getNumber"/>
 
                     <TextView
+                        android:id="@+id/txtfire1"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="1990 ser"
+                        android:text="1990"
                         android:layout_marginLeft="10dp"
                         android:layout_marginRight="10dp"
                         android:layout_weight="1"
-                        ></TextView>
+                        />
 
                 </LinearLayout>
 
@@ -113,17 +121,25 @@
                         android:backgroundTint="#92ADE1DC"
                         android:padding="10dp"
                         android:background="@drawable/rounded_edittext"
-                        android:layout_weight="1"
-                        ></TextView>
+                        android:layout_weight="1" />
+
+                    <Button
+                        android:id="@+id/Fire2"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_marginLeft="270dp"
+                        android:layout_marginTop="-40dp"
+                        android:background="@drawable/ic_baseline_phone_24"
+                        android:onClick="getNumber"/>
 
                     <TextView
+                        android:id="@+id/txtfire2"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="110"
                         android:layout_marginLeft="10dp"
                         android:layout_marginRight="10dp"
-                        android:layout_weight="1"
-                        ></TextView>
+                        android:layout_weight="1"/>
 
                 </LinearLayout>
 
@@ -145,17 +161,26 @@
                         android:backgroundTint="#92ADE1DC"
                         android:padding="10dp"
                         android:background="@drawable/rounded_edittext"
-                        android:layout_weight="1"
-                        ></TextView>
+                        android:layout_weight="1"/>
+
+                    <Button
+                        android:id="@+id/Fire3"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_marginLeft="270dp"
+                        android:layout_marginTop="-40dp"
+                        android:background="@drawable/ic_baseline_phone_24"
+                        android:onClick="getNumber"/>
 
                     <TextView
+                        android:id="@+id/txtfire3"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="112"
                         android:layout_marginLeft="10dp"
                         android:layout_marginRight="10dp"
                         android:layout_weight="1"
-                        ></TextView>
+                       />
 
                 </LinearLayout>
 
@@ -178,16 +203,26 @@
                         android:padding="10dp"
                         android:background="@drawable/rounded_edittext"
                         android:layout_weight="1"
-                        ></TextView>
+                        />
+
+                    <Button
+                        android:id="@+id/Fire4"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_marginLeft="270dp"
+                        android:layout_marginTop="-40dp"
+                        android:background="@drawable/ic_baseline_phone_24"
+                        android:onClick="getNumber"/>
 
                     <TextView
+                        android:id="@+id/txtfire4"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="114"
                         android:layout_marginLeft="10dp"
                         android:layout_marginRight="10dp"
                         android:layout_weight="1"
-                        ></TextView>
+                        />
 
                 </LinearLayout>
 
@@ -210,16 +245,26 @@
                         android:padding="10dp"
                         android:background="@drawable/rounded_edittext"
                         android:layout_weight="1"
-                        ></TextView>
+                        />
+
+                    <Button
+                        android:id="@+id/Fire5"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_marginLeft="270dp"
+                        android:layout_marginTop="-40dp"
+                        android:background="@drawable/ic_baseline_phone_24"
+                        android:onClick="getNumber"/>
 
                     <TextView
+                        android:id="@+id/txtfire5"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="116"
                         android:layout_marginLeft="10dp"
                         android:layout_marginRight="10dp"
                         android:layout_weight="1"
-                        ></TextView>
+                        />
 
                 </LinearLayout>
 
@@ -242,16 +287,26 @@
                         android:padding="10dp"
                         android:background="@drawable/rounded_edittext"
                         android:layout_weight="1"
-                        ></TextView>
+                        />
+
+                    <Button
+                        android:id="@+id/Fire6"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_marginLeft="270dp"
+                        android:layout_marginTop="-40dp"
+                        android:background="@drawable/ic_baseline_phone_24"
+                        android:onClick="getNumber"/>
 
                     <TextView
+                        android:id="@+id/txtfire6"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="116"
                         android:layout_marginLeft="10dp"
                         android:layout_marginRight="10dp"
                         android:layout_weight="1"
-                        ></TextView>
+                        />
 
                 </LinearLayout>
 
@@ -274,16 +329,26 @@
                         android:padding="10dp"
                         android:background="@drawable/rounded_edittext"
                         android:layout_weight="1"
-                        ></TextView>
+                        />
+
+                    <Button
+                        android:id="@+id/Fire7"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_marginLeft="270dp"
+                        android:layout_marginTop="-40dp"
+                        android:background="@drawable/ic_baseline_phone_24"
+                        android:onClick="getNumber"/>
 
                     <TextView
+                        android:id="@+id/txtfire7"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="117"
                         android:layout_marginLeft="10dp"
                         android:layout_marginRight="10dp"
                         android:layout_weight="1"
-                        ></TextView>
+                        />
 
                 </LinearLayout>
 
@@ -305,16 +370,26 @@
                         android:padding="10dp"
                         android:background="@drawable/rounded_edittext"
                         android:layout_weight="1"
-                        ></TextView>
+                        />
+
+                    <Button
+                        android:id="@+id/Fire8"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_marginLeft="270dp"
+                        android:layout_marginTop="-40dp"
+                        android:background="@drawable/ic_baseline_phone_24"
+                        android:onClick="getNumber"/>
 
                     <TextView
+                        android:id="@+id/txtfire8"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="118"
                         android:layout_marginLeft="10dp"
                         android:layout_marginRight="10dp"
                         android:layout_weight="1"
-                        ></TextView>
+                        />
 
                 </LinearLayout>
 
@@ -336,31 +411,30 @@
                         android:padding="10dp"
                         android:background="@drawable/rounded_edittext"
                         android:layout_weight="1"
-                        ></TextView>
+                        />
+
+                    <Button
+                        android:id="@+id/Fire9"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_marginLeft="270dp"
+                        android:layout_marginTop="-40dp"
+                        android:background="@drawable/ic_baseline_phone_24"
+                        android:onClick="getNumber"/>
 
                     <TextView
+                        android:id="@+id/txtfire9"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="119"
                         android:layout_marginLeft="10dp"
                         android:layout_marginRight="10dp"
                         android:layout_weight="1"
-                        ></TextView>
-
-
-
-
-
+                        />
 
                 </LinearLayout>
-
-
-
             </LinearLayout>
         </androidx.core.widget.NestedScrollView>
-
-
-
 
     </LinearLayout>
 
