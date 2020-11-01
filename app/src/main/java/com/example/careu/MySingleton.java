@@ -16,18 +16,7 @@ public class MySingleton {
         requestQueue = getRequestQueue();
     }
 
-    private  RequestQueue getRequestQueue(){
-        if(requestQueue==null)
-            requestQueue = Volley.newRequestQueue(mctx.getApplicationContext());
-        return  requestQueue;
-    }
 
-    public static synchronized MySingleton getInstance(Context context){
-        if(mInstance == null){
-            mInstance = new MySingleton(context);
-        }
-        return mInstance;
-    }
 
     public <T> void addToRequestQue(Request<T> request){
         getRequestQueue().add(request);
