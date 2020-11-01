@@ -7,6 +7,7 @@ import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
@@ -21,11 +22,31 @@ public class homePageDuplicate extends AppCompatActivity {
     DrawerLayout drawerLayout;
     NavigationView navigationView;
     Toolbar toolbar;
+    SharedPreferences sharedPreferences1,sharedPreferences2;
+
+    @Override
+    public void onBackPressed() {
+        sharedPreferences1=getSharedPreferences("logIn",MODE_PRIVATE);
+        if(sharedPreferences1.contains("logInStatus"))
+        {
+            finishAffinity();
+        }
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home_page_duplicate);
+        //sessions updates in Login Files
+
+        sharedPreferences2=getSharedPreferences("logIn",MODE_PRIVATE);
+        if(!sharedPreferences2.contains("logInStatus"))
+        {
+            SharedPreferences.Editor editor=sharedPreferences2.edit();
+            editor.putString("logInStatus","IN");
+            editor.apply();
+        }
+
 
         drawerLayout = findViewById(R.id.drawer);
         navigationView = findViewById(R.id.navView);
@@ -55,8 +76,15 @@ public class homePageDuplicate extends AppCompatActivity {
                         startActivity(editp);
                         return true;
 
+                    case R.id.logOut:
+                        SharedPreferences.Editor editor=sharedPreferences2.edit();
+                        editor.remove("logInStatus");
+                        editor.commit();
+                        Intent logout=new Intent(getApplicationContext(),MainActivity.class);
+                        startActivity(logout);
+                        return true;
                 }
-                return false;
+                return true;
             }
         });
     }

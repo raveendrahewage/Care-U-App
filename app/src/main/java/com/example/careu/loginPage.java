@@ -8,6 +8,7 @@ import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
@@ -23,11 +24,16 @@ public class loginPage extends AppCompatActivity {
 
     Button btnlogin;
     TextView forgetpw;
-
+    SharedPreferences sp;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login_page);
+        sp = getSharedPreferences("login",MODE_PRIVATE);
+        if(sp.getBoolean("logged",false)){
+            Intent i = new Intent(this,homePageDuplicate.class);
+            startActivity(i);
+        }
 
 //        btnlogin = findViewById(R.id.btnLog);
 //
@@ -39,6 +45,7 @@ public class loginPage extends AppCompatActivity {
 //            }
 //        });
 
+
         forgetpw = findViewById(R.id.txtfp);
         forgetpw.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -49,6 +56,7 @@ public class loginPage extends AppCompatActivity {
         });
     }
     public void homePage(View view) {
+        sp.edit().putBoolean("logged",true).apply();
         Intent ne = new Intent(this,homePageDuplicate.class);
         startActivity(ne);
     }

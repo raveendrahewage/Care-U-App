@@ -1,6 +1,18 @@
 <resources>
     <string name="app_name">Care-U</string>
+
+
     <string name="country_prompt">Choose a country</string>
+    <string name="Invalid_First_name">Please Enter First Name</string>
+    <string name="Invalid_Last_name">Please Enter Your Last Name</string>
+    <string name="Invalid_email">Please Enter Valid Email</string>
+    <string name="invalid_number">Please Enter Valid Number(10 Digit)</string>
+    <string name="invalid_password">Enter 8 Digit Password</string>
+    <string name="Invalid_user_name">Please Enter User Name</string>
+    <string name="Invalid_NIC">Invalid NIC number<br>You must Enter 10 digit One Or 12 Digit Number</br></string>
+    <string name="Invalid_address">Please Fill Address Field</string>
+    <string name="invalid_number1">Number type must be (078/077/076/075/072/071/070) 10 Digit Number</string>
+    <string name="invalid_number2">Number type must be (78/77/76/75/72/71/70) 10 Digit Number</string>
     <string-array name="Dis">
         <item>Galle</item>
         <item>Colombo</item>
@@ -27,8 +39,8 @@
         <item>Gampaha-Police</item>
         <item>Mathara-Police</item>
         <item>Hamabanthota-Police</item>
-        <item>New Zealand-Police</item>
-        <item>India-Police</item>
+        <item>Tengalle-Police</item>
+        <item>Haguranoketha-Police</item>
         <item>Malaysia-Police</item>
         <item>United States-Police</item>
         <item>Indonesia-Police</item>
@@ -47,4 +59,6 @@
         <item>more than 5</item>
 
     </string-array>
+    
+
 </resources>
