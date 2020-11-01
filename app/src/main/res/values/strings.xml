@@ -1,6 +1,8 @@
 <resources>
     <string name="app_name">Care-U</string>
-    <string name="country_prompt">Choose a cou</string>
+
+
+    <string name="country_prompt">Choose a country</string>
     <string name="Invalid_First_name">Please Enter First Name</string>
     <string name="Invalid_Last_name">Please Enter Your Last Name</string>
     <string name="Invalid_email">Please Enter Valid Email</string>
@@ -37,8 +39,8 @@
         <item>Gampaha-Police</item>
         <item>Mathara-Police</item>
         <item>Hamabanthota-Police</item>
-        <item>New Zealand-Police</item>
-        <item>India-Police</item>
+        <item>Tengalle-Police</item>
+        <item>Haguranoketha-Police</item>
         <item>Malaysia-Police</item>
         <item>United States-Police</item>
         <item>Indonesia-Police</item>
@@ -57,4 +59,6 @@
         <item>more than 5</item>
 
     </string-array>
+    
+
 </resources>
