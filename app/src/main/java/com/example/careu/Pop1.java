@@ -29,13 +29,6 @@ public class Pop1 extends Activity {
         getWindow().setLayout((int)(width*.8),(int)(height*.7));
     }
 
-    /* @Override
-        public void onCreate(@Nullable Bundle savedInstanceState, @Nullable PersistableBundle persistentState) {
-            super.onCreate(savedInstanceState, persistentState);
-            setContentView(R.layout.pop1_window);
 
-            Text view txt = (TextView) findViewById(R.id.t1);
-            txt.setMovement
-        }*/
 
 }
