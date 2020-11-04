@@ -18,7 +18,9 @@ import android.util.Base64;
 import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
+import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -37,6 +39,7 @@ import org.json.JSONObject;
 
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
+import java.util.Calendar;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -47,6 +50,9 @@ public class registrationPage extends AppCompatActivity {
     AwesomeValidation awesomeValidation;
     Button selectPics1,selectPics2,upload1,upload2,btnReg;
     Bitmap bitmap;
+    Spinner _gender;
+    DatePicker _birthDay;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -68,6 +74,9 @@ public class registrationPage extends AppCompatActivity {
         _r2_num = findViewById(R.id.r2_num);
         _r3 = findViewById(R.id.r3);
         _r3_num = findViewById(R.id.r3_num);
+
+        _gender = findViewById(R.id.gender);
+        _birthDay=findViewById(R.id.birthDay);
 
 
 //        _fnametv = findViewById(R.id.fnametv);
@@ -259,18 +268,32 @@ public class registrationPage extends AppCompatActivity {
         String NIC = _nic.getText().toString();
 
         if (NIC.length()==10){
-            Toast.makeText(this, "length is"+NIC.length(), Toast.LENGTH_LONG).show();
+
             awesomeValidation.addValidation(this,R.id.nic,"[0-9]{9}[V|v]{1}$",R.string.Invalid_NIC);
         }else if (NIC.length()==12) {
-            Toast.makeText(this, "length is"+NIC.length(), Toast.LENGTH_LONG).show();
+//            Toast.makeText(this, "length is"+NIC.length(), Toast.LENGTH_LONG).show();
             awesomeValidation.addValidation(this, R.id.nic, "[0-9]{12}$", R.string.Invalid_NIC);
         }else {
-            Toast.makeText(this, "length is"+NIC.length(), Toast.LENGTH_LONG).show();
+//            Toast.makeText(this, "length is"+NIC.length(), Toast.LENGTH_LONG).show();
             awesomeValidation.addValidation(this,R.id.nic,"",R.string.Invalid_NIC);
         }
 
         String address = _address.getText().toString();
         awesomeValidation.addValidation(this,R.id.address, RegexTemplate.NOT_EMPTY,R.string.Invalid_address);
+
+        String gender = _gender.getSelectedItem().toString();
+//        Toast.makeText(this, gender, Toast.LENGTH_LONG).show();
+
+        int day = _birthDay.getDayOfMonth();
+        int month = _birthDay.getMonth()+1;
+        int year =  _birthDay.getYear();
+        String k = year + "/" + month + "/"+day  ;
+//        Calendar calendar = Calendar.getInstance();
+//        calendar.set(year, month, day);
+
+//        String bday =calendar.getTime().toString();
+        Toast.makeText(this, k, Toast.LENGTH_LONG).show();
+
 
         String r1 = _r1.getText().toString();
        if (!r1.isEmpty()){
@@ -289,17 +312,16 @@ public class registrationPage extends AppCompatActivity {
 //            number(_r3_num.getText().toString(),R.id.r3_num);
             awesomeValidation.addValidation(this,R.id.r3_num,"[0]{1}[7]{1}[1||2||5||6||7||8]{1}[0-9]{7}$",R.string.invalid_number1);
         }
-//        if (awesomeValidation.validate()) {
+        if (awesomeValidation.validate()) {
 //            Intent i = new Intent(this, loginPage.class);
 //            startActivity(i);
-//        }
+            String type = "register";
 
-        String type = "register";
+            BackgroundWorker backgroundWorker = new BackgroundWorker(this);
+            backgroundWorker.execute(type,fname,lname,email,phone,username,pwd,NIC,address,gender,k);
+        }
 
-        BackgroundWorker backgroundWorker = new BackgroundWorker(this);
-        backgroundWorker.execute(type,fname,lname,email,phone,username,pwd,NIC,address);
-        Intent i = new Intent(this, loginPage.class);
-        startActivity(i);
+
     }
 //    public int number(String phone,TextView _ptv){
 //
