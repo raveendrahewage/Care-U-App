@@ -13,6 +13,7 @@ import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -24,16 +25,17 @@ public class loginPage extends AppCompatActivity {
 
     Button btnlogin;
     TextView forgetpw;
+    EditText txtuserName,txtpassword;
     SharedPreferences sp;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login_page);
         sp = getSharedPreferences("login",MODE_PRIVATE);
-        if(sp.getBoolean("logged",false)){
-            Intent i = new Intent(this,homePageDuplicate.class);
-            startActivity(i);
-        }
+//        if(sp.getBoolean("logged",false)){
+//            Intent i = new Intent(this,homePageDuplicate.class);
+//            startActivity(i);
+//        }
 
 //        btnlogin = findViewById(R.id.btnLog);
 //
@@ -57,7 +59,16 @@ public class loginPage extends AppCompatActivity {
     }
     public void homePage(View view) {
         sp.edit().putBoolean("logged",true).apply();
+        txtuserName = findViewById(R.id.txtuserName);
+        txtpassword = findViewById(R.id.txtpw);
+        sp.edit().putBoolean("logged",true).apply();
+        String username = txtuserName.getText().toString();
+        String password = txtpassword.getText().toString();
+        String type = "login";
+        BackgroundWorker backgroundWorker = new BackgroundWorker(this);
+        backgroundWorker.execute(type,username,password);
+
         Intent ne = new Intent(this,homePageDuplicate.class);
-        startActivity(ne);
+        //startActivity(ne);
     }
 }

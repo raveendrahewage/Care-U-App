@@ -47,7 +47,6 @@ public class registrationPage extends AppCompatActivity {
     AwesomeValidation awesomeValidation;
     Button selectPics1,selectPics2,upload1,upload2,btnReg;
     Bitmap bitmap;
-    EditText nicNum;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -70,9 +69,6 @@ public class registrationPage extends AppCompatActivity {
         _r3 = findViewById(R.id.r3);
         _r3_num = findViewById(R.id.r3_num);
 
-        awesomeValidation = new AwesomeValidation(ValidationStyle.BASIC);
-
-
 
 //        _fnametv = findViewById(R.id.fnametv);
 //        _lnametv = findViewById(R.id.lnametv);
@@ -89,17 +85,14 @@ public class registrationPage extends AppCompatActivity {
 //      _tv1tx  = findViewById(R.id.tv1tx);
 
 
-
-
-
       //  selectPics.setOnClickListener(new View.OnClickListener() {
         selectPics1 = findViewById(R.id.btnSelectPic1);
         selectPics2 = findViewById(R.id.btnSelectPic2);
         upload1 = findViewById(R.id.btnUpload1);
         upload2 = findViewById(R.id.btnUpload2);
         btnReg = findViewById(R.id.btnReg);
-        nicNum = findViewById(R.id.nic);
-        final String uploadUrl = "http://10.0.2.2/imageUpload/updateinfo.php";
+       // nicNum = findViewById(R.id.nic);
+        final String uploadUrl = "http://10.0.2.2/careu-php/uploadID.php";
 
 //        btnReg.setOnClickListener(new View.OnClickListener() {
 //            @Override
@@ -168,7 +161,7 @@ public class registrationPage extends AppCompatActivity {
                     @Override
                     protected Map<String, String> getParams() throws AuthFailureError {
                         Map <String,String> params = new HashMap<>();
-                        params.put("name",nicNum.getText().toString().trim()+" 1");
+                        params.put("name",_nic.getText().toString().trim()+" 1");
                         params.put("image",imageToString(bitmap));
 
 
@@ -206,9 +199,8 @@ public class registrationPage extends AppCompatActivity {
                     @Override
                     protected Map<String, String> getParams() throws AuthFailureError {
                         Map <String,String> params = new HashMap<>();
-                        params.put("name",nicNum.getText().toString().trim()+" 2");
+                        params.put("name",_nic.getText().toString().trim()+" 2");
                         params.put("image",imageToString(bitmap));
-
 
                         return params;
                     }
@@ -243,19 +235,20 @@ public class registrationPage extends AppCompatActivity {
     }
 
     public void register(View view) {
+        awesomeValidation = new AwesomeValidation(ValidationStyle.BASIC);
         String s;
         String fname = _fname.getText().toString();
         awesomeValidation.addValidation(this,R.id.fname, RegexTemplate.NOT_EMPTY,R.string.Invalid_First_name);
 
         String lname = _lname.getText().toString();
-        awesomeValidation.addValidation(this,R.id.lname, RegexTemplate.NOT_EMPTY,R.string.Invalid_Last_name);
+      awesomeValidation.addValidation(this,R.id.lname, RegexTemplate.NOT_EMPTY,R.string.Invalid_Last_name);
 
         String email = _email.getText().toString();
-        awesomeValidation.addValidation(this,R.id.email, Patterns.EMAIL_ADDRESS,R.string.Invalid_email);
+       awesomeValidation.addValidation(this,R.id.email, Patterns.EMAIL_ADDRESS,R.string.Invalid_email);
 
         String phone = _pnum.getText().toString();
-        //number(phone,R.id.pnum);
-        awesomeValidation.addValidation(this,R.id.pnum,"[0]{1}[7]{1}[1||2||5||6||7||8]{1}[0-9]{7}$",R.string.invalid_number1);
+       // number(phone,R.id.pnum);
+       awesomeValidation.addValidation(this,R.id.pnum,"[0]{1}[7]{1}[1||2||5||6||7||8]{1}[0-9]{7}$",R.string.invalid_number1);
 
         String username = _username.getText().toString();
         awesomeValidation.addValidation(this,R.id.usrname, RegexTemplate.NOT_EMPTY,R.string.Invalid_user_name);
@@ -265,12 +258,15 @@ public class registrationPage extends AppCompatActivity {
 
         String NIC = _nic.getText().toString();
 
-        if (NIC.length()==10) {
+        if (NIC.length()==10){
+            Toast.makeText(this, "length is"+NIC.length(), Toast.LENGTH_LONG).show();
             awesomeValidation.addValidation(this,R.id.nic,"[0-9]{9}[V|v]{1}$",R.string.Invalid_NIC);
         }else if (NIC.length()==12) {
+            Toast.makeText(this, "length is"+NIC.length(), Toast.LENGTH_LONG).show();
             awesomeValidation.addValidation(this, R.id.nic, "[0-9]{12}$", R.string.Invalid_NIC);
         }else {
-            awesomeValidation.addValidation(this,R.id.nic,"[0-9]{9}[V|v]{1}$",R.string.Invalid_NIC);
+            Toast.makeText(this, "length is"+NIC.length(), Toast.LENGTH_LONG).show();
+            awesomeValidation.addValidation(this,R.id.nic,"",R.string.Invalid_NIC);
         }
 
         String address = _address.getText().toString();
@@ -293,11 +289,17 @@ public class registrationPage extends AppCompatActivity {
 //            number(_r3_num.getText().toString(),R.id.r3_num);
             awesomeValidation.addValidation(this,R.id.r3_num,"[0]{1}[7]{1}[1||2||5||6||7||8]{1}[0-9]{7}$",R.string.invalid_number1);
         }
-        if (awesomeValidation.validate()) {
-            Intent i = new Intent(this, loginPage.class);
-            startActivity(i);
-        }
+//        if (awesomeValidation.validate()) {
+//            Intent i = new Intent(this, loginPage.class);
+//            startActivity(i);
+//        }
 
+        String type = "register";
+
+        BackgroundWorker backgroundWorker = new BackgroundWorker(this);
+        backgroundWorker.execute(type,fname,lname,email,phone,username,pwd,NIC,address);
+        Intent i = new Intent(this, loginPage.class);
+        startActivity(i);
     }
 //    public int number(String phone,TextView _ptv){
 //
