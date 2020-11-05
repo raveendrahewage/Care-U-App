@@ -2,6 +2,8 @@ package com.example.careu;
 
 import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
+import android.content.Intent;
 import android.net.UrlQuerySanitizer;
 import android.os.AsyncTask;
 import android.widget.Toast;
@@ -72,6 +74,8 @@ public class BackgroundWorker extends AsyncTask<String,Void,String> {
             String password= params[6];
             String nic= params[7];
             String address = params[8];
+            String gender = params[9];
+            String dateOfBirth = params[10];
             /*String gender= params[8];
 
             //String dateOfBirth= params[10];
@@ -96,7 +100,9 @@ public class BackgroundWorker extends AsyncTask<String,Void,String> {
                         URLEncoder.encode("nicNumber","UTF-8")+"="+URLEncoder.encode(nic,"UTF-8")+"&"+
                         URLEncoder.encode("email","UTF-8")+"="+URLEncoder.encode(email,"UTF-8")+"&"+
                         URLEncoder.encode("phoneNumber","UTF-8")+"="+URLEncoder.encode(phoneNumber,"UTF-8")+"&"+
-                        URLEncoder.encode("address","UTF-8")+"="+URLEncoder.encode(address,"UTF-8");
+                        URLEncoder.encode("address","UTF-8")+"="+URLEncoder.encode(address,"UTF-8")+"&"+
+                        URLEncoder.encode("gender","UTF-8")+"="+URLEncoder.encode(gender,"UTF-8")+"&"+
+                        URLEncoder.encode("dateOfBirth","UTF-8")+"="+URLEncoder.encode(dateOfBirth,"UTF-8");
 
                 bufferedWriter.write(post_data);
                 bufferedWriter.flush();
@@ -130,8 +136,29 @@ public class BackgroundWorker extends AsyncTask<String,Void,String> {
 
     @Override
     protected void onPostExecute(String result) {
-        alertDialog.setMessage(result);
-        alertDialog.show();
+        if(result.equals("Registration successful")){
+            alertDialog.setMessage(result);
+            alertDialog.show();
+            Intent i = new Intent(context, loginPage.class);
+            context.startActivity(i);
+        }else{
+//            if(result.equals("Already Used User_name please use another one")){
+//                alertDialog.setMessage(result);
+//                alertDialog.show();
+//            }else if (result.equals("Already Created Account using this ID")){
+////
+//                alertDialog.setMessage(result);
+//                alertDialog.show();
+//
+//
+//            }
+            alertDialog.setMessage(result);
+            alertDialog.show();
+
+
+
+        }
+
     }
 
     @Override
