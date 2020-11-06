@@ -287,27 +287,30 @@ public class registrationPage extends AppCompatActivity {
         int day = _birthDay.getDayOfMonth();
         int month = _birthDay.getMonth()+1;
         int year =  _birthDay.getYear();
-        String k = year + "/" + month + "/"+day  ;
+        String dateOfBirth = year + "/" + month + "/"+day  ;
 //        Calendar calendar = Calendar.getInstance();
 //        calendar.set(year, month, day);
 
 //        String bday =calendar.getTime().toString();
-        Toast.makeText(this, k, Toast.LENGTH_LONG).show();
+//        Toast.makeText(this, k, Toast.LENGTH_LONG).show();
 
 
         String r1 = _r1.getText().toString();
+        String r1_num = _r1_num.getText().toString();
        if (!r1.isEmpty()){
 //           number(_r1_num.getText().toString(),R.id.r1_num);
            awesomeValidation.addValidation(this,R.id.r1_num,"[0]{1}[7]{1}[1||2||5||6||7||8]{1}[0-9]{7}$",R.string.invalid_number1);
         }
 
         String r2 = _r2.getText().toString();
+        String r2_num = _r2_num.getText().toString();
         if (!r2.isEmpty()){
 //            number(_r2_num.getText().toString(),R.id.r2_num);
             awesomeValidation.addValidation(this,R.id.r2_num,"[0]{1}[7]{1}[1||2||5||6||7||8]{1}[0-9]{7}$",R.string.invalid_number1);
        }
 
         String r3 = _r3.getText().toString();
+        String r3_num = _r3_num.getText().toString();
         if (!r3.isEmpty()){
 //            number(_r3_num.getText().toString(),R.id.r3_num);
             awesomeValidation.addValidation(this,R.id.r3_num,"[0]{1}[7]{1}[1||2||5||6||7||8]{1}[0-9]{7}$",R.string.invalid_number1);
@@ -318,7 +321,7 @@ public class registrationPage extends AppCompatActivity {
             String type = "register";
 
             BackgroundWorker backgroundWorker = new BackgroundWorker(this);
-            backgroundWorker.execute(type,fname,lname,email,phone,username,pwd,NIC,address,gender,k);
+            backgroundWorker.execute(type,fname,lname,email,phone,username,pwd,NIC,address,gender,dateOfBirth,r1,r1_num,r2,r2_num,r3,r3_num);
         }
 
 
