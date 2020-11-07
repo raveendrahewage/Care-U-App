@@ -3,6 +3,8 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/1087112549/Care-U.iml" filepath="$PROJECT_DIR$/.idea/modules/1087112549/Care-U.iml" group="Care-U" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/1087112549/Care-U-App-Care-U.iml" filepath="$PROJECT_DIR$/.idea/modules/1087112549/Care-U-App-Care-U.iml" group="Care-U" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Care-U-app.iml" filepath="$PROJECT_DIR$/.idea/modules/Care-U-app.iml" group="Care-U/app" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/app.iml" filepath="$PROJECT_DIR$/.idea/modules/app.iml" group="Care-U/app" />
     </modules>
   </component>
