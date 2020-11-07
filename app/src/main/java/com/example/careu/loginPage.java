@@ -9,6 +9,7 @@ import androidx.drawerlayout.widget.DrawerLayout;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
@@ -20,6 +21,8 @@ import android.widget.Toast;
 import com.google.android.material.navigation.NavigationView;
 
 import org.w3c.dom.Text;
+
+import java.util.concurrent.ExecutionException;
 
 public class loginPage extends AppCompatActivity {
 
@@ -57,7 +60,7 @@ public class loginPage extends AppCompatActivity {
             }
         });
     }
-    public void homePage(View view) {
+    public void homePage(View view) throws ExecutionException, InterruptedException {
         sp.edit().putBoolean("logged",true).apply();
         txtuserName = findViewById(R.id.txtuserName);
         txtpassword = findViewById(R.id.txtpw);
@@ -66,9 +69,16 @@ public class loginPage extends AppCompatActivity {
         String password = txtpassword.getText().toString();
         String type = "login";
         BackgroundWorker backgroundWorker = new BackgroundWorker(this);
-        backgroundWorker.execute(type,username,password);
+        String reg = backgroundWorker.execute(type,username,password).get();
 
-        Intent ne = new Intent(this,homePageDuplicate.class);
-        //startActivity(ne);
+//        Toast.makeText(this,reg, Toast.LENGTH_LONG).show();
+        if (reg.equals("login success")){
+            Intent ne = new Intent(this,homePageDuplicate.class);
+            startActivity(ne);
+        }else {
+            Toast.makeText(this,reg, Toast.LENGTH_LONG).show();
+        }
+
+
     }
 }

@@ -42,6 +42,7 @@ import java.io.IOException;
 import java.util.Calendar;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.concurrent.ExecutionException;
 
 public class registrationPage extends AppCompatActivity {
 
@@ -243,7 +244,7 @@ public class registrationPage extends AppCompatActivity {
         return Base64.encodeToString(imgbytes,Base64.DEFAULT);
     }
 
-    public void register(View view) {
+    public void register(View view) throws ExecutionException, InterruptedException {
         awesomeValidation = new AwesomeValidation(ValidationStyle.BASIC);
         String s;
         String fname = _fname.getText().toString();
@@ -321,7 +322,12 @@ public class registrationPage extends AppCompatActivity {
             String type = "register";
 
             BackgroundWorker backgroundWorker = new BackgroundWorker(this);
-            backgroundWorker.execute(type,fname,lname,email,phone,username,pwd,NIC,address,gender,dateOfBirth,r1,r1_num,r2,r2_num,r3,r3_num);
+            String state =backgroundWorker.execute(type,fname,lname,email,phone,username,pwd,NIC,address,gender,dateOfBirth,r1,r1_num,r2,r2_num,r3,r3_num).get();
+            if (state.equals("Registration successful")){
+                Intent i = new Intent(this, loginPage.class);
+                this.startActivity(i);
+            }
+
         }
 
 
