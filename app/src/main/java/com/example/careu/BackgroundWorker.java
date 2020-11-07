@@ -151,21 +151,19 @@ public class BackgroundWorker extends AsyncTask<String,Void,String> {
         if(result.equals("Registration successful")){
             alertDialog.setMessage(result);
             alertDialog.show();
-            Intent i = new Intent(context, loginPage.class);
-            context.startActivity(i);
+//            Intent i = new Intent(context, loginPage.class);
+//            context.startActivity(i);
         }else{
-//            if(result.equals("Already Used User_name please use another one")){
-//                alertDialog.setMessage(result);
-//                alertDialog.show();
-//            }else if (result.equals("Already Created Account using this ID")){
-////
-//                alertDialog.setMessage(result);
-//                alertDialog.show();
-//
-//
-//            }
-            alertDialog.setMessage(result);
-            alertDialog.show();
+            if(result.equals("Already Used User_name please use another one")){
+                alertDialog.setMessage(result);
+                alertDialog.show();
+            }else if (result.equals("Already Created Account using this ID")){
+                alertDialog.setMessage(result);
+                alertDialog.show();
+
+            }
+//            alertDialog.setMessage(result);
+//            alertDialog.show();
 
 
 
