@@ -173,7 +173,7 @@ public class registrationPage extends AppCompatActivity {
         return Base64.encodeToString(imgbytes,Base64.DEFAULT);
     }
 
-    public void register(View view) {
+    public void register(View view) throws ExecutionException, InterruptedException {
         String uploadUrl = "http://10.0.2.2/careu-php/uploadID.php";
         awesomeValidation = new AwesomeValidation(ValidationStyle.BASIC);
         String s;
