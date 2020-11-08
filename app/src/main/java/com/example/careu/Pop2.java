@@ -91,7 +91,7 @@ public class Pop2  extends AppCompatActivity
 
                     for (int i = 0; i < ja.length(); i++) {
                         jo = ja.getJSONObject(i);
-                        name[i] = jo.getString("step");;
+                        name[i] = jo.getString("step");
                         desig[i] = jo.getString("description");
                         img[i] ="http://10.0.2.2/instructions/images/" + jo.getString("image");;
                     }
