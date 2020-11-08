@@ -4,6 +4,7 @@ android {
     compileSdkVersion 30
     buildToolsVersion "30.0.1"
 
+
     defaultConfig {
         applicationId "com.example.care_u"
         minSdkVersion 21
