@@ -29,8 +29,8 @@ public class BackgroundWorker extends AsyncTask<String,Void,String> {
     @Override
     protected String doInBackground(String... params){
         String type = params[0];
-        String login_url = "http://10.0.2.2/careu-php/loginApp.php";
-        String register_url = "http://10.0.2.2/careu-php/registerApp.php";
+        String login_url = "http://10.0.2.2/careuAppWeb/careu-php/loginApp.php";
+        String register_url = "http://10.0.2.2/careuAppWeb/careu-php/registerApp.php";
         if(type.equals("login")){
             String username = params[1];
             String password = params[2];
@@ -149,8 +149,8 @@ public class BackgroundWorker extends AsyncTask<String,Void,String> {
     @Override
     protected void onPostExecute(String result) {
         if(result.equals("Registration successful")){
-            alertDialog.setMessage(result);
-            alertDialog.show();
+          //  alertDialog.setMessage(result);
+           // alertDialog.show();
 //            Intent i = new Intent(context, loginPage.class);
 //            context.startActivity(i);
         }else{
