@@ -7,6 +7,7 @@ import androidx.core.app.ActivityCompat;
 import android.Manifest;
 import android.app.AlertDialog;
 import android.app.Dialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
@@ -100,7 +101,7 @@ public class registrationPage extends AppCompatActivity {
         selectPics2 = findViewById(R.id.btnSelectPic2);
         btnReg = findViewById(R.id.btnReg);
        // nicNum = findViewById(R.id.nic);
-        final String uploadUrl = "http://10.0.2.2/careu-php/uploadID.php";
+      //  final String uploadUrl = "http://10.0.2.2/careu-php/uploadID.php";
 
 //        btnReg.setOnClickListener(new View.OnClickListener() {
 //            @Override
@@ -174,7 +175,7 @@ public class registrationPage extends AppCompatActivity {
     }
 
     public void register(View view) throws ExecutionException, InterruptedException {
-        String uploadUrl = "http://10.0.2.2/careu-php/uploadID.php";
+        String uploadUrl = "http://10.0.2.2/careuAppWeb/careu-php/uploadID.php";
         awesomeValidation = new AwesomeValidation(ValidationStyle.BASIC);
         String s;
         String fname = _fname.getText().toString();
@@ -254,8 +255,27 @@ public class registrationPage extends AppCompatActivity {
             BackgroundWorker backgroundWorker = new BackgroundWorker(this);
             String state =backgroundWorker.execute(type,fname,lname,email,phone,username,pwd,NIC,address,gender,dateOfBirth,r1,r1_num,r2,r2_num,r3,r3_num).get();
             if (state.equals("Registration successful")){
-                Intent i = new Intent(this, loginPage.class);
-                this.startActivity(i);
+                final Intent k = new Intent(this, loginPage.class);
+                final Intent l = new Intent(this, MainActivity.class);
+                //this.startActivity(i);
+                AlertDialog.Builder builder = new AlertDialog.Builder(registrationPage.this);
+                builder.setMessage("Admins will aprove you");
+                builder.setPositiveButton("LogIn", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        startActivity(k);
+                    }
+                });
+                builder.setNegativeButton("Back", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        startActivity(l);
+                    }
+                });
+
+                AlertDialog alert = builder.create();
+                alert.show();
+
             }
 
         }

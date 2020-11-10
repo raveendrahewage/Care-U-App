@@ -34,7 +34,7 @@ public class loginPage extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login_page);
-        sp = getSharedPreferences("login",MODE_PRIVATE);
+//        sp = getSharedPreferences("login",MODE_PRIVATE);
 //        if(sp.getBoolean("logged",false)){
 //            Intent i = new Intent(this,homePageDuplicate.class);
 //            startActivity(i);
@@ -60,11 +60,31 @@ public class loginPage extends AppCompatActivity {
             }
         });
     }
+
+//    @Override
+//    protected void onStart() {
+//        super.onStart();
+//
+//        sessionManagement sessionManagement = new sessionManagement(loginPage.this);
+//        String userName = sessionManagement.getSession();
+//
+//        Toast.makeText(this, userName, Toast.LENGTH_LONG).show();
+//        if(!userName.equals("no")){
+//            Intent ne = new Intent(this,homePageDuplicate.class);
+//            ne.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
+//            startActivity(ne);
+//        }else{
+////            Intent log = new Intent(this,loginPage.class);
+////            log.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
+////            startActivity(log);
+//        }
+//    }
+
     public void homePage(View view) throws ExecutionException, InterruptedException {
-        sp.edit().putBoolean("logged",true).apply();
+        //sp.edit().putBoolean("logged",true).apply();
         txtuserName = findViewById(R.id.txtuserName);
         txtpassword = findViewById(R.id.txtpw);
-        sp.edit().putBoolean("logged",true).apply();
+        //sp.edit().putBoolean("logged",true).apply();
         String username = txtuserName.getText().toString();
         String password = txtpassword.getText().toString();
         String type = "login";
@@ -73,12 +93,21 @@ public class loginPage extends AppCompatActivity {
 
 //        Toast.makeText(this,reg, Toast.LENGTH_LONG).show();
         if (reg.equals("login success")){
+
+            User user = new User(username);
+            sessionManagement sessionManagement = new sessionManagement(loginPage.this);
+            sessionManagement.saveSession(user);
+
             Intent ne = new Intent(this,homePageDuplicate.class);
+            ne.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
             startActivity(ne);
+
         }else {
             Toast.makeText(this,reg, Toast.LENGTH_LONG).show();
         }
 
 
     }
+
+
 }
