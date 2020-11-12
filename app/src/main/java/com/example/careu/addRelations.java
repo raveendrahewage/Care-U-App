@@ -70,7 +70,7 @@ public class addRelations extends AppCompatActivity {
             if (state.equals("Sucessfully add the Relatives")){
 
                 final Intent k = new Intent(this, homePageDuplicate.class);
-                final Intent l = new Intent(this, MainActivity.class);
+//                final Intent l = new Intent(this, MainActivity.class);
                 //this.startActivity(i);
                 AlertDialog.Builder builder = new AlertDialog.Builder(addRelations.this);
                 builder.setMessage("Sucessfully add the Relatives");
@@ -84,6 +84,24 @@ public class addRelations extends AppCompatActivity {
                 AlertDialog alert = builder.create();
                 alert.show();
 
+
+
+            }else if (state.equals("Allready You filled up all the relations")){
+
+                final Intent k = new Intent(this, homePageDuplicate.class);
+//                final Intent l = new Intent(this, MainActivity.class);
+                //this.startActivity(i);
+                AlertDialog.Builder builder = new AlertDialog.Builder(addRelations.this);
+                builder.setMessage("Allready You filled up all the relations");
+                builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        startActivity(k);
+                    }
+                });
+
+                AlertDialog alert = builder.create();
+                alert.show();
 
 
             }
