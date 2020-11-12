@@ -54,8 +54,8 @@
                 android:layout_marginLeft="50dp"
                 android:layout_marginRight="50dp"
                 android:text="userName"
-                android:textAlignment="center"
-                android:textSize="25dp"
+                android:textSize="20dp"
+                android:gravity="center"
                 android:background="@drawable/edit_text"
                 >
 
@@ -77,8 +77,8 @@
                 android:id="@+id/fullName"
                 android:layout_width="match_parent"
                 android:layout_height="38dp"
-                android:textAlignment="center"
                 android:textSize="20dp"
+                android:gravity="center"
                 android:layout_marginLeft="50dp"
                 android:layout_marginRight="50dp"
                 android:background="@drawable/edit_text">
@@ -103,8 +103,8 @@
                 android:layout_height="38dp"
                 android:layout_marginLeft="50dp"
                 android:layout_marginRight="50dp"
-                android:textAlignment="center"
-                android:textSize="25dp"
+                android:textSize="20dp"
+                android:gravity="center"
                 android:background="@drawable/edit_text">
 
             </TextView>
@@ -127,8 +127,8 @@
                 android:layout_height="38dp"
                 android:layout_marginLeft="50dp"
                 android:layout_marginRight="50dp"
-                android:textAlignment="center"
-                android:textSize="25dp"
+                android:textSize="20dp"
+                android:gravity="center"
                 android:background="@drawable/edit_text">
 
             </TextView>
@@ -151,8 +151,8 @@
                 android:layout_height="38dp"
                 android:layout_marginLeft="50dp"
                 android:layout_marginRight="50dp"
-                android:textAlignment="center"
-                android:textSize="25dp"
+                android:textSize="20dp"
+                android:gravity="center"
                 android:background="@drawable/edit_text">
 
             </TextView>
