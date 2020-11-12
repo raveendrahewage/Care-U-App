@@ -25,7 +25,7 @@ public class myprofile extends AppCompatActivity {
 
 //    String user= "limal";
     String apiurl ="http://10.0.2.2/careu-php/myprofile.php?userName=";
-    TextView _userName,_fullName,_email,_phoneNumber,_nicNumber;
+    TextView _userName,_fullName,_email,_phoneNumber,_nicNumber ,_r1,_r1Number,_r2,_r2Number,_r3,_r3Number;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -41,7 +41,12 @@ public class myprofile extends AppCompatActivity {
         _email =findViewById(R.id.email);
         _phoneNumber = findViewById(R.id.phoneNumber);
         _nicNumber = findViewById(R.id.nicNumber);
-
+        _r1 = findViewById(R.id.r1);
+        _r1Number =findViewById(R.id.r1_num);
+        _r2 = findViewById(R.id.r2);
+        _r2Number =findViewById(R.id.r2_num);
+        _r3 = findViewById(R.id.r3);
+        _r3Number =findViewById(R.id.r3_num);
         viewprofile();
 
 
@@ -54,6 +59,8 @@ public class myprofile extends AppCompatActivity {
                 try {
                     JSONArray mypro =  new JSONArray(response);
                     JSONObject myproObject = mypro.getJSONObject(0);
+                    JSONObject myproObject1 = mypro.getJSONObject(1);
+                    JSONObject myproObject2 = mypro.getJSONObject(2);
                     username = myproObject.getString("userName");
                     _userName.setText(username);
                     String fname = myproObject.getString("firstName");
@@ -66,6 +73,64 @@ public class myprofile extends AppCompatActivity {
                     _phoneNumber.setText(phoneNumber);
                     String nicNumber= myproObject.getString("nicNumber");
                     _nicNumber.setText(nicNumber);
+
+                    if (myproObject2.getInt("num")==0){
+                        String r1 = myproObject.getString("relative");
+                        _r1.setText(r1);
+                        String r1Number = myproObject.getString("relativeNumber");
+                        _r1Number.setText(r1Number);
+
+                        String r2 = myproObject.getString("relative");
+                        _r2.setText(r2);
+                        String r2Number = myproObject.getString("relativeNumber");
+                        _r2Number.setText(r2Number);
+
+                        String r3 = myproObject.getString("relative");
+                        _r3.setText(r1);
+                        String r3Number = myproObject.getString("relativeNumber");
+                        _r3Number.setText(r3Number);
+
+                    }else if (myproObject2.getInt("num")==1){
+                        String r1 = myproObject.getString("relative");
+                        _r1.setText(r1);
+                        String r1Number = myproObject.getString("relativeNumber");
+                        _r1Number.setText(r1Number);
+                        _r2.setText("No-relative");
+                        _r2Number.setText("No-relative");
+                        _r3.setText("No-relative");
+                        _r3Number.setText("No-relative");
+
+                    }else if (myproObject2.getInt("num")==2){
+                        String r1 = myproObject.getString("relative");
+                        _r1.setText(r1);
+                        String r1Number = myproObject.getString("relativeNumber");
+                        _r1Number.setText(r1Number);
+                        String r2 = myproObject1.getString("relative");
+                        _r2.setText(r2);
+                        String r2Number = myproObject1.getString("relativeNumber");
+                        _r2Number.setText(r2Number);
+
+                        _r3.setText("No-relative");
+                        _r3Number.setText("No-relative");
+                    }else {
+                        String r1 = myproObject.getString("relative");
+                        _r1.setText(r1);
+                        String r1Number = myproObject.getString("relativeNumber");
+                        _r1Number.setText(r1Number);
+
+                        String r2 = myproObject1.getString("relative");
+                        _r2.setText(r2);
+                        String r2Number = myproObject1.getString("relativeNumber");
+                        _r2Number.setText(r2Number);
+
+                        String r3 = myproObject2.getString("relative");
+                        _r3.setText(r1);
+                        String r3Number = myproObject2.getString("relativeNumber");
+                        _r3Number.setText(r3Number);
+                    }
+
+
+
                     Toast.makeText(myprofile.this, username, Toast.LENGTH_SHORT).show();
                 } catch (JSONException e) {
                     e.printStackTrace();
