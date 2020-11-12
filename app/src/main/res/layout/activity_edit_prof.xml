@@ -48,20 +48,23 @@
 
             </TextView>
 
-            <EditText
+            <TextView
+                android:id="@+id/userName"
                 android:layout_width="match_parent"
                 android:layout_height="38dp"
                 android:layout_marginLeft="50dp"
                 android:layout_marginRight="50dp"
+                android:textSize="25dp"
+                android:gravity="center"
                 android:background="@drawable/edit_text"
                 >
 
-            </EditText>
+            </TextView>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="36dp"
-                android:text="Full Name"
+                android:text="First Name"
                 android:textSize="24sp"
                 android:layout_marginTop="10dp"
                 android:layout_marginLeft="50dp"
@@ -71,10 +74,37 @@
             </TextView>
 
             <EditText
+                android:id="@+id/fName"
                 android:layout_width="match_parent"
                 android:layout_height="38dp"
                 android:layout_marginLeft="50dp"
                 android:layout_marginRight="50dp"
+                android:textSize="20dp"
+                android:gravity="center"
+                android:background="@drawable/edit_text">
+
+            </EditText>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="36dp"
+                android:text="Last Name"
+                android:textSize="24sp"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="50dp"
+                android:layout_marginRight="50dp"
+                android:textColor="#455A64">
+
+            </TextView>
+
+            <EditText
+                android:id="@+id/lName"
+                android:layout_width="match_parent"
+                android:layout_height="38dp"
+                android:layout_marginLeft="50dp"
+                android:layout_marginRight="50dp"
+                android:textSize="20dp"
+                android:gravity="center"
                 android:background="@drawable/edit_text">
 
             </EditText>
@@ -92,10 +122,13 @@
             </TextView>
 
             <EditText
+                android:id="@+id/email"
                 android:layout_width="match_parent"
                 android:layout_height="38dp"
                 android:layout_marginLeft="50dp"
                 android:layout_marginRight="50dp"
+                android:textSize="20dp"
+                android:gravity="center"
                 android:background="@drawable/edit_text">
 
             </EditText>
@@ -113,10 +146,13 @@
             </TextView>
 
             <EditText
+                android:id="@+id/phoneNumber"
                 android:layout_width="match_parent"
                 android:layout_height="38dp"
                 android:layout_marginLeft="50dp"
                 android:layout_marginRight="50dp"
+                android:textSize="20dp"
+                android:gravity="center"
                 android:background="@drawable/edit_text">
 
             </EditText>
@@ -133,14 +169,29 @@
 
             </TextView>
 
-            <EditText
+            <TextView
+                android:id="@+id/nicNumber"
                 android:layout_width="match_parent"
                 android:layout_height="38dp"
                 android:layout_marginLeft="50dp"
                 android:layout_marginRight="50dp"
+                android:textSize="20dp"
+                android:gravity="center"
                 android:background="@drawable/edit_text">
+            </TextView>
+<!--            <TextView-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="36dp"-->
+<!--                android:text="Id Number"-->
+<!--                android:textSize="24sp"-->
+<!--                android:layout_marginTop="10dp"-->
+<!--                android:layout_marginLeft="50dp"-->
+<!--                android:layout_marginRight="50dp"-->
+<!--                android:textColor="#455A64">-->
 
-            </EditText>
+<!--            </TextView>-->
+<!--            -->
+
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -153,6 +204,7 @@
                     android:layout_marginTop="30dp"
                     android:background="@drawable/button_background"
                     android:text="Cancel"
+                    android:onClick="Cancel"
                     android:textColor="#392B2B"
                     android:textSize="18sp">
 
@@ -167,6 +219,7 @@
                     android:layout_marginBottom="50dp"
                     android:background="@drawable/button_background"
                     android:text="Save Changes"
+                    android:onClick="updateProfile"
                     android:textColor="#3C2929"
                     android:textSize="18sp">
 
