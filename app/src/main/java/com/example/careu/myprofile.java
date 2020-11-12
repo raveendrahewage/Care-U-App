@@ -31,6 +31,8 @@ public class myprofile extends AppCompatActivity {
         super.onCreate(savedInstanceState);
 //
         setContentView(R.layout.activity_my_profile);
+
+
         sessionManagement sessionManagement1 = new sessionManagement(myprofile.this);
         String user = sessionManagement1.getSession();
         apiurl ="http://10.0.2.2/careu-php/myprofile.php?userName="+user;

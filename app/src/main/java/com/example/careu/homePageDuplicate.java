@@ -64,7 +64,6 @@ public class homePageDuplicate extends AppCompatActivity {
             public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
                 switch (menuItem.getItemId()){
                     case R.id.myProfile:
-//                        Toast.makeText(homePageDuplicate.this, "this is my profile", Toast.LENGTH_SHORT).show();
                         Intent myp = new Intent(getApplicationContext(),myprofile.class);
                         startActivity(myp);
                         return true;

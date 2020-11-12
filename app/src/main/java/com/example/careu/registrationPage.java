@@ -3,6 +3,7 @@ package com.example.careu;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
+import androidx.core.graphics.BitmapCompat;
 
 import android.Manifest;
 import android.app.AlertDialog;
@@ -175,7 +176,7 @@ public class registrationPage extends AppCompatActivity {
     }
 
     public void register(View view) throws ExecutionException, InterruptedException {
-        String uploadUrl = "http://10.0.2.2/careu-php/uploadID.php";
+        String uploadUrl = "http://10.0.2.2/careuAppWeb/careu-php/uploadID.php";
         awesomeValidation = new AwesomeValidation(ValidationStyle.BASIC);
         String s;
         String fname = _fname.getText().toString();
@@ -247,10 +248,15 @@ public class registrationPage extends AppCompatActivity {
 //            number(_r3_num.getText().toString(),R.id.r3_num);
             awesomeValidation.addValidation(this,R.id.r3_num,"[0]{1}[7]{1}[1||2||5||6||7||8]{1}[0-9]{7}$",R.string.invalid_number1);
         }
+
+        int bitmapSize1 = bitmap1.getAllocationByteCount();
+        int bitmapSize2 = bitmap2.getAllocationByteCount();
         if (awesomeValidation.validate()) {
          //   Intent i = new Intent(this, loginPage.class);
            // startActivity(i);
             String type = "register";
+
+            //Toast.makeText(this, bitmapSize1+","+bitmapSize2, Toast.LENGTH_LONG).show();
 
             BackgroundWorker backgroundWorker = new BackgroundWorker(this);
             String state =backgroundWorker.execute(type,fname,lname,email,phone,username,pwd,NIC,address,gender,dateOfBirth,r1,r1_num,r2,r2_num,r3,r3_num).get();
