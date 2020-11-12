@@ -39,7 +39,7 @@ public class BackgroundWorkerRequest extends AsyncTask<String,Void,String> {
         String noOfPatients = params[6];
         String description = params[7];
 
-        String profileUrl = "http://10.0.2.2/careuAppWeb/careu-php/Request.php";
+        String profileUrl = "http://10.0.2.2/careu-php/Request.php";
         try {
             URL url = new URL(profileUrl);
             HttpURLConnection httpURLConnection = (HttpURLConnection) url.openConnection();
