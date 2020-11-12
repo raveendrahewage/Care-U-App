@@ -29,7 +29,7 @@ public class BackgroundWorkerRequest extends AsyncTask<String,Void,String> {
     }
 
     @Override
-    protected String doInBackground(String... params) {
+    protected String doInBackground(String... params){
         String type = params[0];
         String username = params[1];
         String date = params[2];
