@@ -176,7 +176,7 @@ public class registrationPage extends AppCompatActivity {
     }
 
     public void register(View view) throws ExecutionException, InterruptedException {
-        String uploadUrl = "http://10.0.2.2/careuAppWeb/careu-php/uploadID.php";
+        String uploadUrl = "http://10.0.2.2/careu-php/uploadID.php";
         awesomeValidation = new AwesomeValidation(ValidationStyle.BASIC);
         String s;
         String fname = _fname.getText().toString();

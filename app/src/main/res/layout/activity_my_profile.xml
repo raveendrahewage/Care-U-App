@@ -136,7 +136,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="36dp"
-                android:text="Id Number"
+                android:text="NIC number"
                 android:textSize="24sp"
                 android:layout_marginTop="10dp"
                 android:layout_marginLeft="50dp"
@@ -144,6 +144,7 @@
                 android:textColor="#455A64">
 
             </TextView>
+
 
             <TextView
                 android:id="@+id/nicNumber"
@@ -156,6 +157,156 @@
                 android:background="@drawable/edit_text">
 
             </TextView>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="36dp"
+                android:text="Relative-1 Name"
+                android:textSize="24sp"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="50dp"
+                android:layout_marginRight="50dp"
+                android:textColor="#455A64">
+
+            </TextView>
+
+            <TextView
+                android:id="@+id/r1"
+                android:layout_width="match_parent"
+                android:layout_height="38dp"
+                android:layout_marginLeft="50dp"
+                android:layout_marginRight="50dp"
+                android:textSize="20dp"
+                android:gravity="center"
+                android:background="@drawable/edit_text">
+
+            </TextView>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="36dp"
+                android:text="Relative-1 Number"
+                android:textSize="24sp"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="50dp"
+                android:layout_marginRight="50dp"
+                android:textColor="#455A64">
+
+            </TextView>
+
+            <TextView
+                android:id="@+id/r1_num"
+                android:layout_width="match_parent"
+                android:layout_height="38dp"
+                android:layout_marginLeft="50dp"
+                android:layout_marginRight="50dp"
+                android:textSize="20dp"
+                android:gravity="center"
+                android:background="@drawable/edit_text">
+
+            </TextView>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="36dp"
+                android:text="Relative-2 Name"
+                android:textSize="24sp"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="50dp"
+                android:layout_marginRight="50dp"
+                android:textColor="#455A64">
+
+            </TextView>
+
+            <TextView
+                android:id="@+id/r2"
+                android:layout_width="match_parent"
+                android:layout_height="38dp"
+                android:layout_marginLeft="50dp"
+                android:layout_marginRight="50dp"
+                android:textSize="20dp"
+                android:gravity="center"
+                android:background="@drawable/edit_text">
+
+            </TextView>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="36dp"
+                android:text="Relative-2 Number"
+                android:textSize="24sp"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="50dp"
+                android:layout_marginRight="50dp"
+                android:textColor="#455A64">
+
+            </TextView>
+
+            <TextView
+                android:id="@+id/r2_num"
+                android:layout_width="match_parent"
+                android:layout_height="38dp"
+                android:layout_marginLeft="50dp"
+                android:layout_marginRight="50dp"
+                android:textSize="20dp"
+                android:gravity="center"
+                android:background="@drawable/edit_text">
+
+            </TextView>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="36dp"
+                android:text="Relative-3 Name"
+                android:textSize="24sp"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="50dp"
+                android:layout_marginRight="50dp"
+                android:textColor="#455A64">
+
+            </TextView>
+
+            <TextView
+                android:id="@+id/r3"
+                android:layout_width="match_parent"
+                android:layout_height="38dp"
+                android:layout_marginLeft="50dp"
+                android:layout_marginRight="50dp"
+                android:textSize="20dp"
+                android:gravity="center"
+                android:background="@drawable/edit_text">
+
+            </TextView>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="36dp"
+                android:text="Relative-3 Number"
+                android:textSize="24sp"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="50dp"
+                android:layout_marginRight="50dp"
+                android:textColor="#455A64">
+
+            </TextView>
+
+            <TextView
+                android:id="@+id/r3_num"
+                android:layout_width="match_parent"
+                android:layout_height="38dp"
+                android:layout_marginLeft="50dp"
+                android:layout_marginRight="50dp"
+                android:textSize="20dp"
+                android:gravity="center"
+                android:background="@drawable/edit_text">
+
+            </TextView>
+
+
+
+
+
+
 
             <LinearLayout
                 android:layout_width="match_parent"
