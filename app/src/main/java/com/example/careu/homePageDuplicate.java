@@ -78,6 +78,11 @@ public class homePageDuplicate extends AppCompatActivity {
                         startActivity(editp);
                         return true;
 
+                    case R.id.addRelations:
+                        Intent relations = new Intent(getApplicationContext(),addRelations.class);
+                        startActivity(relations);
+                        return true;
+
                     case R.id.logOut:
 //                        SharedPreferences.Editor editor=sharedPreferences2.edit();
 //                        editor.remove("logInStatus");
