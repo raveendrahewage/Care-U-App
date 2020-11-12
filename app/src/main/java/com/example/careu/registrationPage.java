@@ -249,8 +249,8 @@ public class registrationPage extends AppCompatActivity {
             awesomeValidation.addValidation(this,R.id.r3_num,"[0]{1}[7]{1}[1||2||5||6||7||8]{1}[0-9]{7}$",R.string.invalid_number1);
         }
 
-        int bitmapSize1 = bitmap1.getAllocationByteCount();
-        int bitmapSize2 = bitmap2.getAllocationByteCount();
+//        int bitmapSize1 = bitmap1.getAllocationByteCount();
+//        int bitmapSize2 = bitmap2.getAllocationByteCount();
         if (awesomeValidation.validate()) {
          //   Intent i = new Intent(this, loginPage.class);
            // startActivity(i);
