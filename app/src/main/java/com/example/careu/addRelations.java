@@ -22,7 +22,6 @@ public class addRelations extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_relations);
-
         _r1 = findViewById(R.id.r1);
         _r1_num = findViewById(R.id.r1_num);
         _r2 = findViewById(R.id.r2);
