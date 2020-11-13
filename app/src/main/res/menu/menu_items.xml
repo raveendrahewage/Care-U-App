@@ -17,6 +17,11 @@
         android:icon="@drawable/ic_baseline_supervisor_account_24"/>
 
     <item
+        android:title="Add Relations"
+        android:id="@+id/addRelations"
+        android:icon="@drawable/ic_baseline_group_add_24"/>
+
+    <item
         android:id="@+id/logOut"
         android:icon="@android:drawable/ic_lock_power_off"
         android:title="Log Out" />

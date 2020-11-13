@@ -41,7 +41,9 @@
             android:paddingRight="100dp"
             android:text="Suvasariya Ambulance"
             android:textAlignment="viewEnd"
-            android:textSize="55px"></TextView>
+            android:textColor="#FFFFFF"
+            android:textSize="55px"
+            android:textStyle="bold" ></TextView>
 
 
     </LinearLayout>
@@ -127,6 +129,7 @@
                         android:background="@drawable/rounded_edittext"
                         android:backgroundTint="#DFDBE4">
                         <Spinner
+                            android:id="@+id/disSpinner"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:entries="@array/Dis"
@@ -161,6 +164,7 @@
                         android:background="@drawable/rounded_edittext"
                         android:backgroundTint="#DFDBE4">
                         <Spinner
+                            android:id="@+id/policeSpinner"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:entries="@array/Dis_pos"
@@ -193,6 +197,7 @@
                         android:background="@drawable/rounded_edittext"
                         android:backgroundTint="#DFDBE4">
                         <Spinner
+                            android:id="@+id/patientSpinner"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:entries="@array/Number_of_Patients"
@@ -249,6 +254,7 @@
                         android:background="@drawable/rounded_edittext">
                     </TextView>
                     <EditText
+                        android:id="@+id/note"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="18dp"
@@ -301,14 +307,16 @@
                         android:layout_height="wrap_content"
                         android:text="Request the Ambulance"
                         android:padding="10dp"
+                        android:textColor="#FFFFFF"
                         android:background="@drawable/rounded_edittext"
                         android:backgroundTint="#025105"
                         android:layout_marginRight="10dp"
-                        ></Button>
+                        android:onClick="requestAmbulance"/>
                     <Button
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="Cancel"
+                        android:textColor="#F7F6FA"
                         android:background="@drawable/rounded_edittext"
                         android:backgroundTint="#025105"
                         android:onClick="cancecl_req">

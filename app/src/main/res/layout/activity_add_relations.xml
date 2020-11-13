@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".addRelations">
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginRight="50dp"
+        android:background="@drawable/button_background"
+        android:text="My Requests"
+        android:textSize="30sp"/>
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+
+                        <EditText
+                            android:id="@+id/r1"
+                            android:layout_width="260dp"
+                            android:layout_height="48dp"
+                            android:layout_marginRight="80dp"
+                            android:layout_marginLeft="80dp"
+                            android:layout_marginTop="10dp"
+                            android:ems="10"
+                            android:hint="Relative name"
+                            android:inputType="textPersonName"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            />
+
+                        <EditText
+                            android:id="@+id/r1_num"
+                            android:layout_width="260dp"
+                            android:layout_height="48dp"
+                            android:layout_marginRight="80dp"
+                            android:layout_marginLeft="80dp"
+                            android:layout_marginTop="10dp"
+                            android:ems="10"
+                            android:hint="Phone Number"
+                            android:inputType="number"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+<!--                        <TextView-->
+<!--                            android:id="@+id/r1_numtv"-->
+<!--                            android:layout_width="match_parent"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:layout_marginLeft="80dp"-->
+<!--                            android:layout_marginRight="80dp"-->
+<!--                            android:layout_marginTop="10dp"-->
+<!--                            android:textColor="#9A110E"/>-->
+
+                        <EditText
+                            android:id="@+id/r2"
+                            android:layout_width="260dp"
+                            android:layout_height="48dp"
+                            android:layout_marginRight="80dp"
+                            android:layout_marginLeft="80dp"
+                            android:layout_marginTop="10dp"
+                            android:ems="10"
+                            android:hint="Relative name"
+                            android:inputType="textPersonName"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <EditText
+                            android:id="@+id/r2_num"
+                            android:layout_width="260dp"
+                            android:layout_height="48dp"
+                            android:layout_marginRight="80dp"
+                            android:layout_marginLeft="80dp"
+                            android:layout_marginTop="10dp"
+                            android:ems="10"
+                            android:hint="Phone number"
+                            android:inputType="number"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+<!--                        <TextView-->
+<!--                            android:id="@+id/r2_numtv"-->
+<!--                            android:layout_width="match_parent"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:layout_marginLeft="80dp"-->
+<!--                            android:layout_marginRight="80dp"-->
+<!--                            android:layout_marginTop="10dp"-->
+<!--                            android:textColor="#9A110E"/>-->
+
+                        <EditText
+                            android:id="@+id/r3"
+                            android:layout_width="260dp"
+                            android:layout_height="48dp"
+                            android:layout_marginRight="80dp"
+                            android:layout_marginLeft="80dp"
+                            android:layout_marginTop="10dp"
+                            android:ems="10"
+                            android:hint="Relative Name"
+                            android:inputType="textPersonName"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <EditText
+                            android:id="@+id/r3_num"
+                            android:layout_width="260dp"
+                            android:layout_height="48dp"
+                            android:layout_marginRight="80dp"
+                            android:layout_marginLeft="80dp"
+                            android:layout_marginTop="10dp"
+                            android:ems="10"
+                            android:hint="Phone Number"
+                            android:inputType="number"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+<!--                        <TextView-->
+<!--                            android:id="@+id/r3_numtv"-->
+<!--                            android:layout_width="match_parent"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:layout_marginLeft="80dp"-->
+<!--                            android:layout_marginRight="80dp"-->
+<!--                            android:layout_marginTop="10dp"-->
+<!--                            android:textColor="#9A110E"/>-->
+
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="80dp"
+                android:layout_marginRight="80dp"
+                android:layout_marginBottom="40dp"
+                android:layout_marginTop="20dp"
+                android:backgroundTint="#2D5C57"
+                android:background="@drawable/btn_req_backgrnd"
+                android:text="Save Relations"
+                android:onClick="addRelation"
+                android:textSize="24sp"/>
+
+
+
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

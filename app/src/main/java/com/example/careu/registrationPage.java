@@ -3,10 +3,12 @@ package com.example.careu;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
+import androidx.core.graphics.BitmapCompat;
 
 import android.Manifest;
 import android.app.AlertDialog;
 import android.app.Dialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
@@ -69,12 +71,12 @@ public class registrationPage extends AppCompatActivity {
          _pwd = findViewById(R.id.pwd);
         _nic = findViewById(R.id.nic);
         _address = findViewById(R.id.address);
-        _r1 = findViewById(R.id.r1);
-        _r1_num = findViewById(R.id.r1_num);
-        _r2 = findViewById(R.id.r2);
-        _r2_num = findViewById(R.id.r2_num);
-        _r3 = findViewById(R.id.r3);
-        _r3_num = findViewById(R.id.r3_num);
+//        _r1 = findViewById(R.id.r1);
+//        _r1_num = findViewById(R.id.r1_num);
+//        _r2 = findViewById(R.id.r2);
+//        _r2_num = findViewById(R.id.r2_num);
+//        _r3 = findViewById(R.id.r3);
+//        _r3_num = findViewById(R.id.r3_num);
 
         _gender = findViewById(R.id.gender);
         _birthDay=findViewById(R.id.birthDay);
@@ -100,7 +102,7 @@ public class registrationPage extends AppCompatActivity {
         selectPics2 = findViewById(R.id.btnSelectPic2);
         btnReg = findViewById(R.id.btnReg);
        // nicNum = findViewById(R.id.nic);
-        final String uploadUrl = "http://10.0.2.2/careu-php/uploadID.php";
+      //  final String uploadUrl = "http://10.0.2.2/careu-php/uploadID.php";
 
 //        btnReg.setOnClickListener(new View.OnClickListener() {
 //            @Override
@@ -226,36 +228,63 @@ public class registrationPage extends AppCompatActivity {
 //        Toast.makeText(this, k, Toast.LENGTH_LONG).show();
 
 
-        String r1 = _r1.getText().toString();
-        String r1_num = _r1_num.getText().toString();
-       if (!r1.isEmpty()){
-//           number(_r1_num.getText().toString(),R.id.r1_num);
-           awesomeValidation.addValidation(this,R.id.r1_num,"[0]{1}[7]{1}[1||2||5||6||7||8]{1}[0-9]{7}$",R.string.invalid_number1);
-        }
+//        String r1 = _r1.getText().toString();
+//        String r1_num = _r1_num.getText().toString();
+//       if (!r1.isEmpty()){
+////           number(_r1_num.getText().toString(),R.id.r1_num);
+//           awesomeValidation.addValidation(this,R.id.r1_num,"[0]{1}[7]{1}[1||2||5||6||7||8]{1}[0-9]{7}$",R.string.invalid_number1);
+//        }
+//
+//        String r2 = _r2.getText().toString();
+//        String r2_num = _r2_num.getText().toString();
+//        if (!r2.isEmpty()){
+////            number(_r2_num.getText().toString(),R.id.r2_num);
+//            awesomeValidation.addValidation(this,R.id.r2_num,"[0]{1}[7]{1}[1||2||5||6||7||8]{1}[0-9]{7}$",R.string.invalid_number1);
+//       }
+//
+//        String r3 = _r3.getText().toString();
+//        String r3_num = _r3_num.getText().toString();
+//        if (!r3.isEmpty()){
+////            number(_r3_num.getText().toString(),R.id.r3_num);
+//            awesomeValidation.addValidation(this,R.id.r3_num,"[0]{1}[7]{1}[1||2||5||6||7||8]{1}[0-9]{7}$",R.string.invalid_number1);
+//        }
 
-        String r2 = _r2.getText().toString();
-        String r2_num = _r2_num.getText().toString();
-        if (!r2.isEmpty()){
-//            number(_r2_num.getText().toString(),R.id.r2_num);
-            awesomeValidation.addValidation(this,R.id.r2_num,"[0]{1}[7]{1}[1||2||5||6||7||8]{1}[0-9]{7}$",R.string.invalid_number1);
-       }
-
-        String r3 = _r3.getText().toString();
-        String r3_num = _r3_num.getText().toString();
-        if (!r3.isEmpty()){
-//            number(_r3_num.getText().toString(),R.id.r3_num);
-            awesomeValidation.addValidation(this,R.id.r3_num,"[0]{1}[7]{1}[1||2||5||6||7||8]{1}[0-9]{7}$",R.string.invalid_number1);
-        }
+//        int bitmapSize1 = bitmap1.getAllocationByteCount();
+//        int bitmapSize2 = bitmap2.getAllocationByteCount();
         if (awesomeValidation.validate()) {
          //   Intent i = new Intent(this, loginPage.class);
            // startActivity(i);
             String type = "register";
 
+            //Toast.makeText(this, bitmapSize1+","+bitmapSize2, Toast.LENGTH_LONG).show();
+
             BackgroundWorker backgroundWorker = new BackgroundWorker(this);
-            String state =backgroundWorker.execute(type,fname,lname,email,phone,username,pwd,NIC,address,gender,dateOfBirth,r1,r1_num,r2,r2_num,r3,r3_num).get();
+//            String state =backgroundWorker.execute(type,fname,lname,email,phone,username,pwd,NIC,address,gender,dateOfBirth,r1,r1_num,r2,r2_num,r3,r3_num).get();
+            String state =backgroundWorker.execute(type,fname,lname,email,phone,username,pwd,NIC,address,gender,dateOfBirth).get();
+            Toast.makeText(this, state, Toast.LENGTH_LONG).show();
+
             if (state.equals("Registration successful")){
-                Intent i = new Intent(this, loginPage.class);
-                this.startActivity(i);
+                final Intent k = new Intent(this, loginPage.class);
+                final Intent l = new Intent(this, MainActivity.class);
+                //this.startActivity(i);
+                AlertDialog.Builder builder = new AlertDialog.Builder(registrationPage.this);
+                builder.setMessage("Admins will aprove you");
+                builder.setPositiveButton("LogIn", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        startActivity(k);
+                    }
+                });
+                builder.setNegativeButton("Back", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        startActivity(l);
+                    }
+                });
+
+                AlertDialog alert = builder.create();
+                alert.show();
+
             }
 
         }
