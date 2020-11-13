@@ -176,7 +176,7 @@ public class registrationPage extends AppCompatActivity {
     }
 
     public void register(View view) throws ExecutionException, InterruptedException {
-        String uploadUrl = "http://10.0.2.2/careu-php/uploadID.php";
+        String uploadUrl = "http://10.0.2.2/careuAppWeb/careu-php/uploadID.php";
         awesomeValidation = new AwesomeValidation(ValidationStyle.BASIC);
         String s;
         String fname = _fname.getText().toString();
@@ -306,12 +306,15 @@ public class registrationPage extends AppCompatActivity {
             }
         })
 
+
         {
             @Override
             protected Map<String, String> getParams() throws AuthFailureError {
                 Map <String,String> params = new HashMap<>();
                 params.put("userName",username);
                 params.put("name",_nic.getText().toString().trim()+"_1");
+                //int bitmapSize1 = bitmap1.getAllocationByteCount();
+                
                 params.put("image",imageToString(bitmap1));
 
                 return params;

@@ -20,7 +20,7 @@ import org.json.JSONObject;
 
 public class myprofile extends AppCompatActivity {
     String username= null;
-    String apiurl ="http://10.0.2.2/careu-php/myprofile.php?userName=";
+    String apiurl ="http://10.0.2.2/careuAppWeb/careu-php/myprofile.php?userName=";
     TextView _userName,_fullName,_email,_phoneNumber,_nicNumber ,_r1,_r1Number,_r2,_r2Number,_r3,_r3Number;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,7 +31,7 @@ public class myprofile extends AppCompatActivity {
 
         sessionManagement sessionManagement1 = new sessionManagement(myprofile.this);
         String user = sessionManagement1.getSession();
-        apiurl ="http://10.0.2.2/careu-php/myprofile.php?userName="+user;
+        apiurl ="http://10.0.2.2/careuAppWeb/careu-php/myprofile.php?userName="+user;
         _userName = findViewById(R.id.userName);
         _fullName = findViewById(R.id.fullName);
         _email =findViewById(R.id.email);

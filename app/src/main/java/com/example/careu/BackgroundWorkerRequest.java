@@ -39,7 +39,7 @@ public class BackgroundWorkerRequest extends AsyncTask<String,Void,String> {
         String noOfPatients = params[6];
         String description = params[7];
 
-        String profileUrl = "http://10.0.2.2/careu-php/Request.php";
+        String profileUrl = "http://10.0.2.2/careuAppWeb/careu-php/Request.php";
         try {
             URL url = new URL(profileUrl);
             HttpURLConnection httpURLConnection = (HttpURLConnection) url.openConnection();
@@ -49,7 +49,7 @@ public class BackgroundWorkerRequest extends AsyncTask<String,Void,String> {
             OutputStream outputStream = httpURLConnection.getOutputStream();
             BufferedWriter bufferedWriter = new BufferedWriter(new OutputStreamWriter(outputStream, "UTF-8"));
             String request =URLEncoder.encode("type", "UTF-8")+"="+URLEncoder.encode(type, "UTF-8")+
-                    "&"+URLEncoder.encode("userName", "UTF-8")+"="+URLEncoder.encode(username, "UTF-8")+
+                      "&"+URLEncoder.encode("userName", "UTF-8")+"="+URLEncoder.encode(username, "UTF-8")+
                       "&"+URLEncoder.encode("date", "UTF-8")+"="+URLEncoder.encode(date, "UTF-8")+
                       "&"+URLEncoder.encode("time", "UTF-8")+"="+URLEncoder.encode(time, "UTF-8")+
                       "&"+URLEncoder.encode("district", "UTF-8")+"="+URLEncoder.encode(district, "UTF-8")+
