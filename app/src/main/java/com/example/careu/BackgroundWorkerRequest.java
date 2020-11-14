@@ -49,7 +49,7 @@ public class BackgroundWorkerRequest extends AsyncTask<String,Void,String> {
             OutputStream outputStream = httpURLConnection.getOutputStream();
             BufferedWriter bufferedWriter = new BufferedWriter(new OutputStreamWriter(outputStream, "UTF-8"));
             String request =URLEncoder.encode("type", "UTF-8")+"="+URLEncoder.encode(type, "UTF-8")+
-                    "&"+URLEncoder.encode("userName", "UTF-8")+"="+URLEncoder.encode(username, "UTF-8")+
+                      "&"+URLEncoder.encode("userName", "UTF-8")+"="+URLEncoder.encode(username, "UTF-8")+
                       "&"+URLEncoder.encode("date", "UTF-8")+"="+URLEncoder.encode(date, "UTF-8")+
                       "&"+URLEncoder.encode("time", "UTF-8")+"="+URLEncoder.encode(time, "UTF-8")+
                       "&"+URLEncoder.encode("district", "UTF-8")+"="+URLEncoder.encode(district, "UTF-8")+

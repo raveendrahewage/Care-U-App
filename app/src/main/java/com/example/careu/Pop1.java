@@ -34,7 +34,7 @@ import java.util.ArrayList;
 
 public class Pop1  extends AppCompatActivity
 {
-    private static final String apiurl="http://10.0.2.2/careuAppWeb/careu-php/instruction1.php";
+    private static final String apiurl="http://10.0.2.2/careu-php/instruction1.php";
     ListView lv;
 
 
@@ -93,7 +93,7 @@ public class Pop1  extends AppCompatActivity
                         jo = ja.getJSONObject(i);
                         name[i] = jo.getString("step");
                         desig[i] = jo.getString("description");
-                        img[i] ="http://10.0.2.2/careuAppWeb/careu-php/images/" + jo.getString("image");;
+                        img[i] ="http://10.0.2.2/careu-web/images/" + jo.getString("image");;
                     }
 
                     myadapter adptr = new myadapter(getApplicationContext(), name, desig, img);
