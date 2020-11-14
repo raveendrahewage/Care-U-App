@@ -29,9 +29,9 @@ public class BackgroundWorker extends AsyncTask<String,Void,String> {
     @Override
     protected String doInBackground(String... params){
         String type = params[0];
-        String login_url = "http://10.0.2.2/careuAppWeb/careu-php/loginApp.php";
-        String register_url = "http://10.0.2.2/careuAppWeb/careu-php/registerApp.php";
-        String  forgetPassword_url= "http://10.0.2.2/careuAppWeb/careu-php/forgot.php";
+        String login_url = "http://10.0.2.2/careu-php/loginApp.php";
+        String register_url = "http://10.0.2.2/careu-php/registerApp.php";
+        String  forgetPassword_url= "http://10.0.2.2/careu-php/forgot.php";
         if(type.equals("login")){
             String username = params[1];
             String password = params[2];
