@@ -1,212 +1,164 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".addRelations">
 
-
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="wrap_content"
+    <Button
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="My Relations"
-        android:textColor="#02B2C8"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/scrollView3"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.507" />
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginRight="50dp"
+        android:background="@drawable/button_background"
+        android:text="My Requests"
+        android:textSize="30sp"/>
+
 
     <ScrollView
-        android:id="@+id/scrollView3"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginTop="110dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        android:layout_height="match_parent">
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:orientation="vertical">
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="36dp"
-                android:text="Relative-1 Name"
-                android:textSize="24sp"
-                android:layout_marginTop="10dp"
-                android:layout_marginLeft="50dp"
-                android:layout_marginRight="50dp"
-                android:textColor="#455A64"
-                android:gravity="center">
 
-            </TextView>
+                        <EditText
+                            android:id="@+id/r1"
+                            android:layout_width="260dp"
+                            android:layout_height="48dp"
+                            android:layout_marginRight="80dp"
+                            android:layout_marginLeft="80dp"
+                            android:layout_marginTop="10dp"
+                            android:ems="10"
+                            android:hint="Relative name"
+                            android:inputType="textPersonName"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            />
 
-            <EditText
-                android:id="@+id/r1Name"
-                android:layout_width="match_parent"
-                android:layout_height="38dp"
-                android:layout_marginLeft="50dp"
-                android:layout_marginRight="50dp"
-                android:text=""
-                android:textSize="20dp"
-                android:gravity="center"
-                android:background="@drawable/edit_text"
-                >
+                        <EditText
+                            android:id="@+id/r1_num"
+                            android:layout_width="260dp"
+                            android:layout_height="48dp"
+                            android:layout_marginRight="80dp"
+                            android:layout_marginLeft="80dp"
+                            android:layout_marginTop="10dp"
+                            android:ems="10"
+                            android:hint="Phone Number"
+                            android:inputType="number"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+<!--                        <TextView-->
+<!--                            android:id="@+id/r1_numtv"-->
+<!--                            android:layout_width="match_parent"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:layout_marginLeft="80dp"-->
+<!--                            android:layout_marginRight="80dp"-->
+<!--                            android:layout_marginTop="10dp"-->
+<!--                            android:textColor="#9A110E"/>-->
 
-            </EditText>
+                        <EditText
+                            android:id="@+id/r2"
+                            android:layout_width="260dp"
+                            android:layout_height="48dp"
+                            android:layout_marginRight="80dp"
+                            android:layout_marginLeft="80dp"
+                            android:layout_marginTop="10dp"
+                            android:ems="10"
+                            android:hint="Relative name"
+                            android:inputType="textPersonName"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="36dp"
-                android:text="Relative-1 Number"
-                android:textSize="24sp"
-                android:layout_marginTop="10dp"
-                android:layout_marginLeft="50dp"
-                android:layout_marginRight="50dp"
-                android:textColor="#455A64"
-                android:gravity="center">
+                        <EditText
+                            android:id="@+id/r2_num"
+                            android:layout_width="260dp"
+                            android:layout_height="48dp"
+                            android:layout_marginRight="80dp"
+                            android:layout_marginLeft="80dp"
+                            android:layout_marginTop="10dp"
+                            android:ems="10"
+                            android:hint="Phone number"
+                            android:inputType="number"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+<!--                        <TextView-->
+<!--                            android:id="@+id/r2_numtv"-->
+<!--                            android:layout_width="match_parent"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:layout_marginLeft="80dp"-->
+<!--                            android:layout_marginRight="80dp"-->
+<!--                            android:layout_marginTop="10dp"-->
+<!--                            android:textColor="#9A110E"/>-->
 
-            </TextView>
+                        <EditText
+                            android:id="@+id/r3"
+                            android:layout_width="260dp"
+                            android:layout_height="48dp"
+                            android:layout_marginRight="80dp"
+                            android:layout_marginLeft="80dp"
+                            android:layout_marginTop="10dp"
+                            android:ems="10"
+                            android:hint="Relative Name"
+                            android:inputType="textPersonName"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
 
-            <EditText
-                android:id="@+id/r1Num"
-                android:layout_width="match_parent"
-                android:layout_height="38dp"
-                android:layout_marginLeft="50dp"
-                android:layout_marginRight="50dp"
-                android:text=""
-                android:textSize="20dp"
-                android:gravity="center"
-                android:background="@drawable/edit_text"
-                >
-            </EditText>
+                        <EditText
+                            android:id="@+id/r3_num"
+                            android:layout_width="260dp"
+                            android:layout_height="48dp"
+                            android:layout_marginRight="80dp"
+                            android:layout_marginLeft="80dp"
+                            android:layout_marginTop="10dp"
+                            android:ems="10"
+                            android:hint="Phone Number"
+                            android:inputType="number"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+<!--                        <TextView-->
+<!--                            android:id="@+id/r3_numtv"-->
+<!--                            android:layout_width="match_parent"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:layout_marginLeft="80dp"-->
+<!--                            android:layout_marginRight="80dp"-->
+<!--                            android:layout_marginTop="10dp"-->
+<!--                            android:textColor="#9A110E"/>-->
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="36dp"
-                android:text="Relative-2 Name"
-                android:textSize="24sp"
-                android:layout_marginTop="10dp"
-                android:layout_marginLeft="50dp"
-                android:layout_marginRight="50dp"
-                android:textColor="#455A64"
-                android:gravity="center">
-
-            </TextView>
-
-            <EditText
-                android:id="@+id/r2Name"
-                android:layout_width="match_parent"
-                android:layout_height="38dp"
-                android:layout_marginLeft="50dp"
-                android:layout_marginRight="50dp"
-                android:text=""
-                android:textSize="20dp"
-                android:gravity="center"
-                android:background="@drawable/edit_text"
-                >
-
-            </EditText>
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="36dp"
-                android:text="Relative-2 Number"
-                android:textSize="24sp"
-                android:layout_marginTop="10dp"
-                android:layout_marginLeft="50dp"
-                android:layout_marginRight="50dp"
-                android:textColor="#455A64"
-                android:gravity="center">
-
-            </TextView>
-
-            <EditText
-                android:id="@+id/r2Num"
-                android:layout_width="match_parent"
-                android:layout_height="38dp"
-                android:layout_marginLeft="50dp"
-                android:layout_marginRight="50dp"
-                android:text=""
-                android:textSize="20dp"
-                android:gravity="center"
-                android:background="@drawable/edit_text"
-                >
-            </EditText>
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="36dp"
-                android:text="Relative-3 Name"
-                android:textSize="24sp"
-                android:layout_marginTop="10dp"
-                android:layout_marginLeft="50dp"
-                android:layout_marginRight="50dp"
-                android:textColor="#455A64"
-                android:gravity="center">
-
-            </TextView>
-
-            <EditText
-                android:id="@+id/r3Name"
-                android:layout_width="match_parent"
-                android:layout_height="38dp"
-                android:layout_marginLeft="50dp"
-                android:layout_marginRight="50dp"
-                android:text=""
-                android:textSize="20dp"
-                android:gravity="center"
-                android:background="@drawable/edit_text"
-                >
-
-            </EditText>
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="36dp"
-                android:text="Relative-3 Number"
-                android:textSize="24sp"
-                android:layout_marginTop="10dp"
-                android:layout_marginLeft="50dp"
-                android:layout_marginRight="50dp"
-                android:textColor="#455A64"
-                android:gravity="center">
-
-            </TextView>
-
-            <EditText
-                android:id="@+id/r3Num"
-                android:layout_width="match_parent"
-                android:layout_height="38dp"
-                android:layout_marginLeft="50dp"
-                android:layout_marginRight="50dp"
-                android:text=""
-                android:textSize="20dp"
-                android:gravity="center"
-                android:background="@drawable/edit_text">
-            </EditText>
 
             <Button
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
+                android:layout_marginLeft="80dp"
+                android:layout_marginRight="80dp"
+                android:layout_marginBottom="40dp"
                 android:layout_marginTop="20dp"
-                android:text="Add Relations"
-                android:paddingLeft="10dp"
-                android:paddingRight="10dp"
-                android:background="#0ED2EC"
-                android:textColor="#FFFFFF"
-                android:layout_marginBottom="20dp"/>
+                android:backgroundTint="#2D5C57"
+                android:background="@drawable/btn_req_backgrnd"
+                android:text="Save Relations"
+                android:onClick="addRelation"
+                android:textSize="24sp"/>
+
+
 
         </LinearLayout>
     </ScrollView>
-
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>
