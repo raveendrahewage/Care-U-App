@@ -36,7 +36,7 @@
                 android:layout_marginBottom="20dp"
                 android:background="@drawable/btn_req_backgrnd"
                 android:onClick="req_1"
-                android:text="Request 1"
+                android:text="Ambulance Requests"
                 android:textSize="24sp"/>
 
             <Button
@@ -47,7 +47,7 @@
                 android:layout_marginBottom="20dp"
                 android:background="@drawable/btn_req_backgrnd"
                 android:onClick="req_2"
-                android:text="Request 2"
+                android:text="Police Requests"
                 android:textSize="24sp"/>
 
             <Button
