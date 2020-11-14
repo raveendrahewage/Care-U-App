@@ -309,12 +309,15 @@ public class registrationPage extends AppCompatActivity {
             }
         })
 
+
         {
             @Override
             protected Map<String, String> getParams() throws AuthFailureError {
                 Map <String,String> params = new HashMap<>();
                 params.put("userName",username);
                 params.put("name",_nic.getText().toString().trim()+"_1");
+                //int bitmapSize1 = bitmap1.getAllocationByteCount();
+                
                 params.put("image",imageToString(bitmap1));
 
                 return params;

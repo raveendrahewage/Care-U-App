@@ -23,7 +23,7 @@ public class myprofile extends AppCompatActivity {
     String apiurl ="http://10.0.2.2/careu-php/myprofile.php?userName=";
     TextView _userName,_fullName,_email,_phoneNumber,_nicNumber ,_r1,_r1Number,_r2,_r2Number,_r3,_r3Number;
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
 //
         setContentView(R.layout.activity_my_profile);
