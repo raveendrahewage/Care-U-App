@@ -174,7 +174,7 @@
                 android:layout_marginTop="10dp"
                 android:ems="10"
                 android:hint="Password"
-                android:inputType="textPersonName"
+                android:inputType="textPassword"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -223,15 +223,15 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
-            <Spinner
-                android:id="@+id/gender"
-                android:layout_width="260dp"
-                android:layout_height="48dp"
-                android:layout_marginLeft="80dp"
-                android:layout_marginTop="10dp"
-                android:ems="10"
-                android:entries="@array/gender"
-                ></Spinner>
+<!--            <Spinner-->
+<!--                android:id="@+id/gender"-->
+<!--                android:layout_width="260dp"-->
+<!--                android:layout_height="48dp"-->
+<!--                android:layout_marginLeft="80dp"-->
+<!--                android:layout_marginTop="10dp"-->
+<!--                android:ems="10"-->
+<!--                android:entries="@array/gender"-->
+<!--                ></Spinner>-->
 
                 <DatePicker
                     android:id="@+id/birthDay"
