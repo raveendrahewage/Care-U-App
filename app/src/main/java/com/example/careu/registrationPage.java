@@ -73,7 +73,7 @@ public class registrationPage extends AppCompatActivity {
 //        _r3_num = findViewById(R.id.r3_num);
 
 //        _gender = findViewById(R.id.gender);
-        _birthDay=findViewById(R.id.birthDay);
+//        _birthDay=findViewById(R.id.birthDay);
 
 
 //        _fnametv = findViewById(R.id.fnametv);
