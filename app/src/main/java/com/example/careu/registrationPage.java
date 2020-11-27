@@ -51,7 +51,8 @@ public class registrationPage extends AppCompatActivity {
     Spinner _gender;
     DatePicker _birthDay;
 
-    int imgStatus = 0;
+    int imgStatus1 = 0;
+    int imgStatus2 = 0;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -120,7 +121,7 @@ public class registrationPage extends AppCompatActivity {
                 intent.putExtra(Intent.EXTRA_ALLOW_MULTIPLE,true);
                 intent.setType("image/*");
                 startActivityForResult(intent,1);
-                 imgStatus = 1;
+                 imgStatus1 = 1;
             }
         });
 
@@ -137,7 +138,7 @@ public class registrationPage extends AppCompatActivity {
                 intent.putExtra(Intent.EXTRA_ALLOW_MULTIPLE,true);
                 intent.setType("image/*");
                 startActivityForResult(intent,2);
-                imgStatus = 2;
+                imgStatus2 = 2;
             }
         });
     }
@@ -299,7 +300,7 @@ public class registrationPage extends AppCompatActivity {
 
 //        int bitmapSize1 = bitmap1.getAllocationByteCount();
 //        int bitmapSize2 = bitmap2.getAllocationByteCount();
-        if (awesomeValidation.validate() && imgStatus==(1|2)){
+        if (awesomeValidation.validate() && imgStatus1==1 && imgStatus2==2){
          //   Intent i = new Intent(this, loginPage.class);
            // startActivity(i);
             String type = "register";
@@ -335,7 +336,7 @@ public class registrationPage extends AppCompatActivity {
 
             }
 
-        }else if(imgStatus==0){
+        }else if(imgStatus1==0 || imgStatus2==0){
          Toast toast = Toast.makeText(this, Html.fromHtml("<font color='#FFFFFF' >" + "Please select Your ID Photos" + "</font>"), Toast.LENGTH_LONG);
          View viewt = toast.getView();
          viewt.setPadding(20,20,20,20);
