@@ -13,6 +13,7 @@ import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
+import android.text.Html;
 import android.util.Base64;
 import android.util.Patterns;
 import android.view.View;
@@ -50,7 +51,7 @@ public class registrationPage extends AppCompatActivity {
     Spinner _gender;
     DatePicker _birthDay;
 
-
+    int imgStatus = 0;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -119,6 +120,7 @@ public class registrationPage extends AppCompatActivity {
                 intent.putExtra(Intent.EXTRA_ALLOW_MULTIPLE,true);
                 intent.setType("image/*");
                 startActivityForResult(intent,1);
+                 imgStatus = 1;
             }
         });
 
@@ -135,6 +137,7 @@ public class registrationPage extends AppCompatActivity {
                 intent.putExtra(Intent.EXTRA_ALLOW_MULTIPLE,true);
                 intent.setType("image/*");
                 startActivityForResult(intent,2);
+                imgStatus = 2;
             }
         });
     }
@@ -170,6 +173,10 @@ public class registrationPage extends AppCompatActivity {
     }
 
     public void register(View view) throws ExecutionException, InterruptedException {
+
+//        if(imgStatus==0){
+//            Toast.makeText(this, "Please select an img", Toast.LENGTH_SHORT).show();
+//        }
         String uploadUrl = "http://10.0.2.2/careu-php/uploadID.php";
         awesomeValidation = new AwesomeValidation(ValidationStyle.BASIC);
         String s;
@@ -259,7 +266,7 @@ public class registrationPage extends AppCompatActivity {
                day = bday_array[1];
            }
         }
-        Toast.makeText(this, day+" "+ month + " "+ year, Toast.LENGTH_LONG).show();
+        //Toast.makeText(this, day+" "+ month + " "+ year, Toast.LENGTH_LONG).show();
 
         String dateOfBirth = year + "/" + month + "/"+day  ;
 //        Calendar calendar = Calendar.getInstance();
@@ -292,7 +299,7 @@ public class registrationPage extends AppCompatActivity {
 
 //        int bitmapSize1 = bitmap1.getAllocationByteCount();
 //        int bitmapSize2 = bitmap2.getAllocationByteCount();
-        if (awesomeValidation.validate()) {
+        if (awesomeValidation.validate() && imgStatus==(1|2)){
          //   Intent i = new Intent(this, loginPage.class);
            // startActivity(i);
             String type = "register";
@@ -328,7 +335,14 @@ public class registrationPage extends AppCompatActivity {
 
             }
 
+        }else if(imgStatus==0){
+         Toast toast = Toast.makeText(this, Html.fromHtml("<font color='#FFFFFF' >" + "Please select Your ID Photos" + "</font>"), Toast.LENGTH_LONG);
+         View viewt = toast.getView();
+         viewt.setPadding(20,20,20,20);
+         viewt.setBackgroundResource(android.R.color.holo_red_dark);
+         toast.show();
         }
+
 
         StringRequest stringRequest = new StringRequest(Request.Method.POST, uploadUrl, new Response.Listener<String>() {
             @Override
@@ -527,16 +541,7 @@ public class registrationPage extends AppCompatActivity {
 
                 }
 
-
-
-
         return bd_array;
-
-
-
-
-
-
 
     }
 
