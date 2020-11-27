@@ -93,7 +93,7 @@ public class Pop2  extends AppCompatActivity
                         jo = ja.getJSONObject(i);
                         name[i] = jo.getString("step");
                         desig[i] = jo.getString("description");
-                        img[i] ="http://10.0.2.2/instructions/images/" + jo.getString("image");;
+                        img[i] ="http://10.0.2.2/careu-php/images/" + jo.getString("image");;
                     }
 
                     myadapter adptr = new myadapter(getApplicationContext(), name, desig, img);
