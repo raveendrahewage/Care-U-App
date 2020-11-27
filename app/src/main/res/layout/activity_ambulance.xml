@@ -17,7 +17,7 @@
         android:layout_marginRight="18dp"
         android:layout_marginLeft="18dp"
         android:layout_marginTop="10dp"
-        android:backgroundTint="#025105"
+        android:backgroundTint="#29A536"
         android:paddingTop="15dp"
         android:paddingBottom="15dp"
         android:background="@drawable/rounded_edittext"
@@ -309,7 +309,7 @@
                         android:padding="10dp"
                         android:textColor="#FFFFFF"
                         android:background="@drawable/rounded_edittext"
-                        android:backgroundTint="#025105"
+                        android:backgroundTint="#29A536"
                         android:layout_marginRight="10dp"
                         android:onClick="requestAmbulance"/>
                     <Button
@@ -318,7 +318,7 @@
                         android:text="Cancel"
                         android:textColor="#F7F6FA"
                         android:background="@drawable/rounded_edittext"
-                        android:backgroundTint="#025105"
+                        android:backgroundTint="#29A536"
                         android:onClick="cancecl_req">
 
                     </Button>
