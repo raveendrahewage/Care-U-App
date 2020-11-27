@@ -6,14 +6,14 @@ import androidx.core.app.ActivityCompat;
 
 import android.Manifest;
 import android.app.AlertDialog;
-import android.app.Dialog;
+import android.content.DialogInterface;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
+import android.text.Html;
 import android.util.Base64;
 import android.util.Patterns;
 import android.view.View;
@@ -21,8 +21,6 @@ import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.Spinner;
-import android.widget.TextView;
-import android.widget.EditText;
 import android.widget.Toast;
 
 import com.android.volley.AuthFailureError;
@@ -39,7 +37,6 @@ import org.json.JSONObject;
 
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
-import java.util.Calendar;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.ExecutionException;
@@ -54,7 +51,8 @@ public class registrationPage extends AppCompatActivity {
     Spinner _gender;
     DatePicker _birthDay;
 
-
+    int imgStatus1 = 0;
+    int imgStatus2 = 0;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -69,15 +67,15 @@ public class registrationPage extends AppCompatActivity {
          _pwd = findViewById(R.id.pwd);
         _nic = findViewById(R.id.nic);
         _address = findViewById(R.id.address);
-        _r1 = findViewById(R.id.r1);
-        _r1_num = findViewById(R.id.r1_num);
-        _r2 = findViewById(R.id.r2);
-        _r2_num = findViewById(R.id.r2_num);
-        _r3 = findViewById(R.id.r3);
-        _r3_num = findViewById(R.id.r3_num);
+//        _r1 = findViewById(R.id.r1);
+//        _r1_num = findViewById(R.id.r1_num);
+//        _r2 = findViewById(R.id.r2);
+//        _r2_num = findViewById(R.id.r2_num);
+//        _r3 = findViewById(R.id.r3);
+//        _r3_num = findViewById(R.id.r3_num);
 
-        _gender = findViewById(R.id.gender);
-        _birthDay=findViewById(R.id.birthDay);
+//        _gender = findViewById(R.id.gender);
+//        _birthDay=findViewById(R.id.birthDay);
 
 
 //        _fnametv = findViewById(R.id.fnametv);
@@ -100,7 +98,7 @@ public class registrationPage extends AppCompatActivity {
         selectPics2 = findViewById(R.id.btnSelectPic2);
         btnReg = findViewById(R.id.btnReg);
        // nicNum = findViewById(R.id.nic);
-        final String uploadUrl = "http://10.0.2.2/careu-php/uploadID.php";
+      //  final String uploadUrl = "http://10.0.2.2/careu-php/uploadID.php";
 
 //        btnReg.setOnClickListener(new View.OnClickListener() {
 //            @Override
@@ -123,6 +121,7 @@ public class registrationPage extends AppCompatActivity {
                 intent.putExtra(Intent.EXTRA_ALLOW_MULTIPLE,true);
                 intent.setType("image/*");
                 startActivityForResult(intent,1);
+                 imgStatus1 = 1;
             }
         });
 
@@ -139,6 +138,7 @@ public class registrationPage extends AppCompatActivity {
                 intent.putExtra(Intent.EXTRA_ALLOW_MULTIPLE,true);
                 intent.setType("image/*");
                 startActivityForResult(intent,2);
+                imgStatus2 = 2;
             }
         });
     }
@@ -174,14 +174,25 @@ public class registrationPage extends AppCompatActivity {
     }
 
     public void register(View view) throws ExecutionException, InterruptedException {
+
+//        if(imgStatus==0){
+//            Toast.makeText(this, "Please select an img", Toast.LENGTH_SHORT).show();
+//        }
         String uploadUrl = "http://10.0.2.2/careu-php/uploadID.php";
         awesomeValidation = new AwesomeValidation(ValidationStyle.BASIC);
         String s;
         String fname = _fname.getText().toString();
         awesomeValidation.addValidation(this,R.id.fname, RegexTemplate.NOT_EMPTY,R.string.Invalid_First_name);
+        if (fname.matches(".*\\d.*")){
+            _fname.setError("Cannot be contrains numbers in the First name");
+        }
 
         String lname = _lname.getText().toString();
       awesomeValidation.addValidation(this,R.id.lname, RegexTemplate.NOT_EMPTY,R.string.Invalid_Last_name);
+        if (lname.matches(".*\\d.*")){
+            _lname.setError("Cannot be contrains numbers in the First name");
+        }
+
 
         String email = _email.getText().toString();
        awesomeValidation.addValidation(this,R.id.email, Patterns.EMAIL_ADDRESS,R.string.Invalid_email);
@@ -199,25 +210,65 @@ public class registrationPage extends AppCompatActivity {
         String NIC = _nic.getText().toString();
 
         if (NIC.length()==10){
-
             awesomeValidation.addValidation(this,R.id.nic,"[0-9]{9}[V|v]{1}$",R.string.Invalid_NIC);
+
         }else if (NIC.length()==12) {
 //            Toast.makeText(this, "length is"+NIC.length(), Toast.LENGTH_LONG).show();
             awesomeValidation.addValidation(this, R.id.nic, "[0-9]{12}$", R.string.Invalid_NIC);
+        }else if (NIC.isEmpty()){
+//            Toast.makeText(this, "length is", Toast.LENGTH_LONG).show();
+            _nic.setError("Please Enter Your NIC number");
+//            awesomeValidation.addValidation(this,R.id.nic,RegexTemplate.NOT_EMPTY,R.string.Invalid_NIC);
         }else {
-//            Toast.makeText(this, "length is"+NIC.length(), Toast.LENGTH_LONG).show();
             awesomeValidation.addValidation(this,R.id.nic,"",R.string.Invalid_NIC);
+
         }
+        String gender=null;
+        if (!NIC.isEmpty()){
+            gender = getGender(NIC);
+        }
+
+
 
         String address = _address.getText().toString();
         awesomeValidation.addValidation(this,R.id.address, RegexTemplate.NOT_EMPTY,R.string.Invalid_address);
 
-        String gender = _gender.getSelectedItem().toString();
+//        String gender = _gender.getSelectedItem().toString();
 //        Toast.makeText(this, gender, Toast.LENGTH_LONG).show();
 
-        int day = _birthDay.getDayOfMonth();
-        int month = _birthDay.getMonth()+1;
-        int year =  _birthDay.getYear();
+//        int day = _birthDay.getDayOfMonth();
+//        int month = _birthDay.getMonth()+1;
+//        int year =  _birthDay.getYear();
+        int day = 0;
+        int month= 0;
+        int year= 0;
+        int bday_array[]=new int[2];
+        if (!NIC.isEmpty()){
+            String nic1=null;
+            int yearnumber,daynumber;
+           if (NIC.length()==10){
+               nic1=NIC.substring(0,2);
+               yearnumber=Integer.parseInt(nic1);
+               yearnumber = 1900 + yearnumber;
+               year=yearnumber;
+               nic1 = NIC.substring(2,5);
+               daynumber=Integer.parseInt(nic1);
+               bday_array=findBirthday(year,daynumber);
+               month = bday_array[0];
+               day = bday_array[1];
+           }else if (NIC.length()==12){
+               nic1=NIC.substring(0,4);
+               yearnumber=Integer.parseInt(nic1);
+               year=yearnumber;
+               nic1 = NIC.substring(4,7);
+               daynumber=Integer.parseInt(nic1);
+               bday_array=findBirthday(year, daynumber);
+               month = bday_array[0];
+               day = bday_array[1];
+           }
+        }
+        //Toast.makeText(this, day+" "+ month + " "+ year, Toast.LENGTH_LONG).show();
+
         String dateOfBirth = year + "/" + month + "/"+day  ;
 //        Calendar calendar = Calendar.getInstance();
 //        calendar.set(year, month, day);
@@ -226,39 +277,73 @@ public class registrationPage extends AppCompatActivity {
 //        Toast.makeText(this, k, Toast.LENGTH_LONG).show();
 
 
-        String r1 = _r1.getText().toString();
-        String r1_num = _r1_num.getText().toString();
-       if (!r1.isEmpty()){
-//           number(_r1_num.getText().toString(),R.id.r1_num);
-           awesomeValidation.addValidation(this,R.id.r1_num,"[0]{1}[7]{1}[1||2||5||6||7||8]{1}[0-9]{7}$",R.string.invalid_number1);
-        }
+//        String r1 = _r1.getText().toString();
+//        String r1_num = _r1_num.getText().toString();
+//       if (!r1.isEmpty()){
+////           number(_r1_num.getText().toString(),R.id.r1_num);
+//           awesomeValidation.addValidation(this,R.id.r1_num,"[0]{1}[7]{1}[1||2||5||6||7||8]{1}[0-9]{7}$",R.string.invalid_number1);
+//        }
+//
+//        String r2 = _r2.getText().toString();
+//        String r2_num = _r2_num.getText().toString();
+//        if (!r2.isEmpty()){
+////            number(_r2_num.getText().toString(),R.id.r2_num);
+//            awesomeValidation.addValidation(this,R.id.r2_num,"[0]{1}[7]{1}[1||2||5||6||7||8]{1}[0-9]{7}$",R.string.invalid_number1);
+//       }
+//
+//        String r3 = _r3.getText().toString();
+//        String r3_num = _r3_num.getText().toString();
+//        if (!r3.isEmpty()){
+////            number(_r3_num.getText().toString(),R.id.r3_num);
+//            awesomeValidation.addValidation(this,R.id.r3_num,"[0]{1}[7]{1}[1||2||5||6||7||8]{1}[0-9]{7}$",R.string.invalid_number1);
+//        }
 
-        String r2 = _r2.getText().toString();
-        String r2_num = _r2_num.getText().toString();
-        if (!r2.isEmpty()){
-//            number(_r2_num.getText().toString(),R.id.r2_num);
-            awesomeValidation.addValidation(this,R.id.r2_num,"[0]{1}[7]{1}[1||2||5||6||7||8]{1}[0-9]{7}$",R.string.invalid_number1);
-       }
-
-        String r3 = _r3.getText().toString();
-        String r3_num = _r3_num.getText().toString();
-        if (!r3.isEmpty()){
-//            number(_r3_num.getText().toString(),R.id.r3_num);
-            awesomeValidation.addValidation(this,R.id.r3_num,"[0]{1}[7]{1}[1||2||5||6||7||8]{1}[0-9]{7}$",R.string.invalid_number1);
-        }
-        if (awesomeValidation.validate()) {
+//        int bitmapSize1 = bitmap1.getAllocationByteCount();
+//        int bitmapSize2 = bitmap2.getAllocationByteCount();
+        if (awesomeValidation.validate() && imgStatus1==1 && imgStatus2==2){
          //   Intent i = new Intent(this, loginPage.class);
            // startActivity(i);
             String type = "register";
 
+            //Toast.makeText(this, bitmapSize1+","+bitmapSize2, Toast.LENGTH_LONG).show();
+
             BackgroundWorker backgroundWorker = new BackgroundWorker(this);
-            String state =backgroundWorker.execute(type,fname,lname,email,phone,username,pwd,NIC,address,gender,dateOfBirth,r1,r1_num,r2,r2_num,r3,r3_num).get();
+//            String state =backgroundWorker.execute(type,fname,lname,email,phone,username,pwd,NIC,address,gender,dateOfBirth,r1,r1_num,r2,r2_num,r3,r3_num).get();
+            String state =backgroundWorker.execute(type,fname,lname,email,phone,username,pwd,NIC,address,gender,dateOfBirth).get();
+            Toast.makeText(this, state, Toast.LENGTH_LONG).show();
+
             if (state.equals("Registration successful")){
-                Intent i = new Intent(this, loginPage.class);
-                this.startActivity(i);
+                final Intent k = new Intent(this, loginPage.class);
+                final Intent l = new Intent(this, MainActivity.class);
+                //this.startActivity(i);
+                AlertDialog.Builder builder = new AlertDialog.Builder(registrationPage.this);
+                builder.setMessage("Admins will aprove you");
+                builder.setPositiveButton("LogIn", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        startActivity(k);
+                    }
+                });
+                builder.setNegativeButton("Back", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        startActivity(l);
+                    }
+                });
+
+                AlertDialog alert = builder.create();
+                alert.show();
+
             }
 
+        }else if(imgStatus1==0 || imgStatus2==0){
+         Toast toast = Toast.makeText(this, Html.fromHtml("<font color='#FFFFFF' >" + "Please select Your ID Photos" + "</font>"), Toast.LENGTH_LONG);
+         View viewt = toast.getView();
+         viewt.setPadding(20,20,20,20);
+         viewt.setBackgroundResource(android.R.color.holo_red_dark);
+         toast.show();
         }
+
 
         StringRequest stringRequest = new StringRequest(Request.Method.POST, uploadUrl, new Response.Listener<String>() {
             @Override
@@ -280,12 +365,15 @@ public class registrationPage extends AppCompatActivity {
             }
         })
 
+
         {
             @Override
             protected Map<String, String> getParams() throws AuthFailureError {
                 Map <String,String> params = new HashMap<>();
                 params.put("userName",username);
                 params.put("name",_nic.getText().toString().trim()+"_1");
+                //int bitmapSize1 = bitmap1.getAllocationByteCount();
+                
                 params.put("image",imageToString(bitmap1));
 
                 return params;
@@ -327,8 +415,170 @@ public class registrationPage extends AppCompatActivity {
         MySingleton.getInstance(registrationPage.this).addToRequestQue(stringRequest2);
     }
 
+    private int[] findBirthday(int year, int nic) {
+            int bd_array[] = new int[2];
+            int m , d;
+            boolean leap = false;
+            if (nic>=500){
+                nic= nic-500;
+            }
 
-   public void number (String s,int k) {
+                if (year % 4 == 0) {
+                    if (year % 100 == 0) {
+                        if (year % 400 == 0)
+                            leap = true;
+                        else
+                            leap = false;
+                    }
+                    else
+                        leap = true;
+                }
+
+                else{
+                    leap = false;
+                }
+
+
+
+                if (leap){
+
+                    if (nic<=1 && nic<=31){
+                        bd_array[0] = 1;
+                        bd_array[1] = nic;
+                    }
+                    if (32<=nic && nic <= 60){
+                        bd_array[0] = 2;
+                        bd_array[1] = nic-31;
+                    }
+                    if (61<=nic && nic <= 91){
+                        bd_array[0] = 3;
+                        bd_array[1] = nic-60;
+                    }
+                    if (92<=nic && nic <= 121){
+                        bd_array[0] = 4;
+                        bd_array[1] = nic-91;
+                    }
+                    if (122<=nic && nic <= 152){
+                        bd_array[0] = 5;
+                        bd_array[1] = nic-121;
+                    }
+                    if (153<=nic && nic <=182 ){
+                        bd_array[0] = 6;
+                        bd_array[1] = nic-152;
+                    }
+                    if (183<=nic && nic <= 213){
+                        bd_array[0] = 7;
+                        bd_array[1] = nic-182;
+                    }
+                    if (214<=nic && nic <=244){
+                        bd_array[0] = 8;
+                        bd_array[1] = nic-213;
+                    }
+                    if (245<=nic && nic <= 274){
+                        bd_array[0] = 9;
+                        bd_array[1] = nic-244;
+                    }
+                    if (275<=nic && nic <= 305){
+                        bd_array[0] = 10;
+                        bd_array[1] = nic-274;
+                    }
+                    if (306<=nic && nic <=335){
+                        bd_array[0] = 11;
+                        bd_array[1] = nic-305;
+                    }if (336<=nic && nic <=366){
+                        bd_array[0] = 12;
+                        bd_array[1] = nic-335;
+                    }
+
+
+                } else{
+                    if (nic<=1 && nic<=31){
+                        bd_array[0] = 1;
+                        bd_array[1] = nic;
+                    }
+                    if (32<=nic && nic <= 59){
+                        bd_array[0] = 2;
+                        bd_array[1] = nic-31;
+                    }
+                    if (61<=nic && nic <= 91){
+                        bd_array[0] = 3;
+                        bd_array[1] = nic-60;
+                    }
+                    if (92<=nic && nic <= 121){
+                        bd_array[0] = 4;
+                        bd_array[1] = nic-91;
+                    }
+                    if (122<=nic && nic <= 152){
+                        bd_array[0] = 5;
+                        bd_array[1] = nic-121;
+                    }
+                    if (153<=nic && nic <=182 ){
+                        bd_array[0] = 6;
+                        bd_array[1] = nic-152;
+                    }
+                    if (183<=nic && nic <= 213){
+                        bd_array[0] = 7;
+                        bd_array[1] = nic-182;
+                    }
+                    if (214<=nic && nic <=244){
+                        bd_array[0] = 8;
+                        bd_array[1] = nic-213;
+                    }
+                    if (245<=nic && nic <= 274){
+                        bd_array[0] = 9;
+                        bd_array[1] = nic-244;
+                    }
+                    if (275<=nic && nic <= 305){
+                        bd_array[0] = 10;
+                        bd_array[1] = nic-274;
+                    }
+                    if (306<=nic && nic <=335){
+                        bd_array[0] = 11;
+                        bd_array[1] = nic-305;
+                    }if (336<=nic && nic <=366){
+                        bd_array[0] = 12;
+                        bd_array[1] = nic-335;
+                    }
+
+                }
+
+        return bd_array;
+
+    }
+
+    private String getGender(String nic) {
+        String nic1 = null;
+        int number = 0;
+        String gender1=null;
+        if(nic.length() == 10){
+                nic1=nic.substring(2,5);
+                number=Integer.parseInt(nic1);
+//                Toast.makeText(this, nic1, Toast.LENGTH_LONG).show();
+                if (number<500){
+                    gender1 = "Male";
+//                    Toast.makeText(this, gender1, Toast.LENGTH_LONG).show();
+                }else{
+                    gender1 = "Female";
+//                    Toast.makeText(this, gender1, Toast.LENGTH_LONG).show();
+                }
+
+        }else if (nic.length()==12){
+                nic1=nic.substring(4,7);
+                number=Integer.parseInt(nic1);
+    //                Toast.makeText(this, nic1, Toast.LENGTH_LONG).show();
+                if (number<500){
+                    gender1 = "Male";
+    //                    Toast.makeText(this, gender1, Toast.LENGTH_LONG).show();
+                }else{
+                    gender1 = "Female";
+    //                    Toast.makeText(this, gender1, Toast.LENGTH_LONG).show();
+                }
+        }
+        return gender1;
+    }
+
+
+    public void number (String s,int k) {
         if (s.length()==10){
             awesomeValidation.addValidation(this,k,"[0]{1}[7]{1}[0||1||2||5||6||7||8]{1}[0-9]{7}$",R.string.invalid_number1);
         }else if (s.length()==9){

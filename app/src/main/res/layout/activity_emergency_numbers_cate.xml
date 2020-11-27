@@ -15,7 +15,7 @@
         android:layout_gravity="center"
         android:layout_marginRight="50px"
         android:layout_marginLeft="50px"
-        android:layout_marginTop="15px"
+        android:layout_marginTop="25dp"
         android:layout_marginBottom="15px"
         android:backgroundTint="#D1522A"
         android:paddingTop="20px"
@@ -37,35 +37,39 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
             android:layout_weight="2"
             android:gravity="end"
             android:padding="10px"
             android:paddingRight="100px"
             android:text="Emergency Service Numbers"
             android:textAlignment="viewEnd"
-            android:layout_gravity="center_vertical"
-            android:textSize="55px"></TextView>
+            android:textColor="#FCFCFD"
+            android:textSize="55px"
+            android:textStyle="bold"></TextView>
 
 
 
     </LinearLayout>
 
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
     <GridLayout
         android:id="@+id/favorites_grid"
         android:layout_width="363dp"
         android:layout_height="341dp"
-        android:layout_marginLeft="50px"
-        android:layout_marginTop="250px"
-        android:layout_marginRight="50px"
-        android:layout_marginBottom="100px"
+        android:layout_gravity="center"
+        android:layout_marginTop="65dp"
+        android:layout_marginBottom="55dp"
         android:columnCount="2"
         android:rowCount="2">
 
         <Button
 
-            android:layout_width="144dp"
-            android:layout_height="133dp"
+            android:layout_width="152dp"
+            android:layout_height="137dp"
             android:layout_gravity="center"
             android:layout_marginLeft="50px"
             android:layout_marginTop="15px"
@@ -76,13 +80,13 @@
             android:backgroundTint="#29A536"
             android:drawableTop="@drawable/ic_local_hospital_black_24dp"
             android:gravity="bottom|center_horizontal"
+            android:onClick="helath_click"
             android:paddingTop="10dp"
             android:paddingBottom="25dp"
             android:text="Health"
             android:textColor="#FFFFFF"
             android:textSize="16dp"
             android:textStyle="bold"
-            android:onClick="helath_click"
 
             />
 
@@ -113,7 +117,7 @@
             android:layout_height="133dp"
             android:layout_gravity="center"
             android:layout_marginLeft="50px"
-            android:layout_marginTop="15px"
+            android:layout_marginTop="55px"
             android:layout_marginRight="50px"
             android:layout_marginBottom="15px"
             android:layout_weight="1.5"
@@ -136,7 +140,7 @@
             android:layout_height="133dp"
             android:layout_gravity="center"
             android:layout_marginLeft="50px"
-            android:layout_marginTop="15px"
+            android:layout_marginTop="55px"
             android:layout_marginRight="50px"
             android:layout_marginBottom="15px"
             android:layout_weight="1.5"
@@ -153,7 +157,7 @@
             android:onClick="others"/>
     </GridLayout>
 
-
+    </ScrollView>
 
 
 </LinearLayout>
