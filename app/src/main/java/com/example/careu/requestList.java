@@ -12,6 +12,7 @@ import android.util.DisplayMetrics;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -44,6 +45,14 @@ public class requestList extends AppCompatActivity {
         String userName = sessionManagement.getSession();
         requesturl = "http://10.0.2.2/careu-php/1990AmbulanceRequests.php?userName="+userName;
         requestView = findViewById(R.id.requestListview);
+
+        requestView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                Intent rq = new Intent(getApplicationContext(),request1.class);
+                startActivity(rq);
+            }
+        });
 
         fetch_data_into_array(requestView);
     }
