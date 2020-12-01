@@ -40,7 +40,7 @@ public class ambulance extends AppCompatActivity {
         String type = "ambulance";
         Calendar cc = Calendar.getInstance();
         int year = cc.get(Calendar.YEAR);
-        int month = cc.get(Calendar.MONTH);
+        int month = cc.get(Calendar.MONTH) + 1;
         int mDay = cc.get(Calendar.DAY_OF_MONTH);
         String sYear = Integer.toString(year);
         String sMonth = Integer.toString(month);

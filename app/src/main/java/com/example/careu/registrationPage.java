@@ -43,7 +43,7 @@ import java.util.concurrent.ExecutionException;
 
 public class registrationPage extends AppCompatActivity {
 
-    EditText _fname,_lname,_email,_pnum,_username,_pwd,_nic,_address,_r1,_r1_num,_r2,_r2_num,_r3,_r3_num;
+    EditText _fname,_lname,_email,_pnum,_username,_pwd,_nic,_address,_pwd1,_r1,_r1_num,_r2,_r2_num,_r3,_r3_num;
     //TextView _fnametv,_lnametv,_emailtv,_pnumtv,_usernametv,_pwdtv,_nictv,_addresstv,_r1_numtv,_r2_numtv,_r3_numtv;
     AwesomeValidation awesomeValidation;
     Button selectPics1,selectPics2,upload1,upload2,btnReg;
@@ -65,6 +65,7 @@ public class registrationPage extends AppCompatActivity {
         _pnum = findViewById(R.id.pnum);
         _username = findViewById(R.id.usrname);
          _pwd = findViewById(R.id.pwd);
+         _pwd1 = findViewById(R.id.pwd1);
         _nic = findViewById(R.id.nic);
         _address = findViewById(R.id.address);
 //        _r1 = findViewById(R.id.r1);
@@ -207,6 +208,8 @@ public class registrationPage extends AppCompatActivity {
         String pwd = _pwd.getText().toString();
         awesomeValidation.addValidation(this,R.id.pwd,".{8,}",R.string.invalid_password);
 
+        String pwd1 = _pwd1.getText().toString();
+        awesomeValidation.addValidation(this,R.id.pwd1,pwd,R.string.notMatchingPassword);
         String NIC = _nic.getText().toString();
 
         if (NIC.length()==10){

@@ -36,14 +36,14 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="2"
-            android:gravity="end"
-            android:padding="10px"
-            android:paddingRight="100px"
-            android:text="Other Service Numbers"
-            android:textAlignment="viewEnd"
             android:layout_gravity="center_vertical"
-            android:textSize="55px"/>
+            android:layout_weight="2"
+            android:gravity="center"
+            android:textAlignment="center"
+            android:text="Other Service Numbers"
+            android:textColor="#FFFFFF"
+            android:textSize="55px"
+            android:textStyle="bold"/>
 
     </LinearLayout>
 
@@ -75,7 +75,7 @@
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="1990 Suva Sariya"
+                        android:text="National Help Desk"
                         android:backgroundTint="#92ADE1DC"
                         android:padding="10dp"
                         android:background="@drawable/rounded_edittext"
@@ -95,7 +95,7 @@
                         android:id="@+id/txtother1"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="1990"
+                        android:text="118"
                         android:layout_marginLeft="10dp"
                         android:layout_marginRight="10dp"
                         android:layout_weight="1"
@@ -117,7 +117,7 @@
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text=" Fire and Rescue Service"
+                        android:text=" Government Help"
                         android:backgroundTint="#92ADE1DC"
                         android:padding="10dp"
                         android:background="@drawable/rounded_edittext"
@@ -137,7 +137,7 @@
                         android:id="@+id/txtother2"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="110"
+                        android:text="1919"
                         android:layout_marginLeft="10dp"
                         android:layout_marginRight="10dp"
                         android:layout_weight="1"
@@ -159,7 +159,7 @@
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Police Emergency Service"
+                        android:text="Electricity Break Down"
                         android:backgroundTint="#92ADE1DC"
                         android:padding="10dp"
                         android:background="@drawable/rounded_edittext"
@@ -179,7 +179,7 @@
                         android:id="@+id/txtother3"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="112"
+                        android:text="011-2466660"
                         android:layout_marginLeft="10dp"
                         android:layout_marginRight="10dp"
                         android:layout_weight="1"
@@ -201,7 +201,7 @@
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Operational Commander Colombo"
+                        android:text="Sri Lankan Airlines "
                         android:backgroundTint="#92ADE1DC"
                         android:padding="10dp"
                         android:background="@drawable/rounded_edittext"
@@ -221,7 +221,7 @@
                         android:id="@+id/txtother4"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="114"
+                        android:text="(019) 733 2677"
                         android:layout_marginLeft="10dp"
                         android:layout_marginRight="10dp"
                         android:layout_weight="1"
