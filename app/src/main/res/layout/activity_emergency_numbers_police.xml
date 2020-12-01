@@ -36,14 +36,14 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="2"
-            android:gravity="end"
-            android:padding="10px"
-            android:paddingRight="100px"
-            android:text="Police Service Numbers"
-            android:textAlignment="viewEnd"
             android:layout_gravity="center_vertical"
-            android:textSize="55px"/>
+            android:layout_weight="2"
+            android:gravity="center"
+            android:textAlignment="center"
+            android:text="Police Service Numbers"
+            android:textColor="#FFFFFF"
+            android:textSize="55px"
+            android:textStyle="bold" />
 
 
     </LinearLayout>
@@ -56,32 +56,32 @@
         <androidx.core.widget.NestedScrollView
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
+                android:layout_marginLeft="70px"
                 android:layout_marginRight="70px"
-                android:layout_marginLeft="70px">
+                android:orientation="vertical">
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:backgroundTint="#DFDBE4"
                     android:layout_marginTop="10dp"
                     android:layout_marginBottom="10dp"
-                    android:padding="10dp"
-                    android:background="@drawable/rounded_edittext">
+                    android:background="@drawable/rounded_edittext"
+                    android:backgroundTint="#DFDBE4"
+                    android:orientation="vertical"
+                    android:padding="10dp">
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="1990 Suva Sariya"
+                        android:layout_weight="1"
+                        android:background="@drawable/rounded_edittext"
                         android:backgroundTint="#92ADE1DC"
                         android:padding="10dp"
-                        android:background="@drawable/rounded_edittext"
-                        android:layout_weight="1"
-                        />
+                        android:text="Police Emergency Service" />
 
                     <Button
                         android:id="@+id/Police1"
@@ -90,17 +90,16 @@
                         android:layout_marginLeft="270dp"
                         android:layout_marginTop="-40dp"
                         android:background="@drawable/ic_baseline_phone_24"
-                        android:onClick="getNumber"/>
+                        android:onClick="getNumber" />
 
                     <TextView
                         android:id="@+id/txtpolice1"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="1990"
                         android:layout_marginLeft="10dp"
                         android:layout_marginRight="10dp"
                         android:layout_weight="1"
-                        />
+                        android:text="119" />
 
                 </LinearLayout>
 
@@ -108,64 +107,21 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:backgroundTint="#DFDBE4"
                     android:layout_marginTop="10dp"
                     android:layout_marginBottom="10dp"
-                    android:padding="10dp"
-                    android:background="@drawable/rounded_edittext">
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text=" Fire and Rescue Service"
-                        android:backgroundTint="#92ADE1DC"
-                        android:padding="10dp"
-                        android:background="@drawable/rounded_edittext"
-                        android:layout_weight="1"
-                        />
-
-                    <Button
-                        android:id="@+id/Police2"
-                        android:layout_width="40dp"
-                        android:layout_height="40dp"
-                        android:layout_marginLeft="270dp"
-                        android:layout_marginTop="-40dp"
-                        android:background="@drawable/ic_baseline_phone_24"
-                        android:onClick="getNumber"/>
-
-                    <TextView
-                        android:id="@+id/txtpolice2"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="110"
-                        android:layout_marginLeft="10dp"
-                        android:layout_marginRight="10dp"
-                        android:layout_weight="1"
-                        />
-
-                </LinearLayout>
-
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical"
+                    android:background="@drawable/rounded_edittext"
                     android:backgroundTint="#DFDBE4"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginBottom="10dp"
-                    android:padding="10dp"
-                    android:background="@drawable/rounded_edittext">
+                    android:orientation="vertical"
+                    android:padding="10dp">
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Police Emergency Service"
+                        android:layout_weight="1"
+                        android:background="@drawable/rounded_edittext"
                         android:backgroundTint="#92ADE1DC"
                         android:padding="10dp"
-                        android:background="@drawable/rounded_edittext"
-                        android:layout_weight="1"
-                        />
+                        android:text="Police Emergency Service" />
 
                     <Button
                         android:id="@+id/Police3"
@@ -174,18 +130,56 @@
                         android:layout_marginLeft="270dp"
                         android:layout_marginTop="-40dp"
                         android:background="@drawable/ic_baseline_phone_24"
-                        android:onClick="getNumber"/>
+                        android:onClick="getNumber" />
 
 
                     <TextView
                         android:id="@+id/txtpolice3"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="112"
                         android:layout_marginLeft="10dp"
                         android:layout_marginRight="10dp"
                         android:layout_weight="1"
-                        />
+                        android:text="112" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:background="@drawable/rounded_edittext"
+                    android:backgroundTint="#DFDBE4"
+                    android:orientation="vertical"
+                    android:padding="10dp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@drawable/rounded_edittext"
+                        android:backgroundTint="#92ADE1DC"
+                        android:padding="10dp"
+                        android:text="National Police Commission" />
+
+                    <Button
+                        android:id="@+id/Police2"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_marginLeft="270dp"
+                        android:layout_marginTop="-40dp"
+                        android:background="@drawable/ic_baseline_phone_24"
+                        android:onClick="getNumber" />
+
+                    <TextView
+                        android:id="@+id/txtpolice2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_weight="1"
+                        android:text="(+94) 11 2166500" />
 
                 </LinearLayout>
 
@@ -193,22 +187,21 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:backgroundTint="#DFDBE4"
                     android:layout_marginTop="10dp"
                     android:layout_marginBottom="10dp"
-                    android:padding="10dp"
-                    android:background="@drawable/rounded_edittext">
+                    android:background="@drawable/rounded_edittext"
+                    android:backgroundTint="#DFDBE4"
+                    android:orientation="vertical"
+                    android:padding="10dp">
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Operational Commander Colombo"
+                        android:layout_weight="1"
+                        android:background="@drawable/rounded_edittext"
                         android:backgroundTint="#92ADE1DC"
                         android:padding="10dp"
-                        android:background="@drawable/rounded_edittext"
-                        android:layout_weight="1"
-                        />
+                        android:text="Operational Commander Colombo" />
 
                     <Button
                         android:id="@+id/Police4"
@@ -217,16 +210,16 @@
                         android:layout_marginLeft="270dp"
                         android:layout_marginTop="-40dp"
                         android:background="@drawable/ic_baseline_phone_24"
-                        android:onClick="getNumber"/>
+                        android:onClick="getNumber" />
+
                     <TextView
                         android:id="@+id/txtpolice4"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="114"
                         android:layout_marginLeft="10dp"
                         android:layout_marginRight="10dp"
                         android:layout_weight="1"
-                        />
+                        android:text="114" />
 
                 </LinearLayout>
 
@@ -234,22 +227,21 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:backgroundTint="#DFDBE4"
                     android:layout_marginTop="10dp"
                     android:layout_marginBottom="10dp"
-                    android:padding="10dp"
-                    android:background="@drawable/rounded_edittext">
+                    android:background="@drawable/rounded_edittext"
+                    android:backgroundTint="#DFDBE4"
+                    android:orientation="vertical"
+                    android:padding="10dp">
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text=" Sri Lanka Air Force"
+                        android:layout_weight="1"
+                        android:background="@drawable/rounded_edittext"
                         android:backgroundTint="#92ADE1DC"
                         android:padding="10dp"
-                        android:background="@drawable/rounded_edittext"
-                        android:layout_weight="1"
-                        />
+                        android:text="Bomb Disposal" />
 
                     <Button
                         android:id="@+id/Police5"
@@ -258,17 +250,16 @@
                         android:layout_marginLeft="270dp"
                         android:layout_marginTop="-40dp"
                         android:background="@drawable/ic_baseline_phone_24"
-                        android:onClick="getNumber"/>
+                        android:onClick="getNumber" />
 
                     <TextView
                         android:id="@+id/txtpolice5"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="116"
                         android:layout_marginLeft="10dp"
                         android:layout_marginRight="10dp"
                         android:layout_weight="1"
-                        />
+                        android:text="+94 11 2 434 251" />
 
                 </LinearLayout>
 
@@ -276,22 +267,21 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:backgroundTint="#DFDBE4"
                     android:layout_marginTop="10dp"
                     android:layout_marginBottom="10dp"
-                    android:padding="10dp"
-                    android:background="@drawable/rounded_edittext">
+                    android:background="@drawable/rounded_edittext"
+                    android:backgroundTint="#DFDBE4"
+                    android:orientation="vertical"
+                    android:padding="10dp">
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text=" Sri Lanka Air Force"
+                        android:layout_weight="1"
+                        android:background="@drawable/rounded_edittext"
                         android:backgroundTint="#92ADE1DC"
                         android:padding="10dp"
-                        android:background="@drawable/rounded_edittext"
-                        android:layout_weight="1"
-                        />
+                        android:text=" Army Head Quarters	" />
 
                     <Button
                         android:id="@+id/Police6"
@@ -300,17 +290,16 @@
                         android:layout_marginLeft="270dp"
                         android:layout_marginTop="-40dp"
                         android:background="@drawable/ic_baseline_phone_24"
-                        android:onClick="getNumber"/>
+                        android:onClick="getNumber" />
 
                     <TextView
                         android:id="@+id/txtpolice6"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="116"
                         android:layout_marginLeft="10dp"
                         android:layout_marginRight="10dp"
                         android:layout_weight="1"
-                        />
+                        android:text="011-2432682" />
 
                 </LinearLayout>
 
@@ -318,22 +307,21 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:backgroundTint="#DFDBE4"
                     android:layout_marginTop="10dp"
                     android:layout_marginBottom="10dp"
-                    android:padding="10dp"
-                    android:background="@drawable/rounded_edittext">
+                    android:background="@drawable/rounded_edittext"
+                    android:backgroundTint="#DFDBE4"
+                    android:orientation="vertical"
+                    android:padding="10dp">
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text=" Disaster Management Call Centre"
+                        android:layout_weight="1"
+                        android:background="@drawable/rounded_edittext"
                         android:backgroundTint="#92ADE1DC"
                         android:padding="10dp"
-                        android:background="@drawable/rounded_edittext"
-                        android:layout_weight="1"
-                        />
+                        android:text="Sri Lanka Air Force" />
 
                     <Button
                         android:id="@+id/Police7"
@@ -342,39 +330,37 @@
                         android:layout_marginLeft="270dp"
                         android:layout_marginTop="-40dp"
                         android:background="@drawable/ic_baseline_phone_24"
-                        android:onClick="getNumber"/>
+                        android:onClick="getNumber" />
 
                     <TextView
                         android:id="@+id/txtpolice7"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="117"
                         android:layout_marginLeft="10dp"
                         android:layout_marginRight="10dp"
                         android:layout_weight="1"
-                        />
+                        android:text="116" />
 
                 </LinearLayout>
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:backgroundTint="#DFDBE4"
                     android:layout_marginTop="10dp"
                     android:layout_marginBottom="10dp"
-                    android:padding="10dp"
-                    android:background="@drawable/rounded_edittext">
+                    android:background="@drawable/rounded_edittext"
+                    android:backgroundTint="#DFDBE4"
+                    android:orientation="vertical"
+                    android:padding="10dp">
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text=" National Help Desk"
+                        android:layout_weight="1"
+                        android:background="@drawable/rounded_edittext"
                         android:backgroundTint="#92ADE1DC"
                         android:padding="10dp"
-                        android:background="@drawable/rounded_edittext"
-                        android:layout_weight="1"
-                        />
+                        android:text=" Crimes	" />
 
                     <Button
                         android:id="@+id/Police8"
@@ -383,39 +369,37 @@
                         android:layout_marginLeft="270dp"
                         android:layout_marginTop="-40dp"
                         android:background="@drawable/ic_baseline_phone_24"
-                        android:onClick="getNumber"/>
+                        android:onClick="getNumber" />
 
                     <TextView
                         android:id="@+id/txtpolice8"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="118"
                         android:layout_marginLeft="10dp"
                         android:layout_marginRight="10dp"
                         android:layout_weight="1"
-                        />
+                        android:text="011-2691500" />
 
                 </LinearLayout>
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:backgroundTint="#DFDBE4"
                     android:layout_marginTop="10dp"
                     android:layout_marginBottom="10dp"
-                    android:padding="10dp"
-                    android:background="@drawable/rounded_edittext">
+                    android:background="@drawable/rounded_edittext"
+                    android:backgroundTint="#DFDBE4"
+                    android:orientation="vertical"
+                    android:padding="10dp">
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text=" Police Emergency Service"
+                        android:layout_weight="1"
+                        android:background="@drawable/rounded_edittext"
                         android:backgroundTint="#92ADE1DC"
                         android:padding="10dp"
-                        android:background="@drawable/rounded_edittext"
-                        android:layout_weight="1"
-                        />
+                        android:text=" Police Head Quarters	" />
 
                     <Button
                         android:id="@+id/Police9"
@@ -424,17 +408,16 @@
                         android:layout_marginLeft="270dp"
                         android:layout_marginTop="-40dp"
                         android:background="@drawable/ic_baseline_phone_24"
-                        android:onClick="getNumber"/>
+                        android:onClick="getNumber" />
 
                     <TextView
                         android:id="@+id/txtpolice9"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="119"
                         android:layout_marginLeft="10dp"
                         android:layout_marginRight="10dp"
                         android:layout_weight="1"
-                        />
+                        android:text="011-2421111" />
 
                 </LinearLayout>
 

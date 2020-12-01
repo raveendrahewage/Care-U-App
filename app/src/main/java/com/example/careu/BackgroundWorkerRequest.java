@@ -2,6 +2,8 @@ package com.example.careu;
 
 import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.renderscript.ScriptGroup;
 import android.widget.Toast;
@@ -49,7 +51,7 @@ public class BackgroundWorkerRequest extends AsyncTask<String,Void,String> {
             OutputStream outputStream = httpURLConnection.getOutputStream();
             BufferedWriter bufferedWriter = new BufferedWriter(new OutputStreamWriter(outputStream, "UTF-8"));
             String request =URLEncoder.encode("type", "UTF-8")+"="+URLEncoder.encode(type, "UTF-8")+
-                    "&"+URLEncoder.encode("userName", "UTF-8")+"="+URLEncoder.encode(username, "UTF-8")+
+                      "&"+URLEncoder.encode("userName", "UTF-8")+"="+URLEncoder.encode(username, "UTF-8")+
                       "&"+URLEncoder.encode("date", "UTF-8")+"="+URLEncoder.encode(date, "UTF-8")+
                       "&"+URLEncoder.encode("time", "UTF-8")+"="+URLEncoder.encode(time, "UTF-8")+
                       "&"+URLEncoder.encode("district", "UTF-8")+"="+URLEncoder.encode(district, "UTF-8")+
@@ -90,8 +92,15 @@ public class BackgroundWorkerRequest extends AsyncTask<String,Void,String> {
     @Override
     protected void onPostExecute(String s) {
         super.onPostExecute(s);
-        if (s.equals("Request send")) {
+        if(s.equals("Request send")) {
             alertDialog.setMessage(s);
+            alertDialog.setButton("Ok", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialogInterface, int i) {
+                   Intent toHome = new Intent(context,homePageDuplicate.class);
+                   context.startActivity(toHome);
+                }
+            });
             alertDialog.show();
             //Toast.makeText(myprofile.class, "userfound", Toast.LENGTH_SHORT).show();
         }else if(s.equals("can not find the user")){

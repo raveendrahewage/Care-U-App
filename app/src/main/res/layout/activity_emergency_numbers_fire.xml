@@ -36,14 +36,14 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="2"
-            android:gravity="end"
-            android:padding="10px"
-            android:paddingRight="100px"
-            android:text="FireBrigade Service Numbers"
-            android:textAlignment="viewEnd"
             android:layout_gravity="center_vertical"
-            android:textSize="55px"/>
+            android:layout_weight="2"
+            android:gravity="center"
+            android:textAlignment="center"
+            android:text="Fire Brigade Service Numbers"
+            android:textColor="#FFFFFF"
+            android:textSize="55px"
+            android:textStyle="bold"/>
 
     </LinearLayout>
 
@@ -75,12 +75,11 @@
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="1990 Suva Sariya"
+                        android:text=" Fire and Rescue Service"
                         android:backgroundTint="#92ADE1DC"
                         android:padding="10dp"
                         android:background="@drawable/rounded_edittext"
-                        android:layout_weight="1"
-                        />
+                        android:layout_weight="1" />
 
                     <Button
                         android:id="@+id/Fire1"
@@ -95,14 +94,12 @@
                         android:id="@+id/txtfire1"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="1990"
+                        android:text="110"
                         android:layout_marginLeft="10dp"
                         android:layout_marginRight="10dp"
-                        android:layout_weight="1"
-                        />
+                        android:layout_weight="1"/>
 
                 </LinearLayout>
-
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -157,7 +154,7 @@
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Police Emergency Service"
+                        android:text="Fire and Ambulance	"
                         android:backgroundTint="#92ADE1DC"
                         android:padding="10dp"
                         android:background="@drawable/rounded_edittext"
@@ -176,7 +173,7 @@
                         android:id="@+id/txtfire3"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="112"
+                        android:text="011-2422222"
                         android:layout_marginLeft="10dp"
                         android:layout_marginRight="10dp"
                         android:layout_weight="1"
@@ -198,7 +195,7 @@
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Operational Commander Colombo"
+                        android:text="Fire Service Department"
                         android:backgroundTint="#92ADE1DC"
                         android:padding="10dp"
                         android:background="@drawable/rounded_edittext"
@@ -218,7 +215,7 @@
                         android:id="@+id/txtfire4"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="114"
+                        android:text="011 2686087"
                         android:layout_marginLeft="10dp"
                         android:layout_marginRight="10dp"
                         android:layout_weight="1"
@@ -240,7 +237,7 @@
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text=" Sri Lanka Air Force"
+                        android:text="Main Fire Station"
                         android:backgroundTint="#92ADE1DC"
                         android:padding="10dp"
                         android:background="@drawable/rounded_edittext"
@@ -260,7 +257,7 @@
                         android:id="@+id/txtfire5"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="116"
+                        android:text="0112686406"
                         android:layout_marginLeft="10dp"
                         android:layout_marginRight="10dp"
                         android:layout_weight="1"
@@ -282,7 +279,7 @@
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text=" Sri Lanka Air Force"
+                        android:text="Fire Brigade and Department"
                         android:backgroundTint="#92ADE1DC"
                         android:padding="10dp"
                         android:background="@drawable/rounded_edittext"
@@ -302,7 +299,7 @@
                         android:id="@+id/txtfire6"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="116"
+                        android:text="0112 714 444"
                         android:layout_marginLeft="10dp"
                         android:layout_marginRight="10dp"
                         android:layout_weight="1"

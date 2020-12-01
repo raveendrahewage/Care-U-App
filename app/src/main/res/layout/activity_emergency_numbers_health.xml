@@ -36,14 +36,14 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="2"
-            android:gravity="end"
-            android:padding="10px"
-            android:paddingRight="100px"
-            android:text="Health Service Numbers"
-            android:textAlignment="viewEnd"
             android:layout_gravity="center_vertical"
-            android:textSize="55px"/>
+            android:layout_weight="2"
+            android:gravity="center"
+            android:textAlignment="center"
+            android:text="Health Service Numbers"
+            android:textColor="#FFFFFF"
+            android:textSize="55px"
+            android:textStyle="bold"/>
 
 
 
@@ -77,7 +77,7 @@
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="1990 Suva Sariya"
+                        android:text="Suva Sariya"
                         android:backgroundTint="#92ADE1DC"
                         android:padding="10dp"
                         android:background="@drawable/rounded_edittext"
@@ -117,7 +117,7 @@
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text=" Fire and Rescue Service"
+                        android:text="Ambulance"
                         android:backgroundTint="#92ADE1DC"
                         android:padding="10dp"
                         android:background="@drawable/rounded_edittext"
@@ -163,7 +163,7 @@
                         android:background="@drawable/rounded_edittext"
                         android:backgroundTint="#92ADE1DC"
                         android:padding="10dp"
-                        android:text="Police Emergency Service" />
+                        android:text="Accident Service General Hospital" />
 
                     <Button
                         android:id="@+id/Health3"
@@ -178,7 +178,7 @@
                         android:id="@+id/txtHealth3"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="1123"
+                        android:text="011-2691111"
                         android:layout_marginLeft="10dp"
                         android:layout_marginRight="10dp"
                         android:layout_weight="1"
@@ -200,7 +200,7 @@
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Operational Commander Colombo"
+                        android:text="Blood Bank"
                         android:backgroundTint="#92ADE1DC"
                         android:padding="10dp"
                         android:background="@drawable/rounded_edittext"
@@ -219,7 +219,7 @@
                         android:id="@+id/txtHealth4"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="114"
+                        android:text="011-2695728"
                         android:layout_marginLeft="10dp"
                         android:layout_marginRight="10dp"
                         android:layout_weight="1"
@@ -241,7 +241,7 @@
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text=" Sri Lanka Air Force"
+                        android:text="Red Cross"
                         android:backgroundTint="#92ADE1DC"
                         android:padding="10dp"
                         android:background="@drawable/rounded_edittext"
@@ -260,7 +260,7 @@
                         android:id="@+id/txtHealth5"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="116"
+                        android:text="011-2672727"
                         android:layout_marginLeft="10dp"
                         android:layout_marginRight="10dp"
                         android:layout_weight="1"
@@ -282,7 +282,7 @@
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text=" Sri Lanka Air Force"
+                        android:text=" Poison Information Centre"
                         android:backgroundTint="#92ADE1DC"
                         android:padding="10dp"
                         android:background="@drawable/rounded_edittext"
@@ -301,7 +301,7 @@
                         android:id="@+id/txtHealth6"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="116"
+                        android:text="011-2691111"
                         android:layout_marginLeft="10dp"
                         android:layout_marginRight="10dp"
                         android:layout_weight="1" />
@@ -322,7 +322,7 @@
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text=" Disaster Management Call Centre"
+                        android:text=" Colombo National "
                         android:backgroundTint="#92ADE1DC"
                         android:padding="10dp"
                         android:background="@drawable/rounded_edittext"
@@ -342,7 +342,7 @@
                         android:id="@+id/txtHealth7"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="117"
+                        android:text="(011) 269 1111"
                         android:layout_marginLeft="10dp"
                         android:layout_marginRight="10dp"
                         android:layout_weight="1"
@@ -363,7 +363,7 @@
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text=" National Help Desk"
+                        android:text=" Asiri Medical"
                         android:backgroundTint="#92ADE1DC"
                         android:padding="10dp"
                         android:background="@drawable/rounded_edittext"
@@ -383,7 +383,7 @@
                         android:id="@+id/txtHealth8"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="118"
+                        android:text="+94 11 4 523 300"
                         android:layout_marginLeft="10dp"
                         android:layout_marginRight="10dp"
                         android:layout_weight="1"
@@ -404,7 +404,7 @@
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text=" Police Emergency Service"
+                        android:text=" Nawaloka"
                         android:backgroundTint="#92ADE1DC"
                         android:padding="10dp"
                         android:background="@drawable/rounded_edittext"
@@ -424,7 +424,7 @@
                         android:id="@+id/txtHealth9"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="119"
+                        android:text="+9411 2 3 04 444"
                         android:layout_marginLeft="10dp"
                         android:layout_marginRight="10dp"
                         android:layout_weight="1"

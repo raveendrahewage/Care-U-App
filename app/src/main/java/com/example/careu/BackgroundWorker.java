@@ -180,10 +180,10 @@ public class BackgroundWorker extends AsyncTask<String,Void,String> {
             String userName = params[1];
             String r1 = params[2];
             String r1_num= params[3];
-            String r2 = params[4];
-            String r2_num= params[5];
-            String r3 = params[6];
-            String r3_num= params[7];
+//            String r2 = params[4];
+//            String r2_num= params[5];
+//            String r3 = params[6];
+//            String r3_num= params[7];
 
 
             try {
@@ -196,11 +196,11 @@ public class BackgroundWorker extends AsyncTask<String,Void,String> {
                 BufferedWriter bufferedWriter = new BufferedWriter(new OutputStreamWriter(outputStream,"UTF-8"));
                 String post_data = URLEncoder.encode("username","UTF-8")+"="+URLEncoder.encode(userName,"UTF-8")+
                         "&"+URLEncoder.encode("relative1","UTF-8")+"="+URLEncoder.encode(r1,"UTF-8")+
-                        "&"+URLEncoder.encode("relative1Number","UTF-8")+"="+URLEncoder.encode(r1_num,"UTF-8")+
-                        "&"+URLEncoder.encode("relative2","UTF-8")+"="+URLEncoder.encode(r2,"UTF-8")+
-                        "&"+URLEncoder.encode("relative2Number","UTF-8")+"="+URLEncoder.encode(r2_num,"UTF-8")+
-                        "&"+URLEncoder.encode("relative3","UTF-8")+"="+URLEncoder.encode(r3,"UTF-8")+
-                        "&"+URLEncoder.encode("relative3Number","UTF-8")+"="+URLEncoder.encode(r3_num,"UTF-8");
+                        "&"+URLEncoder.encode("relative1Number","UTF-8")+"="+URLEncoder.encode(r1_num,"UTF-8");
+//                        "&"+URLEncoder.encode("relative2","UTF-8")+"="+URLEncoder.encode(r2,"UTF-8")+
+//                        "&"+URLEncoder.encode("relative2Number","UTF-8")+"="+URLEncoder.encode(r2_num,"UTF-8")+
+//                        "&"+URLEncoder.encode("relative3","UTF-8")+"="+URLEncoder.encode(r3,"UTF-8")+
+//                        "&"+URLEncoder.encode("relative3Number","UTF-8")+"="+URLEncoder.encode(r3_num,"UTF-8");
 
                 bufferedWriter.write(post_data);
                 bufferedWriter.flush();
