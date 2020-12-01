@@ -42,7 +42,10 @@
             android:paddingRight="60px"
             android:text="First Aid Instructions"
             android:textAlignment="viewEnd"
-            android:textSize="24sp"></TextView>
+            android:textColor="#FFFFFF"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:paddingEnd="20dp"></TextView>
 
 
 

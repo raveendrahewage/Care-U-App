@@ -174,7 +174,21 @@
                 android:layout_marginTop="10dp"
                 android:ems="10"
                 android:hint="Password"
-                android:inputType="textPersonName"
+                android:inputType="textPassword"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <EditText
+                android:id="@+id/pwd1"
+                android:layout_width="260dp"
+                android:layout_height="48dp"
+                android:layout_marginLeft="80dp"
+                android:layout_marginTop="10dp"
+                android:ems="10"
+                android:hint="Re-enter Password"
+                android:inputType="textPassword"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -223,26 +237,26 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
-            <Spinner
-                android:id="@+id/gender"
-                android:layout_width="260dp"
-                android:layout_height="48dp"
-                android:layout_marginLeft="80dp"
-                android:layout_marginTop="10dp"
-                android:ems="10"
-                android:entries="@array/gender"
-                ></Spinner>
+<!--            <Spinner-->
+<!--                android:id="@+id/gender"-->
+<!--                android:layout_width="260dp"-->
+<!--                android:layout_height="48dp"-->
+<!--                android:layout_marginLeft="80dp"-->
+<!--                android:layout_marginTop="10dp"-->
+<!--                android:ems="10"-->
+<!--                android:entries="@array/gender"-->
+<!--                ></Spinner>-->
 
-                <DatePicker
-                    android:id="@+id/birthDay"
-                    android:layout_width="260dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="80dp"
-                    android:layout_marginTop="10dp"
-                    android:minDate="12/31/1940"
-                    android:maxDate="12/31/2012"
-                    android:datePickerMode="spinner"
-                    android:calendarViewShown="false"></DatePicker>
+<!--                <DatePicker-->
+<!--                    android:id="@+id/birthDay"-->
+<!--                    android:layout_width="260dp"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_marginLeft="80dp"-->
+<!--                    android:layout_marginTop="10dp"-->
+<!--                    android:minDate="12/31/1940"-->
+<!--                    android:maxDate="12/31/2012"-->
+<!--                    android:datePickerMode="spinner"-->
+<!--                    android:calendarViewShown="false"></DatePicker>-->
 <!--            <TextView-->
 <!--                android:id="@+id/addresstv"-->
 <!--                android:layout_width="match_parent"-->
@@ -252,34 +266,34 @@
 <!--                android:layout_marginTop="10dp"-->
 <!--                android:textColor="#9A110E"/>-->
 
-            <EditText
-                android:id="@+id/r1"
-                android:layout_width="260dp"
-                android:layout_height="48dp"
-                android:layout_marginLeft="80dp"
-                android:layout_marginTop="10dp"
-                android:ems="10"
-                android:hint="Relative name"
-                android:inputType="textPersonName"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                />
+<!--            <EditText-->
+<!--                android:id="@+id/r1"-->
+<!--                android:layout_width="260dp"-->
+<!--                android:layout_height="48dp"-->
+<!--                android:layout_marginLeft="80dp"-->
+<!--                android:layout_marginTop="10dp"-->
+<!--                android:ems="10"-->
+<!--                android:hint="Relative name"-->
+<!--                android:inputType="textPersonName"-->
+<!--                app:layout_constraintBottom_toBottomOf="parent"-->
+<!--                app:layout_constraintEnd_toEndOf="parent"-->
+<!--                app:layout_constraintStart_toStartOf="parent"-->
+<!--                app:layout_constraintTop_toTopOf="parent"-->
+<!--                />-->
 
-            <EditText
-                android:id="@+id/r1_num"
-                android:layout_width="260dp"
-                android:layout_height="48dp"
-                android:layout_marginLeft="80dp"
-                android:layout_marginTop="10dp"
-                android:ems="10"
-                android:hint="Phone Number"
-                android:inputType="number"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+<!--            <EditText-->
+<!--                android:id="@+id/r1_num"-->
+<!--                android:layout_width="260dp"-->
+<!--                android:layout_height="48dp"-->
+<!--                android:layout_marginLeft="80dp"-->
+<!--                android:layout_marginTop="10dp"-->
+<!--                android:ems="10"-->
+<!--                android:hint="Phone Number"-->
+<!--                android:inputType="number"-->
+<!--                app:layout_constraintBottom_toBottomOf="parent"-->
+<!--                app:layout_constraintEnd_toEndOf="parent"-->
+<!--                app:layout_constraintStart_toStartOf="parent"-->
+<!--                app:layout_constraintTop_toTopOf="parent" />-->
 <!--            <TextView-->
 <!--                android:id="@+id/r1_numtv"-->
 <!--                android:layout_width="match_parent"-->
@@ -289,33 +303,33 @@
 <!--                android:layout_marginTop="10dp"-->
 <!--                android:textColor="#9A110E"/>-->
 
-            <EditText
-                android:id="@+id/r2"
-                android:layout_width="260dp"
-                android:layout_height="48dp"
-                android:layout_marginLeft="80dp"
-                android:layout_marginTop="10dp"
-                android:ems="10"
-                android:hint="Relative name"
-                android:inputType="textPersonName"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+<!--            <EditText-->
+<!--                android:id="@+id/r2"-->
+<!--                android:layout_width="260dp"-->
+<!--                android:layout_height="48dp"-->
+<!--                android:layout_marginLeft="80dp"-->
+<!--                android:layout_marginTop="10dp"-->
+<!--                android:ems="10"-->
+<!--                android:hint="Relative name"-->
+<!--                android:inputType="textPersonName"-->
+<!--                app:layout_constraintBottom_toBottomOf="parent"-->
+<!--                app:layout_constraintEnd_toEndOf="parent"-->
+<!--                app:layout_constraintStart_toStartOf="parent"-->
+<!--                app:layout_constraintTop_toTopOf="parent" />-->
 
-            <EditText
-                android:id="@+id/r2_num"
-                android:layout_width="260dp"
-                android:layout_height="48dp"
-                android:layout_marginLeft="80dp"
-                android:layout_marginTop="10dp"
-                android:ems="10"
-                android:hint="Phone number"
-                android:inputType="number"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+<!--            <EditText-->
+<!--                android:id="@+id/r2_num"-->
+<!--                android:layout_width="260dp"-->
+<!--                android:layout_height="48dp"-->
+<!--                android:layout_marginLeft="80dp"-->
+<!--                android:layout_marginTop="10dp"-->
+<!--                android:ems="10"-->
+<!--                android:hint="Phone number"-->
+<!--                android:inputType="number"-->
+<!--                app:layout_constraintBottom_toBottomOf="parent"-->
+<!--                app:layout_constraintEnd_toEndOf="parent"-->
+<!--                app:layout_constraintStart_toStartOf="parent"-->
+<!--                app:layout_constraintTop_toTopOf="parent" />-->
 <!--            <TextView-->
 <!--                android:id="@+id/r2_numtv"-->
 <!--                android:layout_width="match_parent"-->
@@ -325,33 +339,33 @@
 <!--                android:layout_marginTop="10dp"-->
 <!--                android:textColor="#9A110E"/>-->
 
-            <EditText
-                android:id="@+id/r3"
-                android:layout_width="260dp"
-                android:layout_height="48dp"
-                android:layout_marginLeft="80dp"
-                android:layout_marginTop="10dp"
-                android:ems="10"
-                android:hint="Relative Name"
-                android:inputType="textPersonName"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+<!--            <EditText-->
+<!--                android:id="@+id/r3"-->
+<!--                android:layout_width="260dp"-->
+<!--                android:layout_height="48dp"-->
+<!--                android:layout_marginLeft="80dp"-->
+<!--                android:layout_marginTop="10dp"-->
+<!--                android:ems="10"-->
+<!--                android:hint="Relative Name"-->
+<!--                android:inputType="textPersonName"-->
+<!--                app:layout_constraintBottom_toBottomOf="parent"-->
+<!--                app:layout_constraintEnd_toEndOf="parent"-->
+<!--                app:layout_constraintStart_toStartOf="parent"-->
+<!--                app:layout_constraintTop_toTopOf="parent" />-->
 
-            <EditText
-                android:id="@+id/r3_num"
-                android:layout_width="260dp"
-                android:layout_height="48dp"
-                android:layout_marginLeft="80dp"
-                android:layout_marginTop="10dp"
-                android:ems="10"
-                android:hint="Phone Number"
-                android:inputType="number"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+<!--            <EditText-->
+<!--                android:id="@+id/r3_num"-->
+<!--                android:layout_width="260dp"-->
+<!--                android:layout_height="48dp"-->
+<!--                android:layout_marginLeft="80dp"-->
+<!--                android:layout_marginTop="10dp"-->
+<!--                android:ems="10"-->
+<!--                android:hint="Phone Number"-->
+<!--                android:inputType="number"-->
+<!--                app:layout_constraintBottom_toBottomOf="parent"-->
+<!--                app:layout_constraintEnd_toEndOf="parent"-->
+<!--                app:layout_constraintStart_toStartOf="parent"-->
+<!--                app:layout_constraintTop_toTopOf="parent" />-->
 <!--            <TextView-->
 <!--                android:id="@+id/r3_numtv"-->
 <!--                android:layout_width="match_parent"-->

@@ -1,178 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FFFFFF"
-    android:orientation="vertical">
+    tools:context=".MainActivity">
 
 
-    <ScrollView
+
+    <ListView
+        android:id="@+id/lv"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
-
-            <TextView
-                android:id="@+id/textView3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp"
-                android:layout_marginTop="20dp"
-                android:layout_marginRight="20dp"
-                android:layout_marginBottom="20dp"
-                android:gravity="center"
-                android:text="Basic First Aid for Cardiac Arrest"
-                android:textColor="#121111"
-                android:textSize="30sp" />
-
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="76dp"
-                android:layout_marginLeft="20dp"
-                android:layout_marginTop="20dp"
-                android:layout_marginRight="20dp"
-                android:layout_marginBottom="20dp"
-                android:text="1) Immediately put aside everything else you are doing, and make the environment safe by turning off any open fires, irons, cookers etc"
-                android:textColor="#731621"
-                android:textSize="18sp">
-
-            </TextView>
-
-            <ImageView
-                android:layout_width="213dp"
-                android:layout_height="178dp"
-                android:layout_gravity="center"
-                android:layout_marginBottom="20dp"
-                android:src="@drawable/burn1">
-
-            </ImageView>
-
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="98dp"
-                android:layout_marginLeft="20dp"
-                android:layout_marginTop="20dp"
-                android:layout_marginRight="20dp"
-                android:layout_marginBottom="20dp"
-                android:text="2) Carefully look at the appearance of the burn and note specific characteristics. This will help you decide the type of burn and the method of treatment. "
-                android:textColor="#731621"
-                android:textSize="18sp">
-
-            </TextView>
-
-            <ImageView
-                android:layout_width="213dp"
-                android:layout_height="178dp"
-                android:layout_gravity="center"
-                android:layout_marginBottom="20dp"
-                android:src="@drawable/burn2">
-
-            </ImageView>
-
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="104dp"
-                android:layout_marginLeft="20dp"
-                android:layout_marginTop="20dp"
-                android:layout_marginRight="20dp"
-                android:layout_marginBottom="20dp"
-                android:text="3) Hold the injury under cold running water for around 15–20 minutes. This will help pull the heat away from the skin and reduce the chances of inflammation."
-                android:textColor="#731621"
-                android:textSize="18sp">
-
-            </TextView>
-
-            <ImageView
-                android:layout_width="213dp"
-                android:layout_height="178dp"
-                android:layout_gravity="center"
-                android:layout_marginBottom="20dp"
-                android:src="@drawable/burn3">
-
-            </ImageView>
-
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="102dp"
-                android:layout_marginLeft="20dp"
-                android:layout_marginTop="20dp"
-                android:layout_marginRight="20dp"
-                android:layout_marginBottom="20dp"
-                android:text="4) Burns can cause swelling. Wearing accessories around the affected area will add to the discomfort. Thus, it is best to remove them."
-                android:textColor="#731621"
-                android:textSize="18sp">
-
-            </TextView>
-
-            <ImageView
-                android:layout_width="213dp"
-                android:layout_height="178dp"
-                android:layout_gravity="center"
-                android:layout_marginBottom="20dp"
-                android:src="@drawable/burn4">
-
-            </ImageView>
-
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="115dp"
-                android:layout_marginLeft="20dp"
-                android:layout_marginTop="20dp"
-                android:layout_marginRight="20dp"
-                android:layout_marginBottom="20dp"
-                android:text="5) Ointments such as Bacitracin or Polysporin greatly help reduce the chances of infection. Therefore, after washing the burn with running cold water, apply an antibiotic cream."
-                android:textColor="#731621"
-                android:textSize="18sp">
-
-            </TextView>
-
-            <ImageView
-                android:layout_width="213dp"
-                android:layout_height="178dp"
-                android:layout_gravity="center"
-                android:layout_marginBottom="20dp"
-                android:src="@drawable/burn5">
-
-            </ImageView>
-
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="94dp"
-                android:layout_marginLeft="20dp"
-                android:layout_marginTop="20dp"
-                android:layout_marginRight="20dp"
-                android:layout_marginBottom="20dp"
-                android:text="6) Watch the burn to see if a blister pop on its own or by accident. If it does, rinse it with clean water and mild soap. Apply an antibiotic cream once it is dry."
-                android:textColor="#731621"
-                android:textSize="18sp">
-
-            </TextView>
-
-            <ImageView
-                android:layout_width="213dp"
-                android:layout_height="178dp"
-                android:layout_gravity="center"
-                android:layout_marginBottom="20dp"
-                android:src="@drawable/burn6">
-
-            </ImageView>
+        android:layout_height="match_parent"
+        android:background="#FFFFFF" />
 
 
 
-
-        </LinearLayout>
-
-
-    </ScrollView>
-
-
-</LinearLayout>
+</androidx.appcompat.widget.LinearLayoutCompat>

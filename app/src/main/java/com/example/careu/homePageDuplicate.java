@@ -9,6 +9,7 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.se.omapi.Session;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
@@ -39,7 +40,7 @@ public class homePageDuplicate extends AppCompatActivity {
         setContentView(R.layout.activity_home_page_duplicate);
         //sessions updates in Login Files
 
-        sharedPreferences2=getSharedPreferences("logIn",MODE_PRIVATE);
+//        sharedPreferences2=getSharedPreferences("logIn",MODE_PRIVATE);
 //        if(!sharedPreferences2.contains("logInStatus")) {
 //            SharedPreferences.Editor editor=sharedPreferences2.edit();
 //            editor.putString("logInStatus","IN");
@@ -51,6 +52,9 @@ public class homePageDuplicate extends AppCompatActivity {
         navigationView = findViewById(R.id.navView);
         toolbar = findViewById(R.id.app_bar);
 
+        sessionManagement sessionManagement1 = new sessionManagement(homePageDuplicate.this);
+        String username = sessionManagement1.getSession();
+        Toast.makeText(this, username+" is logged in", Toast.LENGTH_SHORT).show();
         setSupportActionBar(toolbar);
         ActionBar actionBar = getSupportActionBar();
         actionBar.setDisplayHomeAsUpEnabled(true);
@@ -60,7 +64,6 @@ public class homePageDuplicate extends AppCompatActivity {
             public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
                 switch (menuItem.getItemId()){
                     case R.id.myProfile:
-//                        Toast.makeText(homePageDuplicate.this, "this is my profile", Toast.LENGTH_SHORT).show();
                         Intent myp = new Intent(getApplicationContext(),myprofile.class);
                         startActivity(myp);
                         return true;
@@ -75,11 +78,19 @@ public class homePageDuplicate extends AppCompatActivity {
                         startActivity(editp);
                         return true;
 
+                    case R.id.addRelations:
+                        Intent relations = new Intent(getApplicationContext(),addRelations.class);
+                        startActivity(relations);
+                        return true;
+
                     case R.id.logOut:
-                        SharedPreferences.Editor editor=sharedPreferences2.edit();
-                        editor.remove("logInStatus");
-                        editor.commit();
+//                        SharedPreferences.Editor editor=sharedPreferences2.edit();
+//                        editor.remove("logInStatus");
+//                        editor.commit();
+                        sessionManagement sessionManagement = new sessionManagement(homePageDuplicate.this);
+                        sessionManagement.removeSession();
                         Intent logout=new Intent(getApplicationContext(),MainActivity.class);
+                        logout.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_NEW_TASK);
                         startActivity(logout);
                         return true;
                 }

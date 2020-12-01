@@ -15,7 +15,7 @@ public class myrequests extends AppCompatActivity {
     }
 
     public void req_1(View view) {
-        Intent i= new Intent(this, request1.class);
+        Intent i= new Intent(this, requestList.class);
         startActivity(i);
     }
 
